@@ -1,0 +1,20 @@
+services:
+  web:
+    container_name: fams-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount the current directory to /app in the container for hot-reloading
+      - .:/app
+      # Exclude node_modules and .next from the volume mount so they use the container's version
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      # Enable polling for hot-reloading to work reliably on Windows/WSL/Docker
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    command: npm run dev
