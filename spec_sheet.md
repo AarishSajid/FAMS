@@ -253,13 +253,13 @@ These are the **non-negotiable rules** that must be enforced by the backend:
 
 The frontend is a **Next.js App Router** application using the Agriverse design language (Inter font, dark theme `#0a0b0e`, green accent `#4caf50`).
 
-### 9.1 `/login` — Role Selection
+### 9.1 `/login` — Unified Login
 - **File:** [page.jsx](file:///c:/Users/user/Desktop/densefusion/FAMS/src/app/login/page.jsx)
-- **Purpose:** Entry point. User picks a role (no password in prototype).
-- **UI:** Two large clickable cards:
-  - **Service Center Manager** (Ayesha Khan — Layyah Center) → redirects to `/dashboard`
-  - **Chief Agronomist** (Dr. Imran Sethi) → redirects to `/overview`
-- **Backend integration:** Will become a real login form posting to `POST /api/auth/login`, receiving a JWT.
+- **Purpose:** Entry point for all FAMS staff.
+- **UI:** A single, standard login form requiring email/username and password. The prototype's role-selection cards have been removed.
+- **Backend integration:** Posts credentials to `POST /api/auth/login`. On success, receives a JWT. The frontend decodes the JWT to determine the user's role and automatically redirects them:
+  - `SERVICE_CENTER_MANAGER` → redirects to `/dashboard`
+  - `CHIEF_AGRONOMIST` → redirects to `/overview`
 
 ---
 
@@ -1388,8 +1388,8 @@ Cache the computed leaderboard scores (yield efficiency, satellite health, condi
 
 | Job | Trigger | Description |
 | :--- | :--- | :--- |
-| **Cycle Generator** | Cron (every 5 days) or manual via `POST /api/advisory-case/cycles/generate` | Opens a new `Cycle` row, queries all Agrobot output since the last cycle, and creates `AdvisoryCase` rows for each. |
-| **Weather Data Ingestion** | Cron (hourly) | Fetches current weather and forecast data from an Open API (e.g., OpenWeatherMap) to display on the dashboard and farm detail views. Alert creation remains a manual process by the Manager. |
+| **Cycle Generator** | Cron inside FastAPI (e.g., `APScheduler` every 5 days) or manual via `POST /api/advisory-case/cycles/generate` | Opens a new `Cycle` row, queries all Agrobot output since the last cycle, and creates `AdvisoryCase` rows for each. |
+| **Weather Data Ingestion** | Cron inside FastAPI (hourly) | Fetches current weather and forecast data from an Open API (e.g., OpenWeatherMap) to display on the dashboard and farm detail views. Alert creation remains a manual process by the Manager. |
 
 ---
 
@@ -1458,10 +1458,4 @@ location / {
 | **Phase 9** | Frontend refactor: replace `src/lib/data.js` mock data and `src/lib/store.jsx` mock state with real `fetch()` calls to FastAPI | All above |
 | **Phase 10** | Docker compose multi-service setup + Nginx reverse proxy | All above |
 
----
 
-## 16. Open Questions
-
-| # | Question | Impact |
-| :--- | :--- | :--- |
-| 1 | **Cycle generation trigger:** Cron inside FastAPI (e.g., `apscheduler`), or external scheduler (e.g., Celery Beat, Kubernetes CronJob)? | Affects whether Phase 4 needs additional infrastructure. |
