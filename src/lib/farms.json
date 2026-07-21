@@ -1,0 +1,8610 @@
+[
+ {
+  "id": "farm-1",
+  "sNo": 1,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "Bilal Khaleel",
+  "village": "Nangal Sahdan",
+  "phone": "0309-4980501",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.255985,
+    31.848542
+   ],
+   [
+    74.25528,
+    31.851215
+   ],
+   [
+    74.251504,
+    31.851608
+   ],
+   [
+    74.25192,
+    31.848543
+   ],
+   [
+    74.255985,
+    31.848542
+   ]
+  ],
+  "lon": 74.2541348,
+  "lat": 31.849690000000002,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": "2025-04-11",
+  "harvestDate": "2025-10-30",
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "3 bags/acre",
+   "date": "2025-07-02",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-27",
+  "nextVariety": "Unknown"
+ },
+ {
+  "id": "farm-2",
+  "sNo": 2,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "Ihtiaham Nasir",
+  "village": "Nangal Sahdan",
+  "phone": "0328-9146833",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26676169105572,
+    31.85073413295215
+   ],
+   [
+    74.26672666962045,
+    31.851468095543375
+   ],
+   [
+    74.26673542497795,
+    31.85214742781708
+   ],
+   [
+    74.2668492446412,
+    31.852231806005143
+   ],
+   [
+    74.26781772062948,
+    31.852250398276865
+   ],
+   [
+    74.26878619661777,
+    31.85224667981813
+   ],
+   [
+    74.26881577163984,
+    31.850681014698623
+   ],
+   [
+    74.26676169105572,
+    31.85073413295215
+   ]
+  ],
+  "lon": 74.26740680127978,
+  "lat": 31.85156171100794,
+  "acres": 3.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5 bags/acre",
+   "date": "2025-07-10",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 Litre/3acre",
+   "date": "2025-07-10",
+   "name": "Lambda cyheluthrin"
+  },
+  "disease": {
+   "issues": "Rice left curl",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-12-09",
+  "nextVariety": "local"
+ },
+ {
+  "id": "farm-3",
+  "sNo": 3,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "Abad Ali",
+  "village": "Nangal Sahdan",
+  "phone": "0306-9547785",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.285006,
+    31.84315
+   ],
+   [
+    74.285064,
+    31.846842
+   ],
+   [
+    74.287872,
+    31.846827
+   ],
+   [
+    74.287829,
+    31.844181
+   ],
+   [
+    74.2864175,
+    31.84409409572129
+   ],
+   [
+    74.2863490546689,
+    31.843734836429146
+   ],
+   [
+    74.28567752733446,
+    31.843622880166627
+   ],
+   [
+    74.28571352472338,
+    31.843160862036235
+   ],
+   [
+    74.285006,
+    31.84315
+   ]
+  ],
+  "lon": 74.28610384519185,
+  "lat": 31.844306963817033,
+  "acres": 515.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5 bags/acre",
+   "date": "2025-06-26",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "250 g/acre",
+   "date": "2025-10-05",
+   "name": "Katara,score"
+  },
+  "disease": {
+   "issues": "Jassid,Blast,leaf curl",
+   "outbreak": true,
+   "severity": 0.45,
+   "from": "2025-09-15",
+   "to": null
+  },
+  "yieldExpected": 35,
+  "yieldActual": 40,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-12-06",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-4",
+  "sNo": 4,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "M. Akhtar",
+  "village": "Nangal Sahdan",
+  "phone": "0307-4634039",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.278744,
+    31.848779
+   ],
+   [
+    74.278742,
+    31.850109
+   ],
+   [
+    74.280109,
+    31.85015
+   ],
+   [
+    74.280021,
+    31.848974
+   ],
+   [
+    74.278744,
+    31.848779
+   ]
+  ],
+  "lon": 74.279272,
+  "lat": 31.8493582,
+  "acres": 9.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "3 bags/acre",
+   "date": "2025-08-26",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "250g/acre",
+   "date": "2025-10-11",
+   "name": "Angentic"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 0.4,
+   "from": "2025-10-03",
+   "to": null
+  },
+  "yieldExpected": 35,
+  "yieldActual": 40,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-02",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-5",
+  "sNo": 5,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "M. Anwar",
+  "village": "Nangal Sahdan",
+  "phone": "0300-4365420",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.29473,
+    31.847964
+   ],
+   [
+    74.291433,
+    31.847976
+   ],
+   [
+    74.291407,
+    31.850036
+   ],
+   [
+    74.294805,
+    31.850008
+   ],
+   [
+    74.29473,
+    31.847964
+   ]
+  ],
+  "lon": 74.293421,
+  "lat": 31.848789599999996,
+  "acres": 25.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847, 1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-25",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "9kg/acre",
+   "date": "2025-10-12",
+   "name": "Angentic"
+  },
+  "disease": {
+   "issues": "Jassid,leaf curl",
+   "outbreak": true,
+   "severity": 0.4,
+   "from": "2025-10-05",
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-6",
+  "sNo": 6,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "M. Afzal",
+  "village": "Nangal Sahdan",
+  "phone": "0321-7625275",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.288569,
+    31.846896
+   ],
+   [
+    74.284736,
+    31.846979
+   ],
+   [
+    74.285362,
+    31.848477
+   ],
+   [
+    74.288557,
+    31.848494
+   ],
+   [
+    74.288569,
+    31.846896
+   ]
+  ],
+  "lon": 74.28715860000001,
+  "lat": 31.847548400000004,
+  "acres": 18.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "PB18471509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1) 2 bags/acre 2) 250g/acre",
+   "date": "2025-08-01",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1) 9kg/acre 2) 250g/acre",
+   "date": null,
+   "name": "1)Cart P 2)Agnetic"
+  },
+  "disease": {
+   "issues": "Leaf Curl,Jassid,Blast",
+   "outbreak": true,
+   "severity": 0.4,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Dilkash, Bakhar"
+ },
+ {
+  "id": "farm-7",
+  "sNo": 7,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Mustafa",
+  "farmer": "M. Asghar Abdullan",
+  "village": "Nangal Sahdan",
+  "phone": "0309-4360421",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.280867,
+    31.845678
+   ],
+   [
+    74.280872,
+    31.84683
+   ],
+   [
+    74.282901,
+    31.846875
+   ],
+   [
+    74.282895,
+    31.845842
+   ],
+   [
+    74.280867,
+    31.845678
+   ]
+  ],
+  "lon": 74.2816804,
+  "lat": 31.846180600000004,
+  "acres": 14.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5 bags/acre",
+   "date": "2025-08-24",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "250g/acre",
+   "date": "2025-10-10",
+   "name": "Angentic"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 45,
+   "from": "2025-10-02",
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 42,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Dilkash"
+ },
+ {
+  "id": "farm-8",
+  "sNo": 8,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "Ahmed Ali",
+  "village": "Nangal Sahdan",
+  "phone": "0302-4484562",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25302010255461,
+    31.841406299305504
+   ],
+   [
+    74.2522813589872,
+    31.846821355116663
+   ],
+   [
+    74.25297843271096,
+    31.846824220882333
+   ],
+   [
+    74.25363101925302,
+    31.846411394234956
+   ],
+   [
+    74.25524760260244,
+    31.845170043842387
+   ],
+   [
+    74.25598948718172,
+    31.845219312992906
+   ],
+   [
+    74.25588706407461,
+    31.841479775253667
+   ],
+   [
+    74.25302010255461,
+    31.841406299305504
+   ]
+  ],
+  "lon": 74.2540068962399,
+  "lat": 31.84434233761674,
+  "acres": 30.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 bags / acre",
+   "date": "2025-07-28",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1)7kg/acre 2)200ml",
+   "date": "2025-07-30",
+   "name": "1)Agentic 2)Score"
+  },
+  "disease": {
+   "issues": "Leaf Roller, Jassid",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-10-01",
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2) Barseem",
+  "nextSowDate": null,
+  "nextVariety": "Leaf roller, Jassid"
+ },
+ {
+  "id": "farm-9",
+  "sNo": 9,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "M Ashraf",
+  "village": "Nangal Sahdan",
+  "phone": "0302-9289504",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25879573077087,
+    31.84525750651821
+   ],
+   [
+    74.25897183323315,
+    31.850671019337394
+   ],
+   [
+    74.26673461528061,
+    31.850685308622978
+   ],
+   [
+    74.26670415056357,
+    31.845771353778332
+   ],
+   [
+    74.26591740377405,
+    31.84577011620213
+   ],
+   [
+    74.26590096151831,
+    31.845200793064123
+   ],
+   [
+    74.25879573077087,
+    31.84525750651821
+   ]
+  ],
+  "lon": 74.26311720370163,
+  "lat": 31.84694480057734,
+  "acres": 28.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1bag/acre 2)1 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": "1)1 bag/acre 2)1bag/acre",
+   "date": null,
+   "name": "1)Pexalon 106sc 2)Amistar Top 325sc"
+  },
+  "disease": {
+   "issues": "Jassid, Leaf roller",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-19",
+  "nextVariety": "local"
+ },
+ {
+  "id": "farm-10",
+  "sNo": 10,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "Munawar Sultan",
+  "village": "Rajpura",
+  "phone": "0306-6648648",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25228632436992,
+    31.881848851554736
+   ],
+   [
+    74.2523829424094,
+    31.883470603494445
+   ],
+   [
+    74.256304,
+    31.883242
+   ],
+   [
+    74.25621342610606,
+    31.881787729688593
+   ],
+   [
+    74.25228632436992,
+    31.881848851554736
+   ]
+  ],
+  "lon": 74.25389460345107,
+  "lat": 31.882439607258505,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "18847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)2.5 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassids,Leaf Folder",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 42,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-31",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-11",
+  "sNo": 11,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "Saddam Ali",
+  "village": "Rajpura",
+  "phone": "0345-4595175",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25194285284753,
+    31.877991817944725
+   ],
+   [
+    74.24967520601388,
+    31.877930821297877
+   ],
+   [
+    74.24912207326051,
+    31.879566454972927
+   ],
+   [
+    74.25001616906886,
+    31.880008731452758
+   ],
+   [
+    74.25038997056832,
+    31.880605644315207
+   ],
+   [
+    74.25116641170793,
+    31.880513713629625
+   ],
+   [
+    74.25124245569566,
+    31.879098130464744
+   ],
+   [
+    74.25200888971517,
+    31.879008882176073
+   ],
+   [
+    74.25194285284753,
+    31.877991817944725
+   ]
+  ],
+  "lon": 74.25083409796949,
+  "lat": 31.8791906682443,
+  "acres": 15.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)3 bag/acre",
+   "date": null,
+   "name": "1)1 bag/acre 2)2.5 bag/acre"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 45,
+   "from": "2025-09-14",
+   "to": null
+  },
+  "yieldExpected": 55,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-12",
+  "sNo": 12,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "Irshad Riaz",
+  "village": "Rajpura",
+  "phone": "0317-8819168",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25132870633055,
+    31.879118096046632
+   ],
+   [
+    74.2512838816438,
+    31.881183902968438
+   ],
+   [
+    74.25625308892639,
+    31.88120207749939
+   ],
+   [
+    74.2561392360789,
+    31.879108272312934
+   ],
+   [
+    74.25132870633055,
+    31.879118096046632
+   ]
+  ],
+  "lon": 74.25326672386204,
+  "lat": 31.879946088974805,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "86",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)3 bag/acre 2)1 bag/acre",
+   "date": null,
+   "name": "1)Urea 2)DAP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": 45,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-09",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-13",
+  "sNo": 13,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "Nasrullah Rajpoot",
+  "village": "Rajpura",
+  "phone": "0310-4813050",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25201019129794,
+    31.876343921653618
+   ],
+   [
+    74.25213558860774,
+    31.878957834076395
+   ],
+   [
+    74.25623614715246,
+    31.87894281831561
+   ],
+   [
+    74.25615091170893,
+    31.876335065372054
+   ],
+   [
+    74.25201019129794,
+    31.876343921653618
+   ]
+  ],
+  "lon": 74.253708606013,
+  "lat": 31.87738471221426,
+  "acres": 8.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": null,
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 35,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2)Pea",
+  "nextSowDate": null,
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-14",
+  "sNo": 14,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Mustafa",
+  "farmer": "Anyat Ullah",
+  "village": "Rajpura",
+  "phone": "",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.25774540103556,
+    31.874058374599677
+   ],
+   [
+    74.25626262561303,
+    31.874185508849045
+   ],
+   [
+    74.25631120051784,
+    31.87703620605587
+   ],
+   [
+    74.25640835032738,
+    31.88062747987701
+   ],
+   [
+    74.25882864606207,
+    31.880491190608836
+   ],
+   [
+    74.25911083001725,
+    31.880256761696327
+   ],
+   [
+    74.26048421319491,
+    31.88042581205973
+   ],
+   [
+    74.26193830970723,
+    31.878039414500645
+   ],
+   [
+    74.26333461941314,
+    31.877615850070416
+   ],
+   [
+    74.26329568538861,
+    31.87406981673779
+   ],
+   [
+    74.25774540103556,
+    31.874058374599677
+   ]
+  ],
+  "lon": 74.25922411657388,
+  "lat": 31.877351344514093,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)Urea",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-31",
+  "nextVariety": "Akbar"
+ },
+ {
+  "id": "farm-15",
+  "sNo": 15,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "Sajjid Gujjar",
+  "village": "Khori",
+  "phone": "0370-0481673",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26745747813834,
+    31.858304363595714
+   ],
+   [
+    74.26737959173673,
+    31.859313628591078
+   ],
+   [
+    74.27378957594591,
+    31.85930240945471
+   ],
+   [
+    74.27382441192879,
+    31.858412246321166
+   ],
+   [
+    74.2730772082896,
+    31.85834546866259
+   ],
+   [
+    74.2715942078092,
+    31.857062557478713
+   ],
+   [
+    74.27047044702803,
+    31.857050056666477
+   ],
+   [
+    74.26746253929754,
+    31.85709447892564
+   ],
+   [
+    74.26745747813834,
+    31.858304363595714
+   ]
+  ],
+  "lon": 74.27027921536805,
+  "lat": 31.858132174810198,
+  "acres": 13.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 Bag/acre",
+   "date": "2025-08-01",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 42,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2)Barseem",
+  "nextSowDate": null,
+  "nextVariety": "Faisalbad 2008 + Desi"
+ },
+ {
+  "id": "farm-16",
+  "sNo": 16,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Farman",
+  "village": "Khori",
+  "phone": "0302-6808939",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26683070728382,
+    31.864324060259165
+   ],
+   [
+    74.26690813928886,
+    31.866453413114876
+   ],
+   [
+    74.26901413928887,
+    31.866424413114874
+   ],
+   [
+    74.26929443530535,
+    31.8642614884442
+   ],
+   [
+    74.26683070728382,
+    31.864324060259165
+   ]
+  ],
+  "lon": 74.26777562569015,
+  "lat": 31.86515748703846,
+  "acres": 5.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-01",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 48,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-02",
+  "nextVariety": "Faisalbad 2008"
+ },
+ {
+  "id": "farm-17",
+  "sNo": 17,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Bashir",
+  "village": "Khori",
+  "phone": "",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.259702543934,
+    31.861652176467693
+   ],
+   [
+    74.259662543934,
+    31.863811176467692
+   ],
+   [
+    74.263199543934,
+    31.863767176467693
+   ],
+   [
+    74.263213543934,
+    31.861661176467692
+   ],
+   [
+    74.259702543934,
+    31.861652176467693
+   ]
+  ],
+  "lon": 74.261096143934,
+  "lat": 31.862508776467696,
+  "acres": 18.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 bag/acre",
+   "date": "2025-08-02",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Score"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 30,
+   "from": "2025-09-22",
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-12",
+  "nextVariety": "Faislabad 2008"
+ },
+ {
+  "id": "farm-18",
+  "sNo": 18,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Ramzan",
+  "village": "Khori",
+  "phone": "",
+  "plotShape": "Irregular",
+  "boundary": [
+   [
+    74.26465426035503,
+    31.858322790718624
+   ],
+   [
+    74.26465721893388,
+    31.859393
+   ],
+   [
+    74.26728068047372,
+    31.85938972027767
+   ],
+   [
+    74.26684111391256,
+    31.85900481992092
+   ],
+   [
+    74.26622346450452,
+    31.858632524114704
+   ],
+   [
+    74.26614006363165,
+    31.858707691552205
+   ],
+   [
+    74.26597964129911,
+    31.85863813613033
+   ],
+   [
+    74.26601073191023,
+    31.85854033537708
+   ],
+   [
+    74.26538072690309,
+    31.85817631892086
+   ],
+   [
+    74.26534397884588,
+    31.858388205929366
+   ],
+   [
+    74.26465426035503,
+    31.858322790718624
+   ]
+  ],
+  "lon": 74.26574237646588,
+  "lat": 31.858683303060037,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bag/acre",
+   "date": "2025-08-02",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 46,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Faisalabad 2008"
+ },
+ {
+  "id": "farm-19",
+  "sNo": 19,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Sultan",
+  "village": "Khori",
+  "phone": "0300-4288250",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.2632058579852,
+    31.85833909303982
+   ],
+   [
+    74.26318379881509,
+    31.860221799752967
+   ],
+   [
+    74.26389129881397,
+    31.86022864769118
+   ],
+   [
+    74.26388146300636,
+    31.85998628581708
+   ],
+   [
+    74.26461113683763,
+    31.8599344294706
+   ],
+   [
+    74.2645839585776,
+    31.859416208983756
+   ],
+   [
+    74.264587,
+    31.85831527912134
+   ],
+   [
+    74.2632058579852,
+    31.85833909303982
+   ]
+  ],
+  "lon": 74.26389379650263,
+  "lat": 31.859347604614573,
+  "acres": 5.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "3 bags/acre",
+   "date": "2025-08-05",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "200g/acre",
+   "date": "2025-09-21",
+   "name": "Katara"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-09-20",
+   "to": null
+  },
+  "yieldExpected": 43,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-12",
+  "nextVariety": "Faisalabad 2008"
+ },
+ {
+  "id": "farm-20",
+  "sNo": 20,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Ishaq",
+  "village": "Khori",
+  "phone": "",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26317347928881,
+    31.858347
+   ],
+   [
+    74.26177915976258,
+    31.858310908662787
+   ],
+   [
+    74.261817,
+    31.859383
+   ],
+   [
+    74.263184,
+    31.859415
+   ],
+   [
+    74.26317347928881,
+    31.858347
+   ]
+  ],
+  "lon": 74.26262542366804,
+  "lat": 31.858760581732554,
+  "acres": 5.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)2 bags/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-05",
+  "nextVariety": "Faisalabad 2008"
+ },
+ {
+  "id": "farm-21",
+  "sNo": 21,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Nazir",
+  "village": "Khori",
+  "phone": "0300-4620837",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26184811939115,
+    31.86433195570323
+   ],
+   [
+    74.26189913268965,
+    31.866449610948777
+   ],
+   [
+    74.26672665590445,
+    31.866455724280925
+   ],
+   [
+    74.26672263664761,
+    31.86435501644573
+   ],
+   [
+    74.26184811939115,
+    31.86433195570323
+   ]
+  ],
+  "lon": 74.26380893280479,
+  "lat": 31.865184852616373,
+  "acres": 13.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-05",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 44,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2)Barseem",
+  "nextSowDate": null,
+  "nextVariety": "1)Faislabad 2)Local"
+ },
+ {
+  "id": "farm-22",
+  "sNo": 22,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "Ghulam Sabir",
+  "village": "Khori",
+  "phone": "0300-084850",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.24118180769457,
+    31.858938344058156
+   ],
+   [
+    74.23771562085962,
+    31.85894975248005
+   ],
+   [
+    74.23768848150932,
+    31.861893856153525
+   ],
+   [
+    74.23849863490227,
+    31.861961648562378
+   ],
+   [
+    74.23883196462688,
+    31.861801641104776
+   ],
+   [
+    74.23937941815845,
+    31.861810670474483
+   ],
+   [
+    74.239848494158,
+    31.862132461975254
+   ],
+   [
+    74.24123366834536,
+    31.862117957337386
+   ],
+   [
+    74.24118180769457,
+    31.858938344058156
+   ]
+  ],
+  "lon": 74.23950665532767,
+  "lat": 31.860949408467132,
+  "acres": 92.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "supri",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 Bag/acre",
+   "date": "2025-07-30",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1)200g/acre 2)200ml/acre",
+   "date": null,
+   "name": "1)Score 2)Nateuo"
+  },
+  "disease": {
+   "issues": "Jassid,Leaf roller",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-09-22",
+   "to": null
+  },
+  "yieldExpected": 48,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Akbar,Dilkash"
+ },
+ {
+  "id": "farm-23",
+  "sNo": 23,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Mustafa",
+  "farmer": "M Rafiq",
+  "village": "Khori",
+  "phone": "0300-4608993",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26242348119457,
+    31.855047672478065
+   ],
+   [
+    74.26243906231694,
+    31.85695764178671
+   ],
+   [
+    74.27041858838902,
+    31.85688869168029
+   ],
+   [
+    74.27030028412513,
+    31.854989539908694
+   ],
+   [
+    74.26242348119457,
+    31.855047672478065
+   ]
+  ],
+  "lon": 74.26560097944405,
+  "lat": 31.855786243666365,
+  "acres": 13.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 bag/acre",
+   "date": "2025-07-03",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Cartap Score"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": 4,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 47,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2)Barseem",
+  "nextSowDate": null,
+  "nextVariety": "1)Faislabad 2008 2)Desi"
+ },
+ {
+  "id": "farm-24",
+  "sNo": 24,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Sajid Ali",
+  "village": "Dak Da Dera",
+  "phone": "0303-4051303",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.22627221747517,
+    31.84372914578105
+   ],
+   [
+    74.22680963346201,
+    31.848548351247267
+   ],
+   [
+    74.23415396883046,
+    31.848506772089923
+   ],
+   [
+    74.23418856774651,
+    31.843720035737327
+   ],
+   [
+    74.22627221747517,
+    31.84372914578105
+   ]
+  ],
+  "lon": 74.22953932099787,
+  "lat": 31.845646690127325,
+  "acres": 120.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "(Lp-18),1847,pp-7)",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)3 bags/acre 2)1 bag/acre",
+   "date": null,
+   "name": "1)Single super 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Lambda"
+  },
+  "disease": {
+   "issues": "Jassid,Leaf folder",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-18",
+  "nextVariety": "Dilkash and Bakhar'"
+ },
+ {
+  "id": "farm-25",
+  "sNo": 25,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Shoukat Ali",
+  "village": "Olaich da dera",
+  "phone": "",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.23764779837212,
+    31.854161414623004
+   ],
+   [
+    74.2377678606496,
+    31.858829704341538
+   ],
+   [
+    74.24469948890581,
+    31.85883176812192
+   ],
+   [
+    74.24467177189396,
+    31.857281108508538
+   ],
+   [
+    74.24049670221876,
+    31.857341254124677
+   ],
+   [
+    74.24049527092981,
+    31.856789140830827
+   ],
+   [
+    74.23973461756412,
+    31.856740901918997
+   ],
+   [
+    74.23972680937192,
+    31.855729590126302
+   ],
+   [
+    74.23841164018842,
+    31.855679569981106
+   ],
+   [
+    74.23836498592158,
+    31.854300315237815
+   ],
+   [
+    74.23764779837212,
+    31.854161414623004
+   ]
+  ],
+  "lon": 74.23996952221711,
+  "lat": 31.856349652948882,
+  "acres": 50.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "(pp-07),1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2.5 bags/acre 2)2 bags/acre",
+   "date": null,
+   "name": "1)Urea 2)Monophasphate"
+  },
+  "pesticide": {
+   "qty": "200g/acre",
+   "date": null,
+   "name": "Tazraffar"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-21",
+  "nextVariety": "Dilkash and Bakhar'"
+ },
+ {
+  "id": "farm-26",
+  "sNo": 26,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "M Ilyas",
+  "village": "Olak da Dera",
+  "phone": "0304-9968485",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.24042741124657,
+    31.84851347098045
+   ],
+   [
+    74.2361769898375,
+    31.848606278427503
+   ],
+   [
+    74.23622664972876,
+    31.85217863951676
+   ],
+   [
+    74.24055471070513,
+    31.852152511671964
+   ],
+   [
+    74.24042741124657,
+    31.84851347098045
+   ]
+  ],
+  "lon": 74.2387626345529,
+  "lat": 31.849992874315422,
+  "acres": 12.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "(18LP),(1847)",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2 bags/acre 2)2 bags/acre",
+   "date": null,
+   "name": "1)Urea 2)Nitrofas"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid,Leaf roller",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-09-18",
+   "to": null
+  },
+  "yieldExpected": 62,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-20",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-27",
+  "sNo": 27,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "M Javaid",
+  "village": "GT road",
+  "phone": "0300-4589536",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.24181893333144,
+    31.838716846673154
+   ],
+   [
+    74.24183368417526,
+    31.841435933250267
+   ],
+   [
+    74.24604067205252,
+    31.841422212628505
+   ],
+   [
+    74.24606806397257,
+    31.838772250162865
+   ],
+   [
+    74.24181893333144,
+    31.838716846673154
+   ]
+  ],
+  "lon": 74.24351605737266,
+  "lat": 31.83981281787759,
+  "acres": 20.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 bag/acre",
+   "date": "2025-07-28",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Imida"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 30,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-11",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-28",
+  "sNo": 28,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Sheikh Tahir",
+  "village": "Shahzad Town",
+  "phone": "0300-4658963",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.28711023087928,
+    31.852847131206676
+   ],
+   [
+    74.28767405720473,
+    31.853960226071067
+   ],
+   [
+    74.28832636182075,
+    31.855073321528362
+   ],
+   [
+    74.292463,
+    31.858379
+   ],
+   [
+    74.29463075396087,
+    31.856049011219923
+   ],
+   [
+    74.2948630184346,
+    31.855591769256286
+   ],
+   [
+    74.29485934079847,
+    31.854583412929202
+   ],
+   [
+    74.294793,
+    31.852717
+   ],
+   [
+    74.28711023087928,
+    31.852847131206676
+   ]
+  ],
+  "lon": 74.29131444377532,
+  "lat": 31.854672000379797,
+  "acres": 25.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)2 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-29",
+  "nextVariety": "Faislabad 2008"
+ },
+ {
+  "id": "farm-29",
+  "sNo": 29,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Abdul Majid",
+  "village": "Shahzad Town",
+  "phone": "0300-4768335",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.27154216425913,
+    31.83054873214703
+   ],
+   [
+    74.2686924476552,
+    31.8305024837192
+   ],
+   [
+    74.26874783574078,
+    31.832187142784594
+   ],
+   [
+    74.27147794222122,
+    31.832171470664676
+   ],
+   [
+    74.27154216425913,
+    31.83054873214703
+   ]
+  ],
+  "lon": 74.2704005108271,
+  "lat": 31.831191712292508,
+  "acres": 50.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5bag/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-02",
+  "nextVariety": "Faislabad 2008"
+ },
+ {
+  "id": "farm-30",
+  "sNo": 30,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Arsalan Hanif",
+  "village": "Nangal Sahdan",
+  "phone": "0300-9487853",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.2609828769239,
+    31.852353379447827
+   ],
+   [
+    74.25961336307637,
+    31.852344439179355
+   ],
+   [
+    74.25964476615307,
+    31.85445896286517
+   ],
+   [
+    74.26107784923116,
+    31.854477221999677
+   ],
+   [
+    74.2609291230774,
+    31.853402070973985
+   ],
+   [
+    74.2609828769239,
+    31.852353379447827
+   ]
+  ],
+  "lon": 74.26053847589763,
+  "lat": 31.853231575652305,
+  "acres": 6.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag/acre 2)1 bag/ acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": "1)200g/acre 2)2bag/acre 3)250g/acre",
+   "date": null,
+   "name": "1)Imida 2)SSP 3)Champion"
+  },
+  "disease": {
+   "issues": "Jassid, Leaf roller",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 30,
+  "yieldActual": 32,
+  "nextCrop": "1)Wheat 2)Barseem",
+  "nextSowDate": "2025-10-21",
+  "nextVariety": "1)Akbar 2)Haro"
+ },
+ {
+  "id": "farm-31",
+  "sNo": 31,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Sadaqat Ali",
+  "village": "Shahzad Town",
+  "phone": "0307-5853613",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.274294,
+    31.818324
+   ],
+   [
+    74.27423343244001,
+    31.8202380985214
+   ],
+   [
+    74.27429173418929,
+    31.821829573156954
+   ],
+   [
+    74.27357423558854,
+    31.82184034621781
+   ],
+   [
+    74.2735654212366,
+    31.8223457528501
+   ],
+   [
+    74.27641113909011,
+    31.822372842195904
+   ],
+   [
+    74.276562,
+    31.819644
+   ],
+   [
+    74.27552924060527,
+    31.81888722069884
+   ],
+   [
+    74.274294,
+    31.818324
+   ]
+  ],
+  "lon": 74.27475057812775,
+  "lat": 31.820422870404563,
+  "acres": 47.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509,1847,hybrib 86",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bottble per acre",
+   "date": "2025-10-01",
+   "name": "Staler"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 47,
+  "nextCrop": "1)Barseem 2)Vegetable 3)Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akbari/Dilkash"
+ },
+ {
+  "id": "farm-32",
+  "sNo": 32,
+  "surveyDate": "2025-10-18",
+  "surveyor": "Mustafa",
+  "farmer": "Taimur Hussain",
+  "village": "GT road",
+  "phone": "0300-9408005",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.253918,
+    31.830017
+   ],
+   [
+    74.25095,
+    31.830094
+   ],
+   [
+    74.2509496638308,
+    31.83110210776148
+   ],
+   [
+    74.25135406192632,
+    31.831117714587503
+   ],
+   [
+    74.25136099149427,
+    31.831663979284748
+   ],
+   [
+    74.2541019407964,
+    31.831653406330943
+   ],
+   [
+    74.25430097414149,
+    31.83034675341461
+   ],
+   [
+    74.25379009271879,
+    31.830344693940127
+   ],
+   [
+    74.253918,
+    31.830017
+   ]
+  ],
+  "lon": 74.25273819165645,
+  "lat": 31.83070629503549,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bag/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 48,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-06",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-33",
+  "sNo": 33,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Shabaz Ali",
+  "village": "Atiqpura",
+  "phone": "0309-6886327",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.29055644197446,
+    31.821818422565176
+   ],
+   [
+    74.28563,
+    31.821904
+   ],
+   [
+    74.285697,
+    31.82508
+   ],
+   [
+    74.29060228583184,
+    31.82506730767988
+   ],
+   [
+    74.29055644197446,
+    31.821818422565176
+   ]
+  ],
+  "lon": 74.28860843395616,
+  "lat": 31.823137630562048,
+  "acres": 34.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847 , 1885",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1.5 bag/acre 2)1 bag/acre",
+   "date": null,
+   "name": "1)Urea 2)Nitrofas"
+  },
+  "pesticide": {
+   "qty": "1 pack/acre",
+   "date": null,
+   "name": "Fortune"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 40,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-30",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-34",
+  "sNo": 34,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Tariq Ali",
+  "village": "Atiqpura",
+  "phone": "0300-945342",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.30435328203642,
+    31.82527665017951
+   ],
+   [
+    74.30304906369554,
+    31.828156066690013
+   ],
+   [
+    74.30209020290816,
+    31.82996064690338
+   ],
+   [
+    74.30211297564168,
+    31.831348223808174
+   ],
+   [
+    74.30195861753526,
+    31.837993180901222
+   ],
+   [
+    74.31238800169996,
+    31.837518530473574
+   ],
+   [
+    74.31248177491761,
+    31.83327913263168
+   ],
+   [
+    74.31253154904043,
+    31.831579275417013
+   ],
+   [
+    74.310812451629,
+    31.831525750510426
+   ],
+   [
+    74.30892666335055,
+    31.831576495109246
+   ],
+   [
+    74.30906389547339,
+    31.830435569004244
+   ],
+   [
+    74.30902858018234,
+    31.82928408030644
+   ],
+   [
+    74.30935078383976,
+    31.82759260378225
+   ],
+   [
+    74.31600138057163,
+    31.824606344081598
+   ],
+   [
+    74.31142211615966,
+    31.82465820510282
+   ],
+   [
+    74.31146613612358,
+    31.82570033065662
+   ],
+   [
+    74.31020451658759,
+    31.825803677307945
+   ],
+   [
+    74.30964461988899,
+    31.825384797233745
+   ],
+   [
+    74.30435328203642,
+    31.82527665017951
+   ]
+  ],
+  "lon": 74.30848631017463,
+  "lat": 31.829313484751545,
+  "acres": 200.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Kainat , 1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)1.5 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": null,
+  "nextCrop": "1)Pea 2)Wheat",
+  "nextSowDate": null,
+  "nextVariety": "1)Local 2)Bakhar"
+ },
+ {
+  "id": "farm-35",
+  "sNo": 35,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "M Ashar Ali",
+  "village": "Atiqpura",
+  "phone": "0325-2782998",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.291295,
+    31.821792
+   ],
+   [
+    74.29133,
+    31.825002
+   ],
+   [
+    74.29345824573907,
+    31.825041576926132
+   ],
+   [
+    74.29341670008856,
+    31.82441825156145
+   ],
+   [
+    74.29337515443797,
+    31.8234305
+   ],
+   [
+    74.293395,
+    31.821834
+   ],
+   [
+    74.291295,
+    31.821792
+   ]
+  ],
+  "lon": 74.29250930003795,
+  "lat": 31.8233300469268,
+  "acres": 20.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847 , 1885",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.75 bag/acre 2)2 bags/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Mistatop 2)Nateavo 3)Fortune 4)Taizraftar"
+  },
+  "disease": {
+   "issues": "Jassidds",
+   "outbreak": true,
+   "severity": 35,
+   "from": "2025-09-20",
+   "to": "2025-10-14"
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-12",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-36",
+  "sNo": 36,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Salamat Ali",
+  "village": "Atiqpura",
+  "phone": "0304-9070755",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.3053166772834,
+    31.82349097843897
+   ],
+   [
+    74.29835376367052,
+    31.823483731528537
+   ],
+   [
+    74.29833029524023,
+    31.824991730838043
+   ],
+   [
+    74.30432146185007,
+    31.825054966298215
+   ],
+   [
+    74.3053166772834,
+    31.82349097843897
+   ]
+  ],
+  "lon": 74.30232777506554,
+  "lat": 31.824102477108546,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)2 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": "1 pack/acre",
+   "date": "2025-10-06",
+   "name": "fortune"
+  },
+  "disease": {
+   "issues": "Jassids,Leaf Folder",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-09-21",
+   "to": "2025-10-14"
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-12",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-37",
+  "sNo": 37,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "Rehman Ahmad",
+  "village": "Harpoki",
+  "phone": "0313-7440686",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.13283039822268,
+    31.91490502953011
+   ],
+   [
+    74.134607,
+    31.917646
+   ],
+   [
+    74.13618860648029,
+    31.916998130936243
+   ],
+   [
+    74.13764850926279,
+    31.916505217677926
+   ],
+   [
+    74.1377383472337,
+    31.915325767326088
+   ],
+   [
+    74.137007405134,
+    31.91536879217395
+   ],
+   [
+    74.13702189819381,
+    31.914740330327813
+   ],
+   [
+    74.13283039822268,
+    31.91490502953011
+   ]
+  ],
+  "lon": 74.13573407034374,
+  "lat": 31.91579928718778,
+  "acres": 15.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)1 bag/acre",
+   "date": null,
+   "name": "1)Urea 2)Nitrphas"
+  },
+  "pesticide": {
+   "qty": "1 bottle/acre",
+   "date": "2025-10-02",
+   "name": "Lambda"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 30,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "Pea",
+  "nextSowDate": "2025-11-28",
+  "nextVariety": "Alina"
+ },
+ {
+  "id": "farm-38",
+  "sNo": 38,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Abdullah Akram",
+  "village": "Budhanke",
+  "phone": "0325-4200070",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.2466499,
+    31.833318
+   ],
+   [
+    74.236915,
+    31.833414
+   ],
+   [
+    74.236846,
+    31.838771
+   ],
+   [
+    74.245873,
+    31.83498
+   ],
+   [
+    74.2466499,
+    31.833318
+   ]
+  ],
+  "lon": 74.24258676,
+  "lat": 31.834760199999998,
+  "acres": 100.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 Bag/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1)1 bag/acre 2)1 bottle/acre",
+   "date": null,
+   "name": "1)Cartap 2)Staler"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 45,
+   "from": "2025-08-02",
+   "to": "2025-10-02"
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Dilkash"
+ },
+ {
+  "id": "farm-39",
+  "sNo": 39,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "M Tanveer",
+  "village": "47 Chak",
+  "phone": "0321-7847544",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.30171734313124,
+    31.789730151184937
+   ],
+   [
+    74.29630566421672,
+    31.789772081933275
+   ],
+   [
+    74.29621484680352,
+    31.794099454014923
+   ],
+   [
+    74.3017854816282,
+    31.794095542416322
+   ],
+   [
+    74.30171734313124,
+    31.789730151184937
+   ]
+  ],
+  "lon": 74.29954813578219,
+  "lat": 31.791485476146875,
+  "acres": 19.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 Bag/acre",
+   "date": "2025-05-30",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-05-30",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": "Jassids,Leaf Folder",
+   "outbreak": true,
+   "severity": 35,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 33,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-40",
+  "sNo": 40,
+  "surveyDate": "2025-10-14",
+  "surveyor": "Hamza",
+  "farmer": "Abdul Majeed",
+  "village": "Layyah",
+  "phone": "0302-1815356",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.886033,
+    30.915534
+   ],
+   [
+    70.884642,
+    30.915878
+   ],
+   [
+    70.88519662482669,
+    30.916831767964098
+   ],
+   [
+    70.88594135918123,
+    30.916534529323393
+   ],
+   [
+    70.88581313108486,
+    30.916227928480406
+   ],
+   [
+    70.886426,
+    30.916036
+   ],
+   [
+    70.886033,
+    30.915534
+   ]
+  ],
+  "lon": 70.88572644501325,
+  "lat": 30.91608231796684,
+  "acres": 3.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Bad",
+  "fertilizer": {
+   "qty": "1)1 bag 2)15kg",
+   "date": null,
+   "name": "1)Gawara 2)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTR 2)Emamacton"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Early blight",
+   "outbreak": true,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Urooj and Dilkash"
+ },
+ {
+  "id": "farm-41",
+  "sNo": 41,
+  "surveyDate": "2025-10-14",
+  "surveyor": "Hamza",
+  "farmer": "Ali Shahid",
+  "village": "Chak 152",
+  "phone": "0307-3900152",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    71.06475206800854,
+    30.892103
+   ],
+   [
+    71.064103,
+    30.89216
+   ],
+   [
+    71.06408667542351,
+    30.893725201239427
+   ],
+   [
+    71.06471726172377,
+    30.8937139349828
+   ],
+   [
+    71.06475206800854,
+    30.892103
+   ]
+  ],
+  "lon": 71.06448221463287,
+  "lat": 30.892761027244443,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag 2)2 bags 3)25kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichlodride 2)Kasugamycin 3)CTPR and EMA"
+  },
+  "disease": {
+   "issues": "Bacterial leaf blight and plant hopper",
+   "outbreak": true,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber 19, Dilakash"
+ },
+ {
+  "id": "farm-42",
+  "sNo": 42,
+  "surveyDate": "2025-10-14",
+  "surveyor": "Hamza",
+  "farmer": "Rizwan Khalid",
+  "village": "Chak 173",
+  "phone": "0313-5303100",
+  "plotShape": "Triangle",
+  "boundary": [
+   [
+    71.06853,
+    30.664081
+   ],
+   [
+    71.067019,
+    30.664119
+   ],
+   [
+    71.068357,
+    30.665866
+   ],
+   [
+    71.06853,
+    30.664081
+   ]
+  ],
+  "lon": 71.068109,
+  "lat": 30.66453675,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Soap 4)zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)kasugamyah"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber 19and Fakhar-e-Bhakar"
+ },
+ {
+  "id": "farm-43",
+  "sNo": 43,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "Ameer Hamza",
+  "village": "Lohanch Nasheeb",
+  "phone": "0301-7545393",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.897007,
+    30.949432
+   ],
+   [
+    70.89613574834749,
+    30.949687149291243
+   ],
+   [
+    70.895336,
+    30.949743
+   ],
+   [
+    70.895227,
+    30.950709
+   ],
+   [
+    70.897517,
+    30.950637
+   ],
+   [
+    70.897007,
+    30.949432
+   ]
+  ],
+  "lon": 70.89637162472458,
+  "lat": 30.94994002488188,
+  "acres": 65.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 2)1bag 3)5kg 4)15kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Zinc 4)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR and Emamacton 2)Paraclostroban"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Early blight",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Akber19And Dilkash"
+ },
+ {
+  "id": "farm-44",
+  "sNo": 44,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "M.amir",
+  "village": "Gurara cwk",
+  "phone": "0306-8763137",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.92296033254188,
+    30.94657861526112
+   ],
+   [
+    70.92224607244452,
+    30.94659017466563
+   ],
+   [
+    70.922207,
+    30.947073
+   ],
+   [
+    70.92298584124646,
+    30.947080319199394
+   ],
+   [
+    70.92296033254188,
+    30.94657861526112
+   ]
+  ],
+  "lon": 70.92267191575496,
+  "lat": 30.946780144877454,
+  "acres": 4.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Kainat",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)25kg 3)25kg 4)4bags 5)5kg",
+   "date": null,
+   "name": "1)Dap 2)Sop 3)Gawara 4)Urea 5)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamactom"
+  },
+  "disease": {
+   "issues": "Leaf Folder",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "237"
+ },
+ {
+  "id": "farm-45",
+  "sNo": 45,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "M.irfan",
+  "village": "Chak 152",
+  "phone": "0301-8541111",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    71.06377389365463,
+    30.886677750626276
+   ],
+   [
+    71.063732,
+    30.887404
+   ],
+   [
+    71.06471495711186,
+    30.887406247980756
+   ],
+   [
+    71.064728,
+    30.88679
+   ],
+   [
+    71.06448481313181,
+    30.886768002477012
+   ],
+   [
+    71.06444464683278,
+    30.886683874053944
+   ],
+   [
+    71.06377389365463,
+    30.886677750626276
+   ]
+  ],
+  "lon": 71.06423602919796,
+  "lat": 30.88691537510918,
+  "acres": 4.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Soap 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichlorde 2)Kasugamyah"
+  },
+  "disease": {
+   "issues": "bacterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "akber19 and Urooj"
+ },
+ {
+  "id": "farm-46",
+  "sNo": 46,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "Muzammil",
+  "village": "Chak 152",
+  "phone": "0307-9240924",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    71.06631616305768,
+    30.88297194865443
+   ],
+   [
+    71.0662097079901,
+    30.883534397575307
+   ],
+   [
+    71.0668247138328,
+    30.883525480385437
+   ],
+   [
+    71.06683722628834,
+    30.88342520856119
+   ],
+   [
+    71.06755203161434,
+    30.88341285561633
+   ],
+   [
+    71.06757812895228,
+    30.88294940656767
+   ],
+   [
+    71.06631616305768,
+    30.88297194865443
+   ]
+  ],
+  "lon": 71.06680487639903,
+  "lat": 30.883255892287828,
+  "acres": 3.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)2bags 3)25kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Soap"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)Flonikronid"
+  },
+  "disease": {
+   "issues": "(Bacterial leaf blight and plant hopper",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber19 and Dilkash"
+ },
+ {
+  "id": "farm-47",
+  "sNo": 47,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "Amir iftikhar",
+  "village": "Gudara chowk",
+  "phone": "0308-0123450",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.924419,
+    30.932472
+   ],
+   [
+    70.921308,
+    30.932591
+   ],
+   [
+    70.92125448641963,
+    30.933503847555627
+   ],
+   [
+    70.92253424074475,
+    30.933814537812903
+   ],
+   [
+    70.9225521562496,
+    30.93394069072387
+   ],
+   [
+    70.92329218124252,
+    30.933965303087373
+   ],
+   [
+    70.92331617439316,
+    30.932887424397318
+   ],
+   [
+    70.92440589241693,
+    30.932843721342305
+   ],
+   [
+    70.924419,
+    30.932472
+   ]
+  ],
+  "lon": 70.92305568127406,
+  "lat": 30.933165613879932,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)1bag 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamactom"
+  },
+  "disease": {
+   "issues": "Leaf folder",
+   "outbreak": true,
+   "severity": 30,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber 19 and Dilkash"
+ },
+ {
+  "id": "farm-48",
+  "sNo": 48,
+  "surveyDate": "2026-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Imran sargani",
+  "village": "bheet",
+  "phone": "0306-8667424",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.884365,
+    30.79489
+   ],
+   [
+    70.88385776753401,
+    30.796125562034177
+   ],
+   [
+    70.885147,
+    30.796115
+   ],
+   [
+    70.885414,
+    30.795199
+   ],
+   [
+    70.884365,
+    30.79489
+   ]
+  ],
+  "lon": 70.8846297535068,
+  "lat": 30.795443912406835,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)1bag 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxidhoride 2)Kasugamyah"
+  },
+  "disease": {
+   "issues": "Bacterial leaf Blight and plant hopper",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Chilli",
+  "nextSowDate": null,
+  "nextVariety": null
+ },
+ {
+  "id": "farm-49",
+  "sNo": 49,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "M.hassan",
+  "village": "Dhapli",
+  "phone": "0308-7376942",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.886463,
+    31.259137
+   ],
+   [
+    70.882792,
+    31.261694
+   ],
+   [
+    70.88351772585061,
+    31.263221464593205
+   ],
+   [
+    70.88418745537987,
+    31.263001839955862
+   ],
+   [
+    70.88435099171981,
+    31.263424168593765
+   ],
+   [
+    70.88651500827908,
+    31.262723470990924
+   ],
+   [
+    70.886463,
+    31.259137
+   ]
+  ],
+  "lon": 70.88489845446135,
+  "lat": 31.261762706304825,
+  "acres": 15.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxidoride 2)Kasugamyah and Dinotifuran"
+  },
+  "disease": {
+   "issues": "Bacterial leaf Blight and Plant Hopper",
+   "outbreak": true,
+   "severity": 30,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akbar,Dilkash"
+ },
+ {
+  "id": "farm-50",
+  "sNo": 50,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "Rana usman",
+  "village": "Dhapi",
+  "phone": "0304-7007751",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.886363,
+    31.25825
+   ],
+   [
+    70.88134313063995,
+    31.25872610613189
+   ],
+   [
+    70.88266808279943,
+    31.261488627483903
+   ],
+   [
+    70.886423,
+    31.258921
+   ],
+   [
+    70.886363,
+    31.25825
+   ]
+  ],
+  "lon": 70.88463204268788,
+  "lat": 31.25912714672316,
+  "acres": 20.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515(hybrid)",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxidoride 2)Kasugamyah and Dinotifuran"
+  },
+  "disease": {
+   "issues": "Bacterial leaf Blight and Plant Hopper",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber and urooj"
+ },
+ {
+  "id": "farm-51",
+  "sNo": 51,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "Malik Nazeer",
+  "village": "Gara Jattan Wala",
+  "phone": "0343-7416007",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.837958,
+    31.282265
+   ],
+   [
+    70.837225,
+    31.282321
+   ],
+   [
+    70.837343,
+    31.283523
+   ],
+   [
+    70.838038,
+    31.283452
+   ],
+   [
+    70.837958,
+    31.282265
+   ]
+  ],
+  "lon": 70.8377044,
+  "lat": 31.2827652,
+  "acres": 8.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bg 2)2 bg 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamyien"
+  },
+  "disease": {
+   "issues": "Backckterial leaf blight",
+   "outbreak": true,
+   "severity": 10,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 25,
+  "yieldActual": 60,
+  "nextCrop": "Wheat(100acres)",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash, Fakhar-e-Bakhar"
+ },
+ {
+  "id": "farm-52",
+  "sNo": 52,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "Siraaj Khan",
+  "village": "Warah Seeran",
+  "phone": "0305-7286120",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.85620701527844,
+    31.272657733224715
+   ],
+   [
+    70.85531239814605,
+    31.272547231092332
+   ],
+   [
+    70.8548252739193,
+    31.272562705183617
+   ],
+   [
+    70.854968,
+    31.273387
+   ],
+   [
+    70.85582537886432,
+    31.273365538635087
+   ],
+   [
+    70.85597181265892,
+    31.273232922651182
+   ],
+   [
+    70.85623,
+    31.27319
+   ],
+   [
+    70.85620701527844,
+    31.272657733224715
+   ]
+  ],
+  "lon": 70.85569336176819,
+  "lat": 31.272950108001456,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag 2)2-3 bag 3)25kg 4)Zinnc",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 55,
+  "yieldActual": 60,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Akbrr, urooj"
+ },
+ {
+  "id": "farm-53",
+  "sNo": 53,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "M Asif",
+  "village": "Khei",
+  "phone": "0342-1721761",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.842118,
+    31.300712
+   ],
+   [
+    70.84214,
+    31.30146
+   ],
+   [
+    70.84337276029501,
+    31.301887736028466
+   ],
+   [
+    70.84394498750501,
+    31.300806754779707
+   ],
+   [
+    70.84369592225593,
+    31.30068627293588
+   ],
+   [
+    70.8433209893544,
+    31.300662584245117
+   ],
+   [
+    70.84220973067971,
+    31.300633518140884
+   ],
+   [
+    70.842118,
+    31.300712
+   ]
+  ],
+  "lon": 70.84286504876125,
+  "lat": 31.30094510826626,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bag 2)2bag 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamyin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "wheat",
+  "nextSowDate": "2025-09-15",
+  "nextVariety": "Akber,Abdul Sattar"
+ },
+ {
+  "id": "farm-54",
+  "sNo": 54,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Hamza",
+  "farmer": "Malik Tariq",
+  "village": "Waaraah Seeran",
+  "phone": "0302-4609372",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.84952,
+    31.269607
+   ],
+   [
+    70.846813,
+    31.270184
+   ],
+   [
+    70.846897,
+    31.27064
+   ],
+   [
+    70.849422,
+    31.270606
+   ],
+   [
+    70.84952,
+    31.269607
+   ]
+  ],
+  "lon": 70.8484344,
+  "lat": 31.2701288,
+  "acres": 20.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag 2)2bag 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamyin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 10,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 55,
+  "yieldActual": 60,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-55",
+  "sNo": 55,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Hamza",
+  "farmer": "Bilal Hussian",
+  "village": "Basti Chagnia",
+  "phone": "0303-2491214",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.85785,
+    31.296142
+   ],
+   [
+    70.85810118871751,
+    31.296724376356007
+   ],
+   [
+    70.859441,
+    31.296640168435232
+   ],
+   [
+    70.859383,
+    31.296187
+   ],
+   [
+    70.85785,
+    31.296142
+   ]
+  ],
+  "lon": 70.85852503774349,
+  "lat": 31.296367108958247,
+  "acres": 20.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bag 2)1 bag 3)25kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "(CTPR+Emmaction), Dinutefuron + Flonicomid"
+  },
+  "disease": {
+   "issues": "Hopper + Leaf Folder",
+   "outbreak": true,
+   "severity": 30,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 40,
+  "yieldActual": 45,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Urooj + Dilkash"
+ },
+ {
+  "id": "farm-56",
+  "sNo": 56,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Hamza",
+  "farmer": "Mumtaz Hussain",
+  "village": "Karor",
+  "phone": "0301-0888888",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.866604,
+    31.276147
+   ],
+   [
+    70.86533,
+    31.276317
+   ],
+   [
+    70.866281,
+    31.278857
+   ],
+   [
+    70.86716,
+    31.278685
+   ],
+   [
+    70.866604,
+    31.276147
+   ]
+  ],
+  "lon": 70.86639579999999,
+  "lat": 31.277230600000003,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)5 bags 2)2 bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-57",
+  "sNo": 57,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Hamza",
+  "farmer": "Sana Ullah Khan",
+  "village": "Karor",
+  "phone": "0301-3827324",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.9055365218396,
+    31.351903739889877
+   ],
+   [
+    70.90558435011559,
+    31.352187019611893
+   ],
+   [
+    70.90550300816237,
+    31.35222413970226
+   ],
+   [
+    70.90544275465828,
+    31.352211343812872
+   ],
+   [
+    70.90541262790622,
+    31.352169409066747
+   ],
+   [
+    70.90532657786389,
+    31.352194430412535
+   ],
+   [
+    70.90537760552124,
+    31.352566457657538
+   ],
+   [
+    70.90654466022865,
+    31.35237884188757
+   ],
+   [
+    70.9065969163198,
+    31.351934553534008
+   ],
+   [
+    70.9055365218396,
+    31.351903739889877
+   ]
+  ],
+  "lon": 70.90568615444553,
+  "lat": 31.35216736754652,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag 2)2 bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber"
+ },
+ {
+  "id": "farm-58",
+  "sNo": 58,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Hamza",
+  "farmer": "Rana Irashad",
+  "village": "Basti Bhand",
+  "phone": "0343-7880188",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.939251,
+    31.233857
+   ],
+   [
+    70.936241,
+    31.234995
+   ],
+   [
+    70.93674821383385,
+    31.236596840077944
+   ],
+   [
+    70.93790728480255,
+    31.236229877633086
+   ],
+   [
+    70.93772338217217,
+    31.235735327284264
+   ],
+   [
+    70.939855,
+    31.235129
+   ],
+   [
+    70.939251,
+    31.233857
+   ]
+  ],
+  "lon": 70.93813955440123,
+  "lat": 31.2352000064279,
+  "acres": 6.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag 2)2 bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-59",
+  "sNo": 59,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Hamza",
+  "farmer": "Allah Nawaz",
+  "village": "Basti Chisti",
+  "phone": "0342-6263786",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.89912263002351,
+    31.284072323883283
+   ],
+   [
+    70.89897414642141,
+    31.28391296391018
+   ],
+   [
+    70.897552,
+    31.285416
+   ],
+   [
+    70.89765,
+    31.286878
+   ],
+   [
+    70.89836966888025,
+    31.28693379818725
+   ],
+   [
+    70.89890407771352,
+    31.286771907465376
+   ],
+   [
+    70.89886133510485,
+    31.2865470754329
+   ],
+   [
+    70.899239,
+    31.286513
+   ],
+   [
+    70.89892608244926,
+    31.285253081481528
+   ],
+   [
+    70.89893172621285,
+    31.284642912317743
+   ],
+   [
+    70.89912263002351,
+    31.284072323883283
+   ]
+  ],
+  "lon": 70.8986957542572,
+  "lat": 31.285546671505596,
+  "acres": 8.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag 2)2 bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-60",
+  "sNo": 60,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Hamza",
+  "farmer": "Allah Nawaz",
+  "village": "Basti Chisti",
+  "phone": "0342-6263786",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.899207,
+    31.285404
+   ],
+   [
+    70.89943978752804,
+    31.286676280313834
+   ],
+   [
+    70.90004828977948,
+    31.286479242333705
+   ],
+   [
+    70.90067994953719,
+    31.286460314133144
+   ],
+   [
+    70.90130003054182,
+    31.28656012553018
+   ],
+   [
+    70.90175800900565,
+    31.286857836485442
+   ],
+   [
+    70.90203836997645,
+    31.28603010496394
+   ],
+   [
+    70.902601,
+    31.285404
+   ],
+   [
+    70.899207,
+    31.285404
+   ]
+  ],
+  "lon": 70.90069771515208,
+  "lat": 31.286141767084473,
+  "acres": 8.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag 2)2 bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)Dap 2)Urea 3)Sop 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper Oxicloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-61",
+  "sNo": 61,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "Ehsan Ahmad",
+  "village": "Harpoki",
+  "phone": "0311-7633956",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.13297972325044,
+    31.90988228761897
+   ],
+   [
+    74.13004134793647,
+    31.910013150585925
+   ],
+   [
+    74.13064451095138,
+    31.911164060607113
+   ],
+   [
+    74.13135166301555,
+    31.912167848059624
+   ],
+   [
+    74.1330822603208,
+    31.911638128584073
+   ],
+   [
+    74.1330450438068,
+    31.91093186338743
+   ],
+   [
+    74.13297972325044,
+    31.90988228761897
+   ]
+  ],
+  "lon": 74.13201775321885,
+  "lat": 31.910811375208873,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1 bag/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-08-12",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 57,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-02",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-62",
+  "sNo": 62,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "M abbas",
+  "village": "Harpoki",
+  "phone": "0301-3679358",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.14975200084584,
+    31.904399552092812
+   ],
+   [
+    74.149925,
+    31.909020833651482
+   ],
+   [
+    74.155497,
+    31.908625
+   ],
+   [
+    74.1555458,
+    31.904346
+   ],
+   [
+    74.14975200084584,
+    31.904399552092812
+   ]
+  ],
+  "lon": 74.15209436033834,
+  "lat": 31.90615818756742,
+  "acres": 60.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2)1 pack/acre",
+   "date": null,
+   "name": "1)Plenium 2)Lambda"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 53,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-63",
+  "sNo": 63,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "Waseem Saltar",
+  "village": "Harpoki",
+  "phone": "0314-40116309",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.15497818977553,
+    31.89008788187445
+   ],
+   [
+    74.15607597834693,
+    31.89404568609752
+   ],
+   [
+    74.161258,
+    31.893996
+   ],
+   [
+    74.16128264232938,
+    31.890656373367705
+   ],
+   [
+    74.16060089071551,
+    31.890636389692773
+   ],
+   [
+    74.16064906603711,
+    31.8900483234197
+   ],
+   [
+    74.15497818977553,
+    31.89008788187445
+   ]
+  ],
+  "lon": 74.15854613671142,
+  "lat": 31.891365505189516,
+  "acres": 25.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5bag/acre",
+   "date": "2025-08-08",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bootle/acre",
+   "date": "2025-10-04",
+   "name": "Lambda"
+  },
+  "disease": {
+   "issues": "1 bottle/acre",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 49,
+  "yieldActual": null,
+  "nextCrop": "1)Pea 2)Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Alina , Bakkahr"
+ },
+ {
+  "id": "farm-64",
+  "sNo": 64,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "Isfaq Razaq",
+  "village": "Harpoki",
+  "phone": "0301-6499275",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.15057963749841,
+    31.895613395907848
+   ],
+   [
+    74.14694659599178,
+    31.89729637826717
+   ],
+   [
+    74.1433480458882,
+    31.89900998344017
+   ],
+   [
+    74.14348630555392,
+    31.90207744353527
+   ],
+   [
+    74.14566941901168,
+    31.9021018319254
+   ],
+   [
+    74.14544859752668,
+    31.901580651486988
+   ],
+   [
+    74.14600661066828,
+    31.901589016599296
+   ],
+   [
+    74.14607537816298,
+    31.90213110929144
+   ],
+   [
+    74.14978311357041,
+    31.902164568881762
+   ],
+   [
+    74.15028848154765,
+    31.898878888147944
+   ],
+   [
+    74.15057963749841,
+    31.895613395907848
+   ]
+  ],
+  "lon": 74.14711016571987,
+  "lat": 31.899823333035556,
+  "acres": 85.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bag/acre",
+   "date": "2025-08-08",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "No"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 58,
+  "yieldActual": null,
+  "nextCrop": "1)Pea 2)Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Alina + Bakkhar"
+ },
+ {
+  "id": "farm-65",
+  "sNo": 65,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "Waheed Hnif",
+  "village": "Harpoki",
+  "phone": "0314-7088433",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.13417469489555,
+    31.902598824523682
+   ],
+   [
+    74.1287921303775,
+    31.90485712143768
+   ],
+   [
+    74.12878117972372,
+    31.906619138342908
+   ],
+   [
+    74.13413197692242,
+    31.906512096550824
+   ],
+   [
+    74.13417469489555,
+    31.902598824523682
+   ]
+  ],
+  "lon": 74.13201093536294,
+  "lat": 31.904637201075758,
+  "acres": 70.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5 bag/acre",
+   "date": "2025-08-02",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-08-02",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 56,
+  "yieldActual": null,
+  "nextCrop": "1)Pea 2)Stawberry 3)Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Alina, Swati, Bakhar"
+ },
+ {
+  "id": "farm-66",
+  "sNo": 66,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "M kashif",
+  "village": "Raja Sadhoke",
+  "phone": "0301-4215875",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.21728072832437,
+    31.908945068831187
+   ],
+   [
+    74.21725683699539,
+    31.91122821179659
+   ],
+   [
+    74.2193632601132,
+    31.911220352339136
+   ],
+   [
+    74.21942477109555,
+    31.909010439455706
+   ],
+   [
+    74.21728072832437,
+    31.908945068831187
+   ]
+  ],
+  "lon": 74.21812126497056,
+  "lat": 31.90986982825076,
+  "acres": 20.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "86",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag/acre 2)1 bag/ acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "score"
+  },
+  "disease": {
+   "issues": "Jassid, Grasshopper",
+   "outbreak": true,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 60,
+  "nextCrop": "wheat",
+  "nextSowDate": "2025-11-12",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-67",
+  "sNo": 67,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "Ali Usman",
+  "village": "Majju Chack",
+  "phone": "0300-1111376",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.10720223190599,
+    31.93165111522451
+   ],
+   [
+    74.10716530577494,
+    31.938708432599885
+   ],
+   [
+    74.10800984002287,
+    31.938745245202817
+   ],
+   [
+    74.10868965020056,
+    31.93878205854854
+   ],
+   [
+    74.10862852544511,
+    31.937754859557728
+   ],
+   [
+    74.11007115460437,
+    31.937762336223738
+   ],
+   [
+    74.11011362915931,
+    31.939342416218174
+   ],
+   [
+    74.110815,
+    31.93928
+   ],
+   [
+    74.110788,
+    31.932441
+   ],
+   [
+    74.1080273620359,
+    31.931076205211248
+   ],
+   [
+    74.10726475831945,
+    31.93086562761096
+   ],
+   [
+    74.10720223190599,
+    31.93165111522451
+   ]
+  ],
+  "lon": 74.10866480744787,
+  "lat": 31.93567170096851,
+  "acres": 60.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/ acre",
+   "date": "2025-08-03",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-08-03",
+   "name": "plenium"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 54,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-68",
+  "sNo": 68,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Mustafa",
+  "farmer": "M Irfan",
+  "village": "Harpori",
+  "phone": "0344-6062348",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.12872483284964,
+    31.907132
+   ],
+   [
+    74.1287813757333,
+    31.90773963392776
+   ],
+   [
+    74.12906970536957,
+    31.90847844374536
+   ],
+   [
+    74.12995541364606,
+    31.90990359240684
+   ],
+   [
+    74.13206974670972,
+    31.90985081273736
+   ],
+   [
+    74.13206863124361,
+    31.908782755858965
+   ],
+   [
+    74.13206751577755,
+    31.90713752932642
+   ],
+   [
+    74.12872483284964,
+    31.907132
+   ]
+  ],
+  "lon": 74.13018275677238,
+  "lat": 31.908269596000338,
+  "acres": 34.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "3 bag/acre",
+   "date": "2025-07-30",
+   "name": "urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-07-30",
+   "name": "plenium"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 58,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-69",
+  "sNo": 69,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Salahuddin",
+  "village": "Budhanke",
+  "phone": "0300-8893933",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.23395375609682,
+    31.835509330849643
+   ],
+   [
+    74.22975459620372,
+    31.835563101820703
+   ],
+   [
+    74.22978790379571,
+    31.839264733466614
+   ],
+   [
+    74.23407644647561,
+    31.83924610491673
+   ],
+   [
+    74.23395375609682,
+    31.835509330849643
+   ]
+  ],
+  "lon": 74.23230529173374,
+  "lat": 31.837018520380667,
+  "acres": 100.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-09",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1)1 bag/acre 2)1 bootle",
+   "date": null,
+   "name": "1)Cartap 2)Staler"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 45,
+   "from": "2025-08-01",
+   "to": "2025-10-06"
+  },
+  "yieldExpected": 50,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-02",
+  "nextVariety": "Dilkash"
+ },
+ {
+  "id": "farm-70",
+  "sNo": 70,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Walayat",
+  "village": "Budhanke",
+  "phone": "0301-4112711",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.21902324864475,
+    31.82411033059379
+   ],
+   [
+    74.21917698983751,
+    31.83073898937179
+   ],
+   [
+    74.2281019437639,
+    31.83057415385887
+   ],
+   [
+    74.22817742615052,
+    31.82412478888252
+   ],
+   [
+    74.21902324864475,
+    31.82411033059379
+   ]
+  ],
+  "lon": 74.22270057140828,
+  "lat": 31.826731718660152,
+  "acres": 104.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1bag/acre 2)1 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": "2025-09-02",
+   "name": "Lambda"
+  },
+  "disease": {
+   "issues": "Fungal attack",
+   "outbreak": true,
+   "severity": 60,
+   "from": "2025-08-25",
+   "to": null
+  },
+  "yieldExpected": 47,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-30",
+  "nextVariety": "Faislabad -2012"
+ },
+ {
+  "id": "farm-71",
+  "sNo": 71,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Ali Sher",
+  "village": "Budhanke",
+  "phone": "0321-1183251",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.238269,
+    31.839108
+   ],
+   [
+    74.234619,
+    31.839276
+   ],
+   [
+    74.234643,
+    31.843676
+   ],
+   [
+    74.238401,
+    31.84373
+   ],
+   [
+    74.238269,
+    31.839108
+   ]
+  ],
+  "lon": 74.2368402,
+  "lat": 31.840979600000004,
+  "acres": 35.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2) bags/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1)1bag/acre 2)1 bottle",
+   "date": null,
+   "name": "1)Cartap 2)Staler"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 45,
+   "from": "2025-08-02",
+   "to": "2025-10-02"
+  },
+  "yieldExpected": 50,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-01",
+  "nextVariety": "Dilkash"
+ },
+ {
+  "id": "farm-72",
+  "sNo": 72,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Akbar Ali",
+  "village": "Budhanke",
+  "phone": "0307-4676003",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.218008,
+    31.837172
+   ],
+   [
+    74.21781499424124,
+    31.837883707664012
+   ],
+   [
+    74.21829672967513,
+    31.838647526512403
+   ],
+   [
+    74.21962824119323,
+    31.84007094231132
+   ],
+   [
+    74.21939557994469,
+    31.84068665316345
+   ],
+   [
+    74.21953095934865,
+    31.841510802135048
+   ],
+   [
+    74.22633692886222,
+    31.841517259063387
+   ],
+   [
+    74.22632768021634,
+    31.83719394424595
+   ],
+   [
+    74.218008,
+    31.837172
+   ]
+  ],
+  "lon": 74.22037190149796,
+  "lat": 31.839094981677288,
+  "acres": 100.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "(1847)(PB07)",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5 bags/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1)1 bag/acre 2)200ml/acre",
+   "date": null,
+   "name": "1)Cartap 2)Natevo"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": 55,
+  "nextCrop": "1)Wheat 2)Pea",
+  "nextSowDate": "2025-10-24",
+  "nextVariety": "Akbri,Nawab"
+ },
+ {
+  "id": "farm-73",
+  "sNo": 73,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Ishfaq Ahmad",
+  "village": "Landy Shareef",
+  "phone": "0300-6264320",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.130417,
+    31.927331
+   ],
+   [
+    74.125109,
+    31.927356
+   ],
+   [
+    74.125051,
+    31.931655
+   ],
+   [
+    74.131733,
+    31.931752
+   ],
+   [
+    74.130417,
+    31.927331
+   ]
+  ],
+  "lon": 74.12854539999998,
+  "lat": 31.929084999999997,
+  "acres": 43.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-04",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1bags/acre",
+   "date": "2025-08-04",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 46,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-30",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-74",
+  "sNo": 74,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Ayub Anjum",
+  "village": "Landy Shareef",
+  "phone": "0301-6615863",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.12492354968411,
+    31.92946983996214
+   ],
+   [
+    74.121381,
+    31.929549
+   ],
+   [
+    74.12290541056711,
+    31.931119933356673
+   ],
+   [
+    74.12496345710102,
+    31.931085015404843
+   ],
+   [
+    74.12492354968411,
+    31.92946983996214
+   ]
+  ],
+  "lon": 74.12381939340727,
+  "lat": 31.930138725737162,
+  "acres": 26.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2bags/acre",
+   "date": "2025-08-03",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2)1 pack/acre",
+   "date": null,
+   "name": "1)Lambda 2)Plenium"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 49,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-30",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-75",
+  "sNo": 75,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Sajid Mehbob",
+  "village": "Landy Shareef",
+  "phone": "0315-5616073",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.12066212173941,
+    31.92299339072835
+   ],
+   [
+    74.11788951739027,
+    31.923000242085866
+   ],
+   [
+    74.117888,
+    31.92513068905642
+   ],
+   [
+    74.1185602385889,
+    31.925149942814187
+   ],
+   [
+    74.11993452935772,
+    31.925104025045925
+   ],
+   [
+    74.11998459783149,
+    31.92406253130789
+   ],
+   [
+    74.12067709130321,
+    31.924065066271126
+   ],
+   [
+    74.12066212173941,
+    31.92299339072835
+   ]
+  ],
+  "lon": 74.1195322772438,
+  "lat": 31.924062409754765,
+  "acres": 15.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-01",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2 bottles/acre",
+   "date": null,
+   "name": "lambda"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 45,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 46,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-29",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-76",
+  "sNo": 76,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Mustafa",
+  "farmer": "Sajad",
+  "village": "Landy Shareef",
+  "phone": "0314-4010078",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.1185880198744,
+    31.929507835519907
+   ],
+   [
+    74.11864354968408,
+    31.93318697821213
+   ],
+   [
+    74.12136287445205,
+    31.933309032860752
+   ],
+   [
+    74.12125845031464,
+    31.929533014203443
+   ],
+   [
+    74.1185880198744,
+    31.929507835519907
+   ]
+  ],
+  "lon": 74.11968818283991,
+  "lat": 31.93100893926323,
+  "acres": 36.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-07",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2 bottles/acre",
+   "date": "2025-10-08",
+   "name": "lambda"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 60,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-08",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-77",
+  "sNo": 77,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Sohail",
+  "village": "Sharpur",
+  "phone": "0304-5050031",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.07212529513079,
+    31.498988325251588
+   ],
+   [
+    74.07149159206159,
+    31.500537784781176
+   ],
+   [
+    74.0833354,
+    31.507331
+   ],
+   [
+    74.088958,
+    31.496632
+   ],
+   [
+    74.08535096299504,
+    31.498844572515196
+   ],
+   [
+    74.07212529513079,
+    31.498988325251588
+   ]
+  ],
+  "lon": 74.07889775755304,
+  "lat": 31.50022033463326,
+  "acres": 200.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)1 bag/acre 2)0.5 bag/acre",
+   "date": null,
+   "name": "1)DAP 2)Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "lambda"
+  },
+  "disease": {
+   "issues": "Fungal Attack",
+   "outbreak": true,
+   "severity": 60,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-31",
+  "nextVariety": "Faislabad-2008"
+ },
+ {
+  "id": "farm-78",
+  "sNo": 78,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "Amjad Ali",
+  "village": "46 chak",
+  "phone": "0326-4262289",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.28390635989724,
+    31.745138619438986
+   ],
+   [
+    74.284009,
+    31.748893
+   ],
+   [
+    74.288244,
+    31.74899
+   ],
+   [
+    74.288262,
+    31.745082612903776
+   ],
+   [
+    74.28390635989724,
+    31.745138619438986
+   ]
+  ],
+  "lon": 74.2856655439589,
+  "lat": 31.74664857035635,
+  "acres": 25.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-08-19",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bottle/acre",
+   "date": "2025-09-14",
+   "name": "lambda"
+  },
+  "disease": {
+   "issues": "Jasssids",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 48,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-79",
+  "sNo": 79,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "Bashrat Ali",
+  "village": "46 Chak",
+  "phone": "0327-0884800",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.29807310957167,
+    31.757131478960247
+   ],
+   [
+    74.29455516435641,
+    31.757184538149822
+   ],
+   [
+    74.29464158217822,
+    31.75977137691557
+   ],
+   [
+    74.29541593465206,
+    31.759575623343537
+   ],
+   [
+    74.29546271352757,
+    31.759425123334704
+   ],
+   [
+    74.29593480857795,
+    31.75946827579903
+   ],
+   [
+    74.29661956171344,
+    31.75930567037527
+   ],
+   [
+    74.29707024653365,
+    31.759382237743406
+   ],
+   [
+    74.29762051369634,
+    31.75943367723832
+   ],
+   [
+    74.298047,
+    31.759222
+   ],
+   [
+    74.29807310957167,
+    31.757131478960247
+   ]
+  ],
+  "lon": 74.296501249489,
+  "lat": 31.758821043710928,
+  "acres": 30.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2bags/acre",
+   "date": "2025-08-19",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "180ml/acre",
+   "date": "2025-09-14",
+   "name": "lambda"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-29",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-80",
+  "sNo": 80,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Afzal",
+  "village": "46 Chak",
+  "phone": "0300-4982252",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.31164249095592,
+    31.778845402430093
+   ],
+   [
+    74.30890836821564,
+    31.778837269343466
+   ],
+   [
+    74.308911,
+    31.784145
+   ],
+   [
+    74.31153308269185,
+    31.78413834076161
+   ],
+   [
+    74.31164249095592,
+    31.778845402430093
+   ]
+  ],
+  "lon": 74.31052748656387,
+  "lat": 31.780962282993052,
+  "acres": 28.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-25",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-05-05",
+   "name": "Manomi"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 30,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-22",
+  "nextVariety": "Akbri"
+ },
+ {
+  "id": "farm-81",
+  "sNo": 81,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Kamran",
+  "village": "47 chak",
+  "phone": "0301-0010166",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.3079766707589,
+    31.77324879179585
+   ],
+   [
+    74.30793632579925,
+    31.77875280518474
+   ],
+   [
+    74.31336665054144,
+    31.77875059937936
+   ],
+   [
+    74.31346828772415,
+    31.778149956132552
+   ],
+   [
+    74.31343614494543,
+    31.77770858389972
+   ],
+   [
+    74.31378325415326,
+    31.777710512838603
+   ],
+   [
+    74.31372579278003,
+    31.776146523358626
+   ],
+   [
+    74.31400017689595,
+    31.774683280900224
+   ],
+   [
+    74.31413736895215,
+    31.773931508253575
+   ],
+   [
+    74.31417974801343,
+    31.773381244958173
+   ],
+   [
+    74.3079766707589,
+    31.77324879179585
+   ]
+  ],
+  "lon": 74.31218064466572,
+  "lat": 31.775973872590665,
+  "acres": 30.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847, chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-21",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2)2 bags/acre",
+   "date": null,
+   "name": "1)Pleniam 2)manomi"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 50,
+   "from": "2025-09-02",
+   "to": "2025-10-04"
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-82",
+  "sNo": 82,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Mustafa",
+  "farmer": "Intazar",
+  "village": "47 chak",
+  "phone": "0306-4536648",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.30749035470149,
+    31.786972684903063
+   ],
+   [
+    74.30736754082986,
+    31.784754425647293
+   ],
+   [
+    74.30535220991021,
+    31.784812712166502
+   ],
+   [
+    74.30532754441381,
+    31.784210653335528
+   ],
+   [
+    74.30314188955252,
+    31.784285956239284
+   ],
+   [
+    74.30327195715134,
+    31.786985611110524
+   ],
+   [
+    74.30749035470149,
+    31.786972684903063
+   ]
+  ],
+  "lon": 74.3056345501801,
+  "lat": 31.785570675472172,
+  "acres": 25.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-30",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "No",
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 30,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-30",
+  "nextVariety": "local"
+ },
+ {
+  "id": "farm-83",
+  "sNo": 83,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Mustafa",
+  "farmer": "Liaqat Ali",
+  "village": "47 chak",
+  "phone": "0309-7439015",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.30527007971806,
+    31.788624850612365
+   ],
+   [
+    74.30189,
+    31.788701
+   ],
+   [
+    74.30186558450039,
+    31.79245400880708
+   ],
+   [
+    74.30538499376023,
+    31.79235897664336
+   ],
+   [
+    74.30529918497832,
+    31.791328406348306
+   ],
+   [
+    74.30530470462996,
+    31.7897156359045
+   ],
+   [
+    74.30527007971806,
+    31.788624850612365
+   ]
+  ],
+  "lon": 74.3043263753293,
+  "lat": 31.790258246989712,
+  "acres": 29.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1.5 bags/acre",
+   "date": "2025-05-28",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2)1 bag/acre",
+   "date": null,
+   "name": "1)Pleniam 2)manomi"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 45,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 32,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-29",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-84",
+  "sNo": 84,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Mustafa",
+  "farmer": "Ghulam Hussain",
+  "village": "47 chak",
+  "phone": "0302-1191478",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.30232173912212,
+    31.795235522817983
+   ],
+   [
+    74.296866,
+    31.795222
+   ],
+   [
+    74.296905,
+    31.799307
+   ],
+   [
+    74.3052546808647,
+    31.799472134301833
+   ],
+   [
+    74.3051783528221,
+    31.79616640783226
+   ],
+   [
+    74.30247439520973,
+    31.79615742652446
+   ],
+   [
+    74.30232173912212,
+    31.795235522817983
+   ]
+  ],
+  "lon": 74.30161741530583,
+  "lat": 31.79668514489922,
+  "acres": 15.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-27",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "2)1 pack/acre",
+   "date": null,
+   "name": "1)Manomi 2)Caartap"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 60,
+   "from": "2025-08-28",
+   "to": "2025-10-02"
+  },
+  "yieldExpected": 20,
+  "yieldActual": 30,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Local"
+ },
+ {
+  "id": "farm-85",
+  "sNo": 85,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Mustafa",
+  "farmer": "Sadaqat Ali",
+  "village": "47 chak",
+  "phone": "0301-8352237",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.33011497481316,
+    31.785337719144533
+   ],
+   [
+    74.32392069995568,
+    31.78531545048487
+   ],
+   [
+    74.323861,
+    31.792257
+   ],
+   [
+    74.33029444106053,
+    31.792335561506025
+   ],
+   [
+    74.33011497481316,
+    31.785337719144533
+   ]
+  ],
+  "lon": 74.3276612181285,
+  "lat": 31.78811669005599,
+  "acres": 32.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Average",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-20",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "No",
+   "date": null,
+   "name": null
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 27,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-26",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-86",
+  "sNo": 86,
+  "surveyDate": "2025-10-29",
+  "surveyor": "Mustafa",
+  "farmer": "Riaz Ahmed",
+  "village": "47 chak",
+  "phone": "0301-4808115",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.32314196913126,
+    31.792433472528746
+   ],
+   [
+    74.315911536961,
+    31.7924821211875
+   ],
+   [
+    74.31602594087224,
+    31.79790017108494
+   ],
+   [
+    74.31595265695726,
+    31.801723176128185
+   ],
+   [
+    74.32249640652091,
+    31.801895217893154
+   ],
+   [
+    74.32314196913126,
+    31.792433472528746
+   ]
+  ],
+  "lon": 74.31944507992898,
+  "lat": 31.79647793855855,
+  "acres": 82.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-19",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bag/acre",
+   "date": "2025-05-19",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 34,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-28",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-87",
+  "sNo": 87,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Mustafa",
+  "farmer": "Shouqat Ali",
+  "village": "47 chak",
+  "phone": "0301-4808216",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.33023000893148,
+    31.792436092633984
+   ],
+   [
+    74.32663677796054,
+    31.79246701351053
+   ],
+   [
+    74.32658387724524,
+    31.795107618227707
+   ],
+   [
+    74.32387765624705,
+    31.795062980227186
+   ],
+   [
+    74.323559,
+    31.801612
+   ],
+   [
+    74.330128,
+    31.801291
+   ],
+   [
+    74.33023000893148,
+    31.792436092633984
+   ]
+  ],
+  "lon": 74.32732076133082,
+  "lat": 31.795773256747626,
+  "acres": 30.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-16",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1bag/acre",
+   "date": "2025-05-16",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 35,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-29",
+  "nextVariety": "Bakhar"
+ },
+ {
+  "id": "farm-88",
+  "sNo": 88,
+  "surveyDate": "2025-10-24",
+  "surveyor": "Mustafa",
+  "farmer": "Ahmad Ali",
+  "village": "47 chak",
+  "phone": "0309-7941923",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.30182951017082,
+    31.781607818309794
+   ],
+   [
+    74.29831741121869,
+    31.781602571412346
+   ],
+   [
+    74.29828090104782,
+    31.785340739074154
+   ],
+   [
+    74.30182474491384,
+    31.786680414188726
+   ],
+   [
+    74.30182951017082,
+    31.781607818309794
+   ]
+  ],
+  "lon": 74.3004164155044,
+  "lat": 31.783367872258964,
+  "acres": 17.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Chanab",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-05-27",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1bag/acre",
+   "date": "2025-05-27",
+   "name": "Plenium"
+  },
+  "disease": {
+   "issues": "Jassid",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-08-29",
+   "to": "2025-10-08"
+  },
+  "yieldExpected": 32,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-10-27",
+  "nextVariety": "local"
+ },
+ {
+  "id": "farm-89",
+  "sNo": 89,
+  "surveyDate": "2025-10-01",
+  "surveyor": "Hamza",
+  "farmer": "Jani Khan",
+  "village": "Sabdal Wala",
+  "phone": "0303-0960007",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.8934555376561,
+    30.90318110665736
+   ],
+   [
+    70.891816,
+    30.905732
+   ],
+   [
+    70.895176,
+    30.9055
+   ],
+   [
+    70.89521153765754,
+    30.903564382293407
+   ],
+   [
+    70.8934555376561,
+    30.90318110665736
+   ]
+  ],
+  "lon": 70.89382292259396,
+  "lat": 30.90423171912163,
+  "acres": 3.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Irri 6",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag/acre 2)1 bag/ acre 3)15kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Gawara 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTR 2)Emamacton"
+  },
+  "disease": {
+   "issues": "Leaf Folder",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Potato",
+  "nextSowDate": null,
+  "nextVariety": "Karonda,Ismi"
+ },
+ {
+  "id": "farm-90",
+  "sNo": 90,
+  "surveyDate": "2025-10-14",
+  "surveyor": "Hamza",
+  "farmer": "Ch Rashid",
+  "village": "Gudava Chak",
+  "phone": "0305-7568653",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.921916,
+    30.921133
+   ],
+   [
+    70.91998,
+    30.921428
+   ],
+   [
+    70.920136,
+    30.921954
+   ],
+   [
+    70.92199659780348,
+    30.921663401550134
+   ],
+   [
+    70.921916,
+    30.921133
+   ]
+  ],
+  "lon": 70.9211889195607,
+  "lat": 30.921462280310028,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "233",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)4-5bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyophenate metyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "77400 and 233"
+ },
+ {
+  "id": "farm-91",
+  "sNo": 91,
+  "surveyDate": "2025-10-14",
+  "surveyor": "Hamza",
+  "farmer": "M Bilal",
+  "village": "Chal 152",
+  "phone": "0306-8760512",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    71.064934,
+    30.889412
+   ],
+   [
+    71.06489604149509,
+    30.89040938437875
+   ],
+   [
+    71.06613951724508,
+    30.890419126608595
+   ],
+   [
+    71.06619870673033,
+    30.88989556412126
+   ],
+   [
+    71.06754827439316,
+    30.88991504998177
+   ],
+   [
+    71.067547,
+    30.88945
+   ],
+   [
+    71.064934,
+    30.889412
+   ]
+  ],
+  "lon": 71.06602821998052,
+  "lat": 30.88984473215577,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 bag 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 50,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Dilkagh and Akberi"
+ },
+ {
+  "id": "farm-92",
+  "sNo": 92,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "Malik Dilbar",
+  "village": "Gudara chowk",
+  "phone": "0326-6851233",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.928211,
+    30.950755
+   ],
+   [
+    70.926998,
+    30.951034
+   ],
+   [
+    70.927068,
+    30.95152
+   ],
+   [
+    70.92797,
+    30.951345
+   ],
+   [
+    70.92796700837016,
+    30.951096507990876
+   ],
+   [
+    70.92841761187967,
+    30.95096771016903
+   ],
+   [
+    70.928211,
+    30.950755
+   ]
+  ],
+  "lon": 70.9278346600357,
+  "lat": 30.95106760259427,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277",
+  "condition": "Average",
+  "fertilizer": {
+   "qty": "1)2bags 2)4-5bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 30,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "277233"
+ },
+ {
+  "id": "farm-93",
+  "sNo": 93,
+  "surveyDate": "2025-10-15",
+  "surveyor": "Hamza",
+  "farmer": "Mujeeb ul Hassan",
+  "village": "Bheet",
+  "phone": "0309-7153133",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.91164454847379,
+    30.941984170595052
+   ],
+   [
+    70.909288,
+    30.942077
+   ],
+   [
+    70.909437,
+    30.943111
+   ],
+   [
+    70.913468,
+    30.943003
+   ],
+   [
+    70.91343513161749,
+    30.942106047897347
+   ],
+   [
+    70.91164454847379,
+    30.941984170595052
+   ]
+  ],
+  "lon": 70.91148620476083,
+  "lat": 30.942377564847906,
+  "acres": 30.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277, 233",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5-6bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 10,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "277 and 77400"
+ },
+ {
+  "id": "farm-94",
+  "sNo": 94,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Afzal Mirani",
+  "village": "Bheet Nasheeb",
+  "phone": "0302-6767251",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.92175380025988,
+    30.905457742218324
+   ],
+   [
+    70.92087741265884,
+    30.905682799210087
+   ],
+   [
+    70.920085,
+    30.905917
+   ],
+   [
+    70.920787,
+    30.906659
+   ],
+   [
+    70.92207913633571,
+    30.906346063282044
+   ],
+   [
+    70.92175380025988,
+    30.905457742218324
+   ]
+  ],
+  "lon": 70.92122269158571,
+  "lat": 30.90592005782146,
+  "acres": 30.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "233",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5-6bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "233 and 277"
+ },
+ {
+  "id": "farm-95",
+  "sNo": 95,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "M Rustam",
+  "village": "Bheet",
+  "phone": "0304-5542349",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.880945,
+    30.794252
+   ],
+   [
+    70.880895,
+    30.795007
+   ],
+   [
+    70.88224636779219,
+    30.794960140550252
+   ],
+   [
+    70.88228458116328,
+    30.795173064170157
+   ],
+   [
+    70.88287035265111,
+    30.795236582517305
+   ],
+   [
+    70.883069,
+    30.794348
+   ],
+   [
+    70.880945,
+    30.794252
+   ]
+  ],
+  "lon": 70.88189361451522,
+  "lat": 30.794746969605388,
+  "acres": 8.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "237",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5-6bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "233 and 277"
+ },
+ {
+  "id": "farm-96",
+  "sNo": 96,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Nazeer Ahmed",
+  "village": "kharal Azeem",
+  "phone": "0300-2958025",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.885682,
+    30.809241
+   ],
+   [
+    70.884385,
+    30.809248
+   ],
+   [
+    70.884362,
+    30.810555
+   ],
+   [
+    70.885694,
+    30.810538
+   ],
+   [
+    70.885682,
+    30.809241
+   ]
+  ],
+  "lon": 70.885161,
+  "lat": 30.809764600000005,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5-6bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton 3)Bifenthrin"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "277"
+ },
+ {
+  "id": "farm-97",
+  "sNo": 97,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Saleem lolanch",
+  "village": "Lohanch Naseeb",
+  "phone": "0307-7591575",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.89926,
+    30.949226
+   ],
+   [
+    70.898525,
+    30.949664
+   ],
+   [
+    70.899526,
+    30.950633
+   ],
+   [
+    70.899857,
+    30.94984
+   ],
+   [
+    70.89926,
+    30.949226
+   ]
+  ],
+  "lon": 70.89928560000001,
+  "lat": 30.949717799999995,
+  "acres": 18.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5-6bags 3)2bags 4)50kg 5)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP 5)Humic Acid"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "77400, 237"
+ },
+ {
+  "id": "farm-98",
+  "sNo": 98,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Jameel Ur rehman",
+  "village": "Lohanch Naseeb",
+  "phone": "0303-6482731",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.881981,
+    30.949099
+   ],
+   [
+    70.881109,
+    30.949256
+   ],
+   [
+    70.88140374539087,
+    30.9507491550976
+   ],
+   [
+    70.88213154550714,
+    30.950712556684834
+   ],
+   [
+    70.88198118202746,
+    30.94989473912579
+   ],
+   [
+    70.881981,
+    30.949099
+   ]
+  ],
+  "lon": 70.8817645788209,
+  "lat": 30.949801741818035,
+  "acres": 20.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277 , 233",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5-6bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "277, 283"
+ },
+ {
+  "id": "farm-99",
+  "sNo": 99,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Anees Ahmed",
+  "village": "Lohanch Naseeb",
+  "phone": "0301-1326036",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.87295998863138,
+    30.79721040930541
+   ],
+   [
+    70.8724822768609,
+    30.797199852326553
+   ],
+   [
+    70.87245950044576,
+    30.797646476970666
+   ],
+   [
+    70.87265398952289,
+    30.79770183535389
+   ],
+   [
+    70.87295392487816,
+    30.797718375321015
+   ],
+   [
+    70.87295998863138,
+    30.79721040930541
+   ]
+  ],
+  "lon": 70.87274494482841,
+  "lat": 30.79744789309716,
+  "acres": 2.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)3-4bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton 3)Bifenthrin"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Maiza",
+  "nextSowDate": null,
+  "nextVariety": "Pioneer (surkhab)"
+ },
+ {
+  "id": "farm-100",
+  "sNo": 100,
+  "surveyDate": "2025-10-16",
+  "surveyor": "Hamza",
+  "farmer": "Ghulam Akbar",
+  "village": "Bheet",
+  "phone": "0306-6765313",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.89898877263926,
+    30.785295931736954
+   ],
+   [
+    70.898957,
+    30.785829
+   ],
+   [
+    70.900018,
+    30.785872
+   ],
+   [
+    70.900184,
+    30.785322
+   ],
+   [
+    70.89898877263926,
+    30.785295931736954
+   ]
+  ],
+  "lon": 70.8994273090557,
+  "lat": 30.785522972694782,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "277",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)3-4bags 3)2bags 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)SOP"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "Thyphenate methyl"
+  },
+  "disease": {
+   "issues": "Red Rot",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "277"
+ },
+ {
+  "id": "farm-101",
+  "sNo": 101,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "Kashif Khan",
+  "village": "Seehran",
+  "phone": "0302-7087942",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.85696770525125,
+    31.270313491067984
+   ],
+   [
+    70.85678096841332,
+    31.270775828267865
+   ],
+   [
+    70.858442,
+    31.271275
+   ],
+   [
+    70.858687,
+    31.270318
+   ],
+   [
+    70.8577152578963,
+    31.270376147789918
+   ],
+   [
+    70.85721963947654,
+    31.270346902259668
+   ],
+   [
+    70.85696770525125,
+    31.270313491067984
+   ]
+  ],
+  "lon": 70.8575400394698,
+  "lat": 31.27053126577906,
+  "acres": 8.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)2-3bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-102",
+  "sNo": 102,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "Sana Ullah Khan",
+  "village": "Gara Madni",
+  "phone": "0300-2860530",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.85724396771205,
+    31.26723642807656
+   ],
+   [
+    70.85696431148622,
+    31.267235320681586
+   ],
+   [
+    70.85673407570675,
+    31.26624856396272
+   ],
+   [
+    70.85633126133554,
+    31.26624636141692
+   ],
+   [
+    70.856458,
+    31.268296
+   ],
+   [
+    70.857279,
+    31.268277
+   ],
+   [
+    70.85724396771205,
+    31.26723642807656
+   ]
+  ],
+  "lon": 70.85689351199322,
+  "lat": 31.267253728887766,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)2-3bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Urooj"
+ },
+ {
+  "id": "farm-103",
+  "sNo": 103,
+  "surveyDate": "2025-10-17",
+  "surveyor": "Hamza",
+  "farmer": "Iftikhar Ahmed",
+  "village": "Qasai Mer",
+  "phone": "0343-3563523",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.87200527809128,
+    31.267570826637403
+   ],
+   [
+    70.8714187749927,
+    31.26785966799316
+   ],
+   [
+    70.87235732020952,
+    31.269727808783397
+   ],
+   [
+    70.87302432020952,
+    31.269464808783397
+   ],
+   [
+    70.87200527809128,
+    31.267570826637403
+   ]
+  ],
+  "lon": 70.87216219431886,
+  "lat": 31.26843878776695,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)2-3bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)kasugamycin 3)Dinotifuran 4)Flonikamid"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight and Hopper",
+   "outbreak": true,
+   "severity": 40,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Dilkash, Urooj"
+ },
+ {
+  "id": "farm-104",
+  "sNo": 104,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Hamza",
+  "farmer": "Riaz Hussain",
+  "village": "Wadhe Wala New",
+  "phone": "0346-8763810",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.870269,
+    31.302868
+   ],
+   [
+    70.870202,
+    31.30335
+   ],
+   [
+    70.8714556,
+    31.303684
+   ],
+   [
+    70.8715,
+    31.303134
+   ],
+   [
+    70.870269,
+    31.302868
+   ]
+  ],
+  "lon": 70.87073912000001,
+  "lat": 31.3031808,
+  "acres": 15.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight and Hopper",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber,Urooj,Dilkash"
+ },
+ {
+  "id": "farm-105",
+  "sNo": 105,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Hamza",
+  "farmer": "Rasheed Chigti",
+  "village": "Sarghani Nasheeb",
+  "phone": "0346-8762746",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.8946,
+    31.260608
+   ],
+   [
+    70.892627,
+    31.263872
+   ],
+   [
+    70.89447401655916,
+    31.26452365211305
+   ],
+   [
+    70.895415,
+    31.261308
+   ],
+   [
+    70.8946,
+    31.260608
+   ]
+  ],
+  "lon": 70.89434320331183,
+  "lat": 31.262183930422612,
+  "acres": 35.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxichloride 2)kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial leaf blight and Hopper",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber,Urooj,Dilkash,Fakher-e- Bakahar"
+ },
+ {
+  "id": "farm-106",
+  "sNo": 106,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Hamza",
+  "farmer": "Akhter Abbas",
+  "village": "Sarghani Nasheeb",
+  "phone": "0308-8948356",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.94922012757507,
+    31.18950038793358
+   ],
+   [
+    70.94922775171777,
+    31.190001775751263
+   ],
+   [
+    70.94998745240434,
+    31.190000665449215
+   ],
+   [
+    70.94997345240434,
+    31.189492277587227
+   ],
+   [
+    70.94922012757507,
+    31.18950038793358
+   ]
+  ],
+  "lon": 70.94952578233531,
+  "lat": 31.189699098930976,
+  "acres": 4.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea/A6 3)SOP 4)Zinc 5)Potash"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton 3Granular"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Hopper",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "1)Sugarcane 2)Wheat",
+  "nextSowDate": null,
+  "nextVariety": "wheat(Akber19,Dilkash) ,Sugarcane 237"
+ },
+ {
+  "id": "farm-107",
+  "sNo": 107,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Hamza",
+  "farmer": "M Sajjad",
+  "village": "Warah road",
+  "phone": "0344-6775787",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.865237,
+    31.266369
+   ],
+   [
+    70.865556,
+    31.268208
+   ],
+   [
+    70.869369,
+    31.268092
+   ],
+   [
+    70.869246,
+    31.267209
+   ],
+   [
+    70.86708246832308,
+    31.267382814529554
+   ],
+   [
+    70.86701348316433,
+    31.26656826705897
+   ],
+   [
+    70.86630938352454,
+    31.266554486776528
+   ],
+   [
+    70.86620006626364,
+    31.26639735338746
+   ],
+   [
+    70.865237,
+    31.266369
+   ]
+  ],
+  "lon": 70.86680560014173,
+  "lat": 31.2670166579725,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Super long 515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton 3)Dinotifuran 4)Flonikamid"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Hopper",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber19,Dilkash"
+ },
+ {
+  "id": "farm-108",
+  "sNo": 108,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Hamza",
+  "farmer": "Ghulam Murtaza",
+  "village": "Warah road",
+  "phone": "0309-8662786",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.84931167244785,
+    31.26831748599412
+   ],
+   [
+    70.849388,
+    31.269477
+   ],
+   [
+    70.85074426217541,
+    31.269117017479495
+   ],
+   [
+    70.850846696465,
+    31.26833914698056
+   ],
+   [
+    70.85050322731897,
+    31.268440480245733
+   ],
+   [
+    70.85012752868585,
+    31.26845916952591
+   ],
+   [
+    70.84931167244785,
+    31.26831748599412
+   ]
+  ],
+  "lon": 70.85003329422013,
+  "lat": 31.268638255174277,
+  "acres": 5.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "Kainat (1121)",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2-3bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Hopper",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber19,Urooj"
+ },
+ {
+  "id": "farm-109",
+  "sNo": 109,
+  "surveyDate": "2025-10-21",
+  "surveyor": "Hamza",
+  "farmer": "Anayat Ullah",
+  "village": "Warrah Seehran",
+  "phone": "0309-9898946",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.85184857764884,
+    31.278071309264863
+   ],
+   [
+    70.85102565742825,
+    31.278091620789873
+   ],
+   [
+    70.85106888679783,
+    31.278233543566035
+   ],
+   [
+    70.85085685501491,
+    31.278263890630917
+   ],
+   [
+    70.85091411068774,
+    31.27849054040442
+   ],
+   [
+    70.85109165194856,
+    31.278896228235475
+   ],
+   [
+    70.85210497929269,
+    31.278653775671767
+   ],
+   [
+    70.85184857764884,
+    31.278071309264863
+   ]
+  ],
+  "lon": 70.85134491205847,
+  "lat": 31.27834652722853,
+  "acres": 15.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton 3)Dinotifuran 4)Flonikamid"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Hopper",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2)Mungbean",
+  "nextSowDate": null,
+  "nextVariety": "Akber19,Urooj"
+ },
+ {
+  "id": "farm-110",
+  "sNo": 110,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Hamza",
+  "farmer": "M Zahid",
+  "village": "Khei",
+  "phone": "0305-7040799",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.8440205330869,
+    31.300567603377313
+   ],
+   [
+    70.84400123380541,
+    31.300717621321112
+   ],
+   [
+    70.84481266103626,
+    31.30123330179515
+   ],
+   [
+    70.845309,
+    31.302184
+   ],
+   [
+    70.84546829338194,
+    31.30214749074826
+   ],
+   [
+    70.84527305367875,
+    31.30096901905753
+   ],
+   [
+    70.8440205330869,
+    31.300567603377313
+   ]
+  ],
+  "lon": 70.8447007582966,
+  "lat": 31.301198091382386,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "77400",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)5bags 3)2kg 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Amida chloropid 2)Fepronil 3)chlothadin"
+  },
+  "disease": {
+   "issues": "Spidermite",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "77400 or 237"
+ },
+ {
+  "id": "farm-111",
+  "sNo": 111,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Hamza",
+  "farmer": "Malik Mumtaz Cheena",
+  "village": "Karor",
+  "phone": "0301-0888888",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.865984,
+    31.273571
+   ],
+   [
+    70.86435185138737,
+    31.27354145280106
+   ],
+   [
+    70.8652955768356,
+    31.27618315713657
+   ],
+   [
+    70.866589,
+    31.276077
+   ],
+   [
+    70.865984,
+    31.273571
+   ]
+  ],
+  "lon": 70.8656408856446,
+  "lat": 31.274588721987527,
+  "acres": 25.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "237",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)3-4bags 3)2kg 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Amida chloropid 2)Fepronil 3)chlothadin"
+  },
+  "disease": {
+   "issues": "Spidermite",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Mung bean",
+  "nextSowDate": null,
+  "nextVariety": null
+ },
+ {
+  "id": "farm-112",
+  "sNo": 112,
+  "surveyDate": "2025-10-22",
+  "surveyor": "Hamza",
+  "farmer": "M Aslam",
+  "village": "Sarghani Nasheeb",
+  "phone": "0307-6547886",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.94273746109857,
+    31.189631740003122
+   ],
+   [
+    70.942148,
+    31.189683
+   ],
+   [
+    70.942105512396,
+    31.19126172524627
+   ],
+   [
+    70.94278933659737,
+    31.191235181181167
+   ],
+   [
+    70.94273746109857,
+    31.189631740003122
+   ]
+  ],
+  "lon": 70.9425035542381,
+  "lat": 31.190288677286738,
+  "acres": 15.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Sugarcane",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "77400",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)2bags 2)4-5bags 3)2kg 4)50kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Gawara 4)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Amida chloropid 2)Fepronil 3)chlothadin"
+  },
+  "disease": {
+   "issues": "Spidermite",
+   "outbreak": true,
+   "severity": 15,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Sugarcane",
+  "nextSowDate": null,
+  "nextVariety": "237 , 77400"
+ },
+ {
+  "id": "farm-113",
+  "sNo": 113,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Hamza",
+  "farmer": "Shahzaib Khan",
+  "village": "Warah Seeran",
+  "phone": "3486364432",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.84646243273797,
+    31.273801180206863
+   ],
+   [
+    70.84587343244023,
+    31.273833557125194
+   ],
+   [
+    70.84535090431537,
+    31.273869565373786
+   ],
+   [
+    70.845354,
+    31.273932
+   ],
+   [
+    70.845979,
+    31.274984
+   ],
+   [
+    70.84660418482012,
+    31.274801463337425
+   ],
+   [
+    70.84658779940307,
+    31.27463213973285
+   ],
+   [
+    70.84688740833252,
+    31.27456436052075
+   ],
+   [
+    70.84646243273797,
+    31.273801180206863
+   ]
+  ],
+  "lon": 70.84617351053193,
+  "lat": 31.27424660516708,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5 2)2 4)25kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)Sop"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)CTPR 2)Emamacton 3)Dinotifuran 4)Flonikamid"
+  },
+  "disease": {
+   "issues": "Leaf Folder and Hopper",
+   "outbreak": true,
+   "severity": 25,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-114",
+  "sNo": 114,
+  "surveyDate": "2025-10-23",
+  "surveyor": "Hamza",
+  "farmer": "Jhangeer Totan",
+  "village": "Khei",
+  "phone": "0326-7180398",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.844728,
+    31.297834469301634
+   ],
+   [
+    70.84264777279003,
+    31.298019979617635
+   ],
+   [
+    70.842717,
+    31.29996
+   ],
+   [
+    70.8451,
+    31.300519
+   ],
+   [
+    70.844728,
+    31.297834469301634
+   ]
+  ],
+  "lon": 70.843984154558,
+  "lat": 31.298833583644182,
+  "acres": 15.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "515",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxicloride 2)Kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial and leaf Fold",
+   "outbreak": true,
+   "severity": 35,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber19, Fakher-e-Bhakar"
+ },
+ {
+  "id": "farm-115",
+  "sNo": 115,
+  "surveyDate": "2025-10-03",
+  "surveyor": "Hamza",
+  "farmer": "Heebat Ali",
+  "village": "Basti Joiya",
+  "phone": "0300-7366741",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    70.872378,
+    31.278976
+   ],
+   [
+    70.86911563176693,
+    31.27955523911926
+   ],
+   [
+    70.86919753274647,
+    31.280582905709206
+   ],
+   [
+    70.86933487725662,
+    31.28164216254242
+   ],
+   [
+    70.86963420784188,
+    31.281623143821363
+   ],
+   [
+    70.869777,
+    31.281901
+   ],
+   [
+    70.872887,
+    31.281473
+   ],
+   [
+    70.872378,
+    31.278976
+   ]
+  ],
+  "lon": 70.8705877812015,
+  "lat": 31.280591181399032,
+  "acres": 10.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "1)0.5bags 2)2bags 3)25kg 4)5kg",
+   "date": null,
+   "name": "1)DAP 2)Urea 3)SOP 4)Zinc"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "1)Copper oxicloride 2)Kasugamycin"
+  },
+  "disease": {
+   "issues": "Backterial and leaf Fold",
+   "outbreak": true,
+   "severity": 20,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": null,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": null,
+  "nextVariety": "Akber, Dilkash"
+ },
+ {
+  "id": "farm-116",
+  "sNo": 116,
+  "surveyDate": "2025-10-01",
+  "surveyor": "Mustafa",
+  "farmer": "M Amjad",
+  "village": "Khori",
+  "phone": "0313-4286321",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.26389466294927,
+    31.862119050177547
+   ],
+   [
+    74.26383666294927,
+    31.863787050177546
+   ],
+   [
+    74.26821823424315,
+    31.863708270903853
+   ],
+   [
+    74.26815071102833,
+    31.862160940091
+   ],
+   [
+    74.26389466294927,
+    31.862119050177547
+   ]
+  ],
+  "lon": 74.26559898682386,
+  "lat": 31.8627788723055,
+  "acres": 12.0,
+  "irrigation": [
+   "Canal"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "86 , 1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acrre",
+   "date": "2025-06-29",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "No"
+  },
+  "disease": {
+   "issues": null,
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": null,
+  "nextCrop": "1)Wheat 2)Barseem",
+  "nextSowDate": null,
+  "nextVariety": "Faislabad 2008 , Local"
+ },
+ {
+  "id": "farm-117",
+  "sNo": 117,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Ashraf Ali",
+  "village": "Atiqpura",
+  "phone": "0304-4641825",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.289718,
+    31.816979
+   ],
+   [
+    74.287024,
+    31.816974647245676
+   ],
+   [
+    74.28767490786477,
+    31.819073093534023
+   ],
+   [
+    74.289729,
+    31.819085
+   ],
+   [
+    74.289718,
+    31.816979
+   ]
+  ],
+  "lon": 74.28877278157294,
+  "lat": 31.817818148155943,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "3 bags/acre",
+   "date": "2025-10-07",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 pack/acre",
+   "date": "2025-10-07",
+   "name": "Fortune"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-09-18",
+   "to": "2025-10-13"
+  },
+  "yieldExpected": 47,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-12",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-118",
+  "sNo": 118,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Waris Ali",
+  "village": "Atiqpura",
+  "phone": "0301-1758407",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.287732,
+    31.819141
+   ],
+   [
+    74.28839855802553,
+    31.821268520268656
+   ],
+   [
+    74.28982415614388,
+    31.821272210633975
+   ],
+   [
+    74.289743,
+    31.819154
+   ],
+   [
+    74.287732,
+    31.819141
+   ]
+  ],
+  "lon": 74.2886859428339,
+  "lat": 31.819995346180526,
+  "acres": 10.0,
+  "irrigation": [
+   "Canal",
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2.5 bags/acre",
+   "date": "2025-08-06",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 pack/acre",
+   "date": "2025-10-06",
+   "name": "Fortune"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 40,
+   "from": "2025-09-17",
+   "to": "2025-10-07"
+  },
+  "yieldExpected": 49,
+  "yieldActual": null,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-07",
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-119",
+  "sNo": 119,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Rana Shujat Hussain",
+  "village": "Atiqpura",
+  "phone": "0300-8470288",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.29119723593324,
+    31.81531290883898
+   ],
+   [
+    74.29124518427163,
+    31.81691502996714
+   ],
+   [
+    74.294086,
+    31.816879211572346
+   ],
+   [
+    74.29408611220771,
+    31.815363545317382
+   ],
+   [
+    74.29119723593324,
+    31.81531290883898
+   ]
+  ],
+  "lon": 74.29236235366916,
+  "lat": 31.815956720906968,
+  "acres": 35.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1509/1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": null,
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": null,
+   "date": null,
+   "name": "No"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": false,
+   "severity": null,
+   "from": null,
+   "to": null
+  },
+  "yieldExpected": 45,
+  "yieldActual": 50,
+  "nextCrop": "1)Wheat 2)Barseem",
+  "nextSowDate": null,
+  "nextVariety": "Bhakar"
+ },
+ {
+  "id": "farm-120",
+  "sNo": 120,
+  "surveyDate": "2025-10-20",
+  "surveyor": "Mustafa",
+  "farmer": "Mian Sharhawat Ali",
+  "village": "Atiqpura",
+  "phone": "0308-6104501",
+  "plotShape": "Rectangular",
+  "boundary": [
+   [
+    74.296209,
+    31.807688970734265
+   ],
+   [
+    74.29479464221889,
+    31.8075963103216
+   ],
+   [
+    74.29470028931041,
+    31.808198078278764
+   ],
+   [
+    74.29118014262481,
+    31.80822642952821
+   ],
+   [
+    74.29118257131296,
+    31.813573738653474
+   ],
+   [
+    74.296162,
+    31.813558
+   ],
+   [
+    74.296209,
+    31.807688970734265
+   ]
+  ],
+  "lon": 74.29434823506672,
+  "lat": 31.80950435689294,
+  "acres": 106.0,
+  "irrigation": [
+   "Tubewell"
+  ],
+  "crop": "Rice",
+  "sowDate": null,
+  "harvestDate": null,
+  "variety": "1847",
+  "condition": "Good",
+  "fertilizer": {
+   "qty": "2 bags/acre",
+   "date": "2025-10-15",
+   "name": "Urea"
+  },
+  "pesticide": {
+   "qty": "1 bottle/acre",
+   "date": "2025-10-15",
+   "name": "Staler"
+  },
+  "disease": {
+   "issues": "Jassids",
+   "outbreak": true,
+   "severity": 50,
+   "from": "2025-09-25",
+   "to": "2025-09-25"
+  },
+  "yieldExpected": 35,
+  "yieldActual": 40,
+  "nextCrop": "Wheat",
+  "nextSowDate": "2025-11-07",
+  "nextVariety": null
+ }
+]
