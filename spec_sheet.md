@@ -392,88 +392,964 @@ The frontend is a **Next.js App Router** application using the Agriverse design 
 
 ---
 
-## 10. FastAPI Backend — Full Endpoint Specification
+## 10. API Reference — Full Endpoint Guide for Developers
 
-### 10.1 Service Centers — `/api/service-center`
+**Base URL:** `https://172.16.1.230/api`
 
-| Method | Path | Purpose | Roles | Request Body | Response |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| `POST` | `/` | Create a service center | ADMIN | `{name, district, location}` | `ServiceCenter` |
-| `GET` | `/` | List all centers | ADMIN, SCM, CA | — | `ServiceCenter[]` |
-| `GET` | `/:id` | Get one center + farms + agents | ADMIN, SCM, CA | — | `ServiceCenter` (populated) |
-| `PUT` | `/:id` | Update center details | ADMIN | `{name?, district?, location?}` | `ServiceCenter` |
-| `PATCH` | `/:id/farms` | Assign farms to this center | ADMIN, SCM | `{farmIds: string[]}` | `{updated: int}` |
-| `PATCH` | `/:id/agents` | Assign agents to this center | ADMIN, SCM | `{agentIds: string[]}` | `{updated: int}` |
+All endpoints except those marked **Public** require a Bearer token in the `Authorization` header:
+```
+Authorization: Bearer <accessToken>
+```
 
----
-
-### 10.2 Advisory Cases — `/api/advisory-case`
-
-| Method | Path | Purpose | Roles | Key Business Logic |
-| :--- | :--- | :--- | :--- | :--- |
-| `POST` | `/cycles/generate` | Open new 5-day cycle, create cases from Agrobot output | ADMIN, CA | Ingests Agrobot advisories since last cycle |
-| `GET` | `/` | List/filter cases | SCM, CA, FA (own), ADMIN | Filter by `serviceCenterId`, `state`, `severity`, `assignedAgentId` |
-| `GET` | `/:id` | Case detail + full event history | SCM, CA, FA (own), ADMIN | — |
-| `PATCH` | `/:id/assign` | Assign to field agent | SCM, ADMIN | State → `UNDER_REVIEW`. Writes `AdvisoryEvent`. |
-| `POST` | `/:id/verification` | Agent submits verification | FA (assignee only) | Outcome: CONFIRMED or NOT_FOUND. State → `VERIFIED_*`. Writes `AdvisoryEvent` + `AdvisoryVerification`. |
-| `POST` | `/:id/feedback` | Record mandatory feedback | FA, SCM | **BR-2:** Blocks forward/close until present. State → `FEEDBACK_RECORDED`. Writes `AdvisoryEvent` + `AdvisoryFeedback`. Sets `returnedToAgrobot = true` (BR-6). |
-| `POST` | `/:id/forward` | Forward to farmer via Farmer App | SCM, CA | **BR-1 + BR-4:** Server MUST reject unless state = `VERIFIED_CONFIRMED` AND feedback exists. State → `FORWARDED`. Writes `AdvisoryEvent` + `AdvisoryForwarding`. |
-| `POST` | `/:id/close` | Close without forwarding | SCM, CA | Requires feedback exists. State → `CLOSED_NOT_FORWARDED`. Writes `AdvisoryEvent` + `AdvisoryClosure`. |
-| `GET` | `/:id/events` | Audit trail for one case | SCM, CA, ADMIN | — |
+> [!NOTE]
+> The server is currently reachable over HTTPS with a self-signed / IP-based certificate. If your HTTP client validates certificates strictly, you may need to disable certificate verification for this host in development — check with the backend team before disabling verification against anything other than this development host.
 
 ---
 
-### 10.3 Field Agent Operations
+### 10.1 Authentication
 
-| Method | Path | Purpose | Roles |
-| :--- | :--- | :--- | :--- |
-| `PATCH` | `/api/users/:id/availability` | Set agent availability (AVAILABLE/BUSY/OFF_DUTY) | FA (self), SCM, ADMIN |
-| `GET` | `/api/users/field-agents?serviceCenterId=` | List agents for assignment UI | SCM, ADMIN |
-| `GET` | `/api/leaderboard?serviceCenterId=&period=` | Agent performance stats | SCM, CA, ADMIN |
+Every FAMS staff session (manager, field agent, chief agronomist) starts here. The Farmer App does **not** use this flow — see Section 10.6.
+
+#### `POST /auth/login`
+**Auth:** Public (this is how you obtain a token)
+
+Log in with either email or username. Returns the user profile and a short-lived access token plus a refresh token.
+
+**Request body:**
+```json
+{
+  "email": "manager.layyah@agriverse.pk",
+  "password": "••••••••"
+}
+```
+
+**Sample response:**
+```json
+{
+  "message": "Login successful",
+  "user": {
+    "id": "b3e1f9d2-4a11-4e2a-9c3d-7f2e8a1b6c90",
+    "email": "manager.layyah@agriverse.pk",
+    "username": "layyah_manager",
+    "firstName": "Ayesha",
+    "lastName": "Khan",
+    "role": "SERVICE_CENTER_MANAGER",
+    "isActive": true,
+    "serviceCenterId": 3,
+    "availabilityStatus": null,
+    "lastLogin": "2026-07-21T09:12:44.000Z"
+  },
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIzZ...",
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIzZ..."
+}
+```
+
+#### `GET /auth/me`
+**Auth:** Any authenticated user
+
+Returns the identity of the currently logged-in user, decoded from the token — useful to confirm a token is still valid and to read the caller's own role/id.
+
+**Sample response:**
+```json
+{
+  "id": "b3e1f9d2-4a11-4e2a-9c3d-7f2e8a1b6c90",
+  "email": "manager.layyah@agriverse.pk",
+  "username": "layyah_manager",
+  "role": "SERVICE_CENTER_MANAGER",
+  "firstName": "Ayesha",
+  "lastName": "Khan"
+}
+```
 
 ---
 
-### 10.4 Service Request Extensions — `/api/service/requests`
+### 10.2 Service Center Setup
 
-| Method | Path | Purpose | Roles |
-| :--- | :--- | :--- | :--- |
-| `PATCH` | `/:id/cost` | Manager enters `petrolCost`; server calculates `totalCost = basePrice + petrolCost` | SCM, ADMIN, FA |
-| `PATCH` | `/:id/schedule` | Set `scheduledFor` date and `handledById` | SCM, ADMIN |
-| `PATCH` | `/:id/complete` | Set `completedAt`, mark `COMPLETED` | SCM, FA, ADMIN |
-| `PATCH` | `/:id/decline` | Set `declineReason`, mark `REJECTED` | SCM, ADMIN |
-| `GET` | `/service-center/:id` | Requests scoped to one service center | SCM, ADMIN |
+One-time / admin setup: create the service center, then assign farms and staff to it. Everything else in FAMS (cases, requests, dashboards) is scoped to a `serviceCenterId`.
+
+#### `POST /service-center`
+**Auth:** ADMIN
+
+Create a new service center.
+
+**Request body:**
+```json
+{
+  "name": "Layyah Service Center",
+  "region": "Punjab",
+  "districtId": 12,
+  "phone": "0301-2345678"
+}
+```
+
+**Sample response:**
+```json
+{
+  "id": 3,
+  "name": "Layyah Service Center",
+  "region": "Punjab",
+  "districtId": 12,
+  "phone": "0301-2345678",
+  "createdAt": "2026-07-21T09:00:00.000Z",
+  "updatedAt": "2026-07-21T09:00:00.000Z"
+}
+```
+
+#### `GET /service-center`
+**Auth:** ADMIN, SCM, CA
+
+List all service centers with counts of farms, staff, and advisory cases.
+
+**Sample response:**
+```json
+[
+  {
+    "id": 3,
+    "name": "Layyah Service Center",
+    "region": "Punjab",
+    "districtId": 12,
+    "phone": "0301-2345678",
+    "district": { "id": 12, "name": "Layyah" },
+    "_count": { "farms": 42, "users": 5, "advisoryCases": 18 }
+  }
+]
+```
+
+#### `GET /service-center/:id`
+**Auth:** ADMIN, SCM, CA
+
+Get one service center with its assigned farms and staff.
+
+**Sample response:**
+```json
+{
+  "id": 3,
+  "name": "Layyah Service Center",
+  "region": "Punjab",
+  "districtId": 12,
+  "phone": "0301-2345678",
+  "district": { "id": 12, "name": "Layyah" },
+  "farms": [
+    { "id": 101, "farmer": "Rashid Iqbal", "phone": "0300-1112222", "village": "Chak 12" }
+  ],
+  "users": [
+    { "id": "c4a2...", "firstName": "Bilal", "lastName": "Ahmed", "role": "FIELD_AGENT", "availabilityStatus": "AVAILABLE" }
+  ]
+}
+```
+
+#### `PUT /service-center/:id`
+**Auth:** ADMIN
+
+Update a service center's name, region, district, or phone.
+
+**Request body:**
+```json
+{ "phone": "0301-9999999" }
+```
+
+**Sample response:**
+```json
+{
+  "id": 3,
+  "name": "Layyah Service Center",
+  "region": "Punjab",
+  "districtId": 12,
+  "phone": "0301-9999999",
+  "updatedAt": "2026-07-21T10:02:00.000Z"
+}
+```
+
+#### `PATCH /service-center/:id/farms`
+**Auth:** ADMIN, SCM
+
+Assign (or reassign) a batch of farms to this service center.
+
+**Request body:**
+```json
+{ "farmIds": [101, 102, 103] }
+```
+
+**Sample response:**
+```json
+{ "message": "Farms assigned to service center", "serviceCenterId": 3, "farmsUpdated": 3 }
+```
+
+#### `PATCH /service-center/:id/agents`
+**Auth:** ADMIN, SCM
+
+Assign (or reassign) field agents / managers to this service center.
+
+**Request body:**
+```json
+{ "userIds": ["c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f"] }
+```
+
+**Sample response:**
+```json
+{ "message": "Users assigned to service center", "serviceCenterId": 3, "usersUpdated": 1 }
+```
 
 ---
 
-### 10.5 Broadcasts — `/api/broadcast`
+### 10.3 Field Agent Management
 
-| Method | Path | Purpose | Roles |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/` | Create a broadcast | SCM, CA, ADMIN |
-| `GET` | `/` | List broadcasts (filterable by district/center) | All authenticated |
-| `POST` | `/:id/send` | Publish to target scope | SCM, CA, ADMIN |
-| `DELETE` | `/:id` | Retract unsent broadcast | CA, ADMIN |
+#### `PATCH /users/:id/availability`
+**Auth:** FIELD_AGENT (self only), SCM, ADMIN
+
+Set a field agent's availability. Field agents can only update their own record.
+
+**Request body:**
+```json
+{ "availabilityStatus": "BUSY" }
+```
+
+**Sample response:**
+```json
+{ "id": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f", "firstName": "Bilal", "lastName": "Ahmed", "availabilityStatus": "BUSY" }
+```
+
+#### `GET /users/field-agents?serviceCenterId=3`
+**Auth:** SCM, ADMIN
+
+List field agents, optionally scoped to a service center — used to populate the case-assignment dropdown.
+
+**Sample response:**
+```json
+[
+  {
+    "id": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f",
+    "firstName": "Bilal",
+    "lastName": "Ahmed",
+    "phone": "0302-3334444",
+    "availabilityStatus": "AVAILABLE",
+    "serviceCenterId": 3,
+    "isActive": true,
+    "_count": { "assignedAdvisoryCases": 7 }
+  }
+]
+```
+
+#### `GET /users/leaderboard?serviceCenterId=3&sinceDays=30`
+**Auth:** SCM, CA, ADMIN
+
+Per-agent performance: cases assigned/resolved, verification mix, average turnaround. Feeds the Leader Board page.
+
+**Sample response:**
+```json
+[
+  {
+    "agentId": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f",
+    "name": "Bilal Ahmed",
+    "casesAssigned": 12,
+    "casesResolved": 9,
+    "verificationsSubmitted": 10,
+    "confirmedRate": 0.8,
+    "avgTurnaroundHours": 14.3
+  }
+]
+```
 
 ---
 
-### 10.6 Weather Alerts — `/api/weather-alert`
+### 10.4 Advisory Case Workflow (Core of FAMS)
 
-| Method | Path | Purpose | Roles |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/` | Create district-scoped alert | SCM, CA, ADMIN |
-| `GET` | `/district/:districtId` | Active alerts for a district | All authenticated |
-| `PATCH` | `/:id` | Update alert | SCM, CA, ADMIN |
-| `DELETE` | `/:id` | Remove alert | CA, ADMIN |
+This is the main loop: a cycle generates cases from Agrobot output, a manager assigns each case to a field agent, the agent verifies it on-site and records feedback, and the case is either forwarded to the farmer or closed. Every step writes an audit entry (see `GET /:id/events`).
+
+#### `POST /advisory-case/cycles/generate`
+**Auth:** ADMIN, CA (or a scheduled job)
+
+Opens a new 5-day cycle and creates `AdvisoryCase` rows from any completed Agrobot advisory that doesn't have a case yet. Farms with no service center assigned are skipped and reported back.
+
+**Sample response:**
+```json
+{
+  "cycle": {
+    "id": 9, "index": 9,
+    "startDate": "2026-07-21T00:00:00.000Z",
+    "endDate": "2026-07-26T00:00:00.000Z",
+    "active": true
+  },
+  "casesCreated": 14,
+  "skippedNoServiceCenter": [205, 209]
+}
+```
+
+#### `GET /advisory-case?serviceCenterId=3&state=UNDER_REVIEW`
+**Auth:** SCM, CA, ADMIN, FA (own cases only)
+
+The manager's action queue. Field agents calling this only ever see cases assigned to them, regardless of filters passed.
+
+**Sample response:**
+```json
+[
+  {
+    "id": 501,
+    "farmId": 101,
+    "fieldCropId": 220,
+    "cycleId": 9,
+    "serviceCenterId": 3,
+    "kind": "FARM_LEVEL",
+    "issueType": "WATER_STRESS",
+    "severity": "HIGH",
+    "text": "NDVI shows a sharp drop over the last 5 days on the eastern plot.",
+    "state": "UNDER_REVIEW",
+    "assignedAgentId": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f",
+    "generatedAt": "2026-07-21T06:00:00.000Z",
+    "farm": { "id": 101, "farmer": "Rashid Iqbal", "phone": "0300-1112222", "village": "Chak 12" },
+    "assignedAgent": { "id": "c4a2...", "firstName": "Bilal", "lastName": "Ahmed", "availabilityStatus": "AVAILABLE" },
+    "cycle": { "id": 9, "index": 9 },
+    "verification": null,
+    "feedback": null
+  }
+]
+```
+
+#### `GET /advisory-case/:id`
+**Auth:** SCM, CA, ADMIN, FA (assignee only)
+
+Full case detail, including verification, feedback, forwarding/closure, and the complete event history.
+
+**Sample response:**
+```json
+{
+  "id": 501,
+  "farmId": 101,
+  "fieldCropId": 220,
+  "cycleId": 9,
+  "serviceCenterId": 3,
+  "kind": "FARM_LEVEL",
+  "issueType": "WATER_STRESS",
+  "severity": "HIGH",
+  "text": "NDVI shows a sharp drop over the last 5 days on the eastern plot.",
+  "state": "FEEDBACK_RECORDED",
+  "farm": { "id": 101, "farmer": "Rashid Iqbal", "village": "Chak 12" },
+  "serviceCenter": { "id": 3, "name": "Layyah Service Center" },
+  "assignedAgent": { "id": "c4a2...", "firstName": "Bilal", "lastName": "Ahmed", "phone": "0302-3334444", "availabilityStatus": "BUSY" },
+  "verification": {
+    "outcome": "CONFIRMED",
+    "visitDate": "2026-07-22T00:00:00.000Z",
+    "observations": "Visible wilting on 2 acres."
+  },
+  "feedback": {
+    "outcome": "CONFIRMED",
+    "explanation": "Confirmed on-site, farmer notified.",
+    "returnedToAgrobot": true
+  },
+  "forwarding": null,
+  "closure": null,
+  "events": [
+    { "label": "RECEIVED", "at": "2026-07-21T06:00:00.000Z", "actorLabel": "system", "stateSnapshot": "RECEIVED" },
+    { "label": "ASSIGNED", "at": "2026-07-21T07:15:00.000Z", "actorLabel": "Ayesha Khan", "stateSnapshot": "UNDER_REVIEW" },
+    { "label": "VERIFIED", "at": "2026-07-22T13:40:00.000Z", "actorLabel": "Bilal Ahmed", "stateSnapshot": "VERIFIED_CONFIRMED" },
+    { "label": "FEEDBACK_RECORDED", "at": "2026-07-22T13:45:00.000Z", "actorLabel": "Bilal Ahmed", "stateSnapshot": "FEEDBACK_RECORDED" }
+  ]
+}
+```
+
+#### `PATCH /advisory-case/:id/assign`
+**Auth:** SCM, ADMIN
+
+Assign a case to a field agent. If the case is still `RECEIVED`, its state moves to `UNDER_REVIEW`.
+
+**Request body:**
+```json
+{ "agentId": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f" }
+```
+
+**Sample response:**
+```json
+{ "id": 501, "assignedAgentId": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f", "state": "UNDER_REVIEW", "updatedAt": "2026-07-21T07:15:00.000Z" }
+```
+
+#### `POST /advisory-case/:id/verification`
+**Auth:** FA (assignee only), ADMIN
+
+Field agent submits their on-site verification outcome. Moves state to `VERIFIED_CONFIRMED` or `VERIFIED_NOT_FOUND`. Can only be submitted once per case.
+
+**Request body:**
+```json
+{
+  "outcome": "CONFIRMED",
+  "visitDate": "2026-07-22",
+  "observations": "Visible wilting on ~2 acres of the eastern plot, consistent with the water-stress reading.",
+  "photos": ["https://storage.agriverse.pk/verifications/501-1.jpg"]
+}
+```
+
+**Sample response:**
+```json
+{
+  "verification": {
+    "id": 88,
+    "advisoryCaseId": 501,
+    "agentId": "c4a2...",
+    "outcome": "CONFIRMED",
+    "visitDate": "2026-07-22T00:00:00.000Z",
+    "observations": "Visible wilting on ~2 acres..."
+  },
+  "case": { "id": 501, "state": "VERIFIED_CONFIRMED" }
+}
+```
+
+#### `POST /advisory-case/:id/feedback`
+**Auth:** FA, SCM, ADMIN
+
+Record mandatory feedback (required in both outcomes before the case can be forwarded or closed). Automatically marked as returned to Agrobot (BR-6).
+
+**Request body:**
+```json
+{
+  "explanation": "Confirmed on-site, farmer notified to adjust irrigation schedule.",
+  "falsePositiveReason": null
+}
+```
+
+**Sample response:**
+```json
+{
+  "feedback": {
+    "id": 44,
+    "advisoryCaseId": 501,
+    "outcome": "CONFIRMED",
+    "explanation": "Confirmed on-site...",
+    "returnedToAgrobot": true,
+    "returnedAt": "2026-07-22T13:45:00.000Z"
+  },
+  "case": { "id": 501, "state": "FEEDBACK_RECORDED" }
+}
+```
+
+#### `POST /advisory-case/:id/forward`
+**Auth:** SCM, CA, ADMIN
+
+Forward the advisory to the Farmer App. **Only succeeds if verification was CONFIRMED and feedback has been recorded** — otherwise returns `409` with an explanation (BR-1 + BR-4).
+
+**Request body:**
+```json
+{ "annotatedText": "Irrigate within 48 hours; recommended 2-inch application on the eastern plot." }
+```
+
+**Sample response:**
+```json
+{
+  "forwarding": {
+    "id": 21,
+    "advisoryCaseId": 501,
+    "forwardedById": "b3e1f9d2...",
+    "forwardedAt": "2026-07-22T14:00:00.000Z",
+    "deliveredToFarmerApp": false
+  },
+  "case": { "id": 501, "state": "FORWARDED" }
+}
+```
+
+#### `POST /advisory-case/:id/close`
+**Auth:** SCM, CA, ADMIN
+
+Close a case without forwarding it — typically used when verification came back `NOT_FOUND`. Also requires feedback to already be recorded (BR-2).
+
+**Request body:**
+```json
+{ "reason": "Field visit found no water stress — index anomaly, not a real issue." }
+```
+
+**Sample response:**
+```json
+{
+  "closure": {
+    "id": 15,
+    "advisoryCaseId": 502,
+    "reason": "Field visit found no water stress...",
+    "closedById": "b3e1f9d2...",
+    "closedAt": "2026-07-22T14:10:00.000Z"
+  },
+  "case": { "id": 502, "state": "CLOSED_NOT_FORWARDED" }
+}
+```
+
+#### `GET /advisory-case/:id/events`
+**Auth:** SCM, CA, ADMIN
+
+The full audit trail for one case, oldest first.
+
+**Sample response:**
+```json
+[
+  { "id": 1, "advisoryCaseId": 501, "label": "RECEIVED", "actorLabel": "system", "at": "2026-07-21T06:00:00.000Z", "stateSnapshot": "RECEIVED" },
+  { "id": 2, "advisoryCaseId": 501, "label": "ASSIGNED", "actorLabel": "Ayesha Khan", "detail": "Assigned to Bilal Ahmed", "at": "2026-07-21T07:15:00.000Z", "stateSnapshot": "UNDER_REVIEW" },
+  { "id": 3, "advisoryCaseId": 501, "label": "VERIFIED", "actorLabel": "Bilal Ahmed", "detail": "Verification outcome: CONFIRMED", "at": "2026-07-22T13:40:00.000Z", "stateSnapshot": "VERIFIED_CONFIRMED" },
+  { "id": 4, "advisoryCaseId": 501, "label": "FEEDBACK_RECORDED", "actorLabel": "Bilal Ahmed", "at": "2026-07-22T13:45:00.000Z", "stateSnapshot": "FEEDBACK_RECORDED" },
+  { "id": 5, "advisoryCaseId": 501, "label": "FORWARDED", "actorLabel": "Ayesha Khan", "at": "2026-07-22T14:00:00.000Z", "stateSnapshot": "FORWARDED" }
+]
+```
 
 ---
 
-### 10.7 Dashboard & Stats — `/api/stats/service-center/:id`
+### 10.5 Manager Dashboard Stats
 
-| Method | Path | Purpose | Roles |
-| :--- | :--- | :--- | :--- |
-| `GET` | `/kpis` | KPI tiles: open cases, overdue verifications, pending requests, closed this cycle | SCM, ADMIN |
-| `GET` | `/trends` | Trend data: cases per cycle, verification accuracy over time | SCM, CA, ADMIN |
-| `GET` | `/map` | Farm map data: farms with active cases, color-coded by state/severity | SCM, ADMIN |
+#### `GET /stats/service-center/:id/kpis`
+**Auth:** SCM, ADMIN
+
+KPI tiles for the morning dashboard: open cases, overdue verifications (no agent action in 2+ days), pending service/product requests, and cases closed this cycle.
+
+**Sample response:**
+```json
+{
+  "serviceCenterId": 3,
+  "activeCycle": { "id": 9, "index": 9, "endDate": "2026-07-26T00:00:00.000Z" },
+  "openCases": 22,
+  "overdueVerifications": 4,
+  "pendingRequests": 6,
+  "closedThisCycle": 11
+}
+```
+
+#### `GET /stats/service-center/:id/trends?cycles=5`
+**Auth:** SCM, CA, ADMIN
+
+Trend chart data: cases per cycle and verification accuracy over the last N cycles (default 10), oldest first.
+
+**Sample response:**
+```json
+[
+  { "cycleId": 5, "cycleIndex": 5, "startDate": "2026-06-16T00:00:00.000Z", "totalCases": 30, "forwarded": 22, "closedNotForwarded": 5, "verificationAccuracy": 0.81 },
+  { "cycleId": 6, "cycleIndex": 6, "startDate": "2026-06-21T00:00:00.000Z", "totalCases": 27, "forwarded": 20, "closedNotForwarded": 4, "verificationAccuracy": 0.83 }
+]
+```
+
+#### `GET /stats/service-center/:id/map`
+**Auth:** SCM, ADMIN
+
+Farm map data — every farm in the service center with its count of open cases and highest severity, for colour-coding map markers.
+
+**Sample response:**
+```json
+[
+  {
+    "id": 101,
+    "farmer": "Rashid Iqbal",
+    "village": "Chak 12",
+    "location": "Near canal head",
+    "openCaseCount": 1,
+    "highestSeverity": "HIGH",
+    "cases": [
+      { "id": 501, "state": "UNDER_REVIEW", "severity": "HIGH", "kind": "FARM_LEVEL" }
+    ]
+  }
+]
+```
+
+---
+
+### 10.6 Farmer-Facing: Browse & Request (Public)
+
+These endpoints have **no authentication at all**, on purpose. A farmer is a row in the `Farm` table with their own credentials — not a `User` with a role — so they can never hold a Bearer token. The Farmer App calls these directly.
+
+#### `GET /service`
+**Auth:** Public
+
+Browse the services catalogue.
+
+**Sample response:**
+```json
+[
+  { "id": 1, "name": "Drone Spraying", "description": "Pesticide application by drone.", "rate": 1500, "isActive": true }
+]
+```
+
+#### `GET /service/:serviceId`
+**Auth:** Public
+
+Get one service.
+
+**Sample response:**
+```json
+{ "id": 1, "name": "Drone Spraying", "description": "Pesticide application by drone.", "rate": 1500, "isActive": true }
+```
+
+#### `POST /service/:serviceId/request`
+**Auth:** Public
+
+Farmer submits a service request from a farm. Rejected with `409` if that farm already has a pending request for the same service.
+
+**Request body:**
+```json
+{ "farmId": 101, "notes": "Please visit in the morning if possible." }
+```
+
+**Sample response:**
+```json
+{
+  "id": 77,
+  "farmId": 101,
+  "serviceId": 1,
+  "status": "PENDING",
+  "notes": "Please visit in the morning if possible.",
+  "requestedAt": "2026-07-21T08:00:00.000Z",
+  "service": { "id": 1, "name": "Drone Spraying", "rate": 1500 },
+  "farm": { "id": 101, "farmer": "Rashid Iqbal", "phone": "0300-1112222", "village": "Chak 12" }
+}
+```
+
+#### `GET /service/requests/farm/:farmId`
+**Auth:** Public
+
+All service requests submitted by one farm.
+
+**Sample response:**
+```json
+[
+  { "id": 77, "serviceId": 1, "status": "PENDING", "requestedAt": "2026-07-21T08:00:00.000Z", "service": { "id": 1, "name": "Drone Spraying", "rate": 1500 } }
+]
+```
+
+#### `GET /product`
+**Auth:** Public
+
+Browse the products catalogue.
+
+**Sample response:**
+```json
+[
+  { "id": 4, "name": "Urea (50kg bag)", "description": "Nitrogen fertilizer.", "rate": 4200, "isActive": true }
+]
+```
+
+#### `POST /product/:productId/request`
+**Auth:** Public
+
+Farmer submits a product request. Unlike services, products have no petrol cost / scheduling fields — this is a goods order, not a field visit.
+
+**Request body:**
+```json
+{ "farmId": 101, "quantity": 3, "notes": "Deliver to the farm gate." }
+```
+
+**Sample response:**
+```json
+{
+  "id": 33,
+  "farmId": 101,
+  "productId": 4,
+  "quantity": 3,
+  "status": "PENDING",
+  "requestedAt": "2026-07-21T08:05:00.000Z",
+  "product": { "id": 4, "name": "Urea (50kg bag)", "rate": 4200 },
+  "farm": { "id": 101, "farmer": "Rashid Iqbal", "phone": "0300-1112222", "village": "Chak 12" }
+}
+```
+
+#### `GET /product/requests/farm/:farmId`
+**Auth:** Public
+
+All product requests submitted by one farm.
+
+**Sample response:**
+```json
+[
+  { "id": 33, "productId": 4, "quantity": 3, "status": "PENDING", "requestedAt": "2026-07-21T08:05:00.000Z", "product": { "id": 4, "name": "Urea (50kg bag)", "rate": 4200 } }
+]
+```
+
+---
+
+### 10.7 Manager: Handling Requests
+
+**Pricing rule:** Farm-level advisories are free. Only service requests are priced, as `basePrice` (snapshotted from the catalogue rate) + `petrolCost` (entered manually by the manager per request — never a preset value). Product requests are not priced through this flow.
+
+#### `GET /service/requests/service-center/:id?status=PENDING`
+**Auth:** SCM, ADMIN
+
+Service requests scoped to one service center — the manager's request queue.
+
+**Sample response:**
+```json
+[
+  {
+    "id": 77,
+    "status": "PENDING",
+    "requestedAt": "2026-07-21T08:00:00.000Z",
+    "service": { "id": 1, "name": "Drone Spraying", "rate": 1500 },
+    "farm": { "id": 101, "farmer": "Rashid Iqbal", "village": "Chak 12" }
+  }
+]
+```
+
+#### `PATCH /service/requests/:requestId/cost`
+**Auth:** SCM, FA, ADMIN
+
+Manager enters the petrol cost for this specific request. `basePrice` is snapshotted from the service's current rate the first time this is called; `totalCost` is computed automatically.
+
+**Request body:**
+```json
+{ "petrolCost": 350 }
+```
+
+**Sample response:**
+```json
+{
+  "id": 77,
+  "basePrice": 1500,
+  "petrolCost": 350,
+  "totalCost": 1850,
+  "service": { "id": 1, "name": "Drone Spraying" },
+  "farm": { "id": 101, "farmer": "Rashid Iqbal" }
+}
+```
+
+#### `PATCH /service/requests/:requestId/schedule`
+**Auth:** SCM, ADMIN
+
+Schedule the visit and assign who will handle it. Moves status to `IN_PROGRESS`.
+
+**Request body:**
+```json
+{
+  "scheduledFor": "2026-07-25T09:00:00.000Z",
+  "handledById": "c4a2f1e0-1234-4a1b-8c3d-1a2b3c4d5e6f"
+}
+```
+
+**Sample response:**
+```json
+{
+  "id": 77,
+  "status": "IN_PROGRESS",
+  "scheduledFor": "2026-07-25T09:00:00.000Z",
+  "handledBy": { "id": "c4a2...", "firstName": "Bilal", "lastName": "Ahmed" }
+}
+```
+
+#### `PATCH /service/requests/:requestId/complete`
+**Auth:** SCM, FA, ADMIN
+
+Mark a service request complete.
+
+**Sample response:**
+```json
+{ "id": 77, "status": "COMPLETED", "completedAt": "2026-07-25T11:30:00.000Z" }
+```
+
+#### `PATCH /service/requests/:requestId/decline`
+**Auth:** SCM, ADMIN
+
+Decline a service request with a reason.
+
+**Request body:**
+```json
+{ "declineReason": "Outside service radius for this center." }
+```
+
+**Sample response:**
+```json
+{ "id": 78, "status": "REJECTED", "declineReason": "Outside service radius for this center." }
+```
+
+#### `GET /product/requests/service-center/:id?status=PENDING`
+**Auth:** SCM, ADMIN
+
+Product requests scoped to one service center (joined through the farm's `serviceCenterId`, since `ProductRequest` itself has no `serviceCenterId` column).
+
+**Sample response:**
+```json
+[
+  {
+    "id": 33,
+    "status": "PENDING",
+    "requestedAt": "2026-07-21T08:05:00.000Z",
+    "product": { "id": 4, "name": "Urea (50kg bag)", "rate": 4200 },
+    "farm": { "id": 101, "farmer": "Rashid Iqbal", "village": "Chak 12" }
+  }
+]
+```
+
+---
+
+### 10.8 Broadcasts
+
+General messages pushed to farmers in a district or service center — weather notes, mandi prices, canal closures. Free, no verification required. Creating a broadcast sends it immediately (there is no separate draft/send step).
+
+#### `POST /broadcast`
+**Auth:** SCM, CA, ADMIN
+
+Create and immediately publish a broadcast. Requires at least one of `districtId` / `serviceCenterId` as a target scope.
+
+**Request body:**
+```json
+{
+  "title": "Canal closure notice",
+  "text": "The main irrigation canal will be closed for maintenance July 25–27.",
+  "category": "IRRIGATION",
+  "districtId": 12
+}
+```
+
+**Sample response:**
+```json
+{
+  "id": 9,
+  "title": "Canal closure notice",
+  "category": "IRRIGATION",
+  "districtId": 12,
+  "serviceCenterId": null,
+  "validFrom": "2026-07-21T08:30:00.000Z",
+  "validTo": null,
+  "createdById": "b3e1f9d2..."
+}
+```
+
+#### `GET /broadcast?districtId=12&activeOnly=true`
+**Auth:** Public
+
+List broadcasts, optionally filtered by district, service center, category, or currently-active only.
+
+**Sample response:**
+```json
+[
+  {
+    "id": 9,
+    "title": "Canal closure notice",
+    "category": "IRRIGATION",
+    "validFrom": "2026-07-21T08:30:00.000Z",
+    "validTo": null,
+    "district": { "id": 12, "name": "Layyah" }
+  }
+]
+```
+
+#### `DELETE /broadcast/:id`
+**Auth:** CA, ADMIN
+
+Retract a broadcast.
+
+**Sample response:**
+```json
+{ "message": "Broadcast retracted", "id": 9 }
+```
+
+---
+
+### 10.9 Weather Alerts
+
+District-scoped, severity-tagged risk alerts — distinct from Broadcasts, which are free-text. Shown on both the farmer map and the manager dashboard.
+
+#### `POST /weather-alert`
+**Auth:** SCM, CA, ADMIN
+
+Create a weather/pest/disease alert for a district.
+
+**Request body:**
+```json
+{
+  "districtId": 12,
+  "alertType": "HEATWAVE",
+  "severity": "HIGH",
+  "headline": "Heatwave warning",
+  "message": "Temperatures expected to exceed 45°C over the next three days.",
+  "validFrom": "2026-07-22T00:00:00.000Z",
+  "validTo": "2026-07-25T00:00:00.000Z"
+}
+```
+
+**Sample response:**
+```json
+{
+  "id": 5,
+  "districtId": 12,
+  "alertType": "HEATWAVE",
+  "severity": "HIGH",
+  "headline": "Heatwave warning",
+  "validFrom": "2026-07-22T00:00:00.000Z",
+  "validTo": "2026-07-25T00:00:00.000Z",
+  "source": "manual"
+}
+```
+
+#### `GET /weather-alert/district/:districtId`
+**Auth:** Public
+
+Currently active alerts for a district, most severe first.
+
+**Sample response:**
+```json
+[
+  {
+    "id": 5,
+    "alertType": "HEATWAVE",
+    "severity": "HIGH",
+    "headline": "Heatwave warning",
+    "message": "Temperatures expected to exceed 45°C...",
+    "validFrom": "2026-07-22T00:00:00.000Z",
+    "validTo": "2026-07-25T00:00:00.000Z"
+  }
+]
+```
+
+#### `PATCH /weather-alert/:id`
+**Auth:** SCM, CA, ADMIN
+
+Update severity, message, or validity window.
+
+**Request body:**
+```json
+{ "severity": "CRITICAL" }
+```
+
+**Sample response:**
+```json
+{ "id": 5, "severity": "CRITICAL", "headline": "Heatwave warning" }
+```
+
+#### `DELETE /weather-alert/:id`
+**Auth:** CA, ADMIN
+
+Remove an expired or incorrect alert.
+
+**Sample response:**
+```json
+{ "message": "Weather alert deleted", "id": 5 }
+```
+
+---
+
+### 10.10 Source Advisory Data (Agrobot)
+
+> [!NOTE]
+> Reference only — these endpoints already exist on the Agriverse side and are what feeds Section 10.4's cycle generator. You generally won't call these from the FAMS frontend; they're listed here so it's clear where `AdvisoryCase.text` and `sourceFarmAdvisoryId` come from.
+
+#### `POST /agrobot/generate`
+**Auth:** AGRONOMIST, ADMIN, CA
+
+Triggers Agrobot's RAG pipeline for a field crop with a free-text query. Runs asynchronously; poll `GET /agrobot/:requestId` for completion.
+
+**Request body:**
+```json
+{ "fieldCropId": 220, "query": "Assess current crop stress based on the latest imagery." }
+```
+
+**Sample response:**
+```json
+{ "requestId": "d4e5f6...", "status": "PROCESSING" }
+```
+
+#### `GET /agrobot/farm/:farmId`
+**Auth:** Any authenticated user
+
+All Agrobot advisories generated for a farm, most recent first.
+
+**Sample response:**
+```json
+[
+  {
+    "requestId": "d4e5f6...",
+    "fieldCropId": 220,
+    "status": "COMPLETE",
+    "advisoryText": "NDVI shows a sharp drop over the last 5 days...",
+    "createdAt": "2026-07-21T05:58:00.000Z"
+  }
+]
+```
 
 ---
 
