@@ -154,27 +154,38 @@ The farm registry is sourced from `farms.json` (120 surveyed fields from Sheikhu
 
 ---
 
-## 6. Database Schema — New FAMS Tables
+## 6. Database Schema — Database Changes
 
 > [!NOTE]
 > These tables are **additive** to the existing Agriverse Postgres database. They were deployed via `npx prisma db push`. FastAPI will access them via SQLAlchemy models that mirror the Prisma schema exactly.
 
-### 6.1 New Tables
+### 6.2 New Tables (10)
 
-| Table | Purpose | Key Columns |
+| Table | Purpose | Key Fields |
 | :--- | :--- | :--- |
-| `ServiceCenter` | Regional office managing a set of farms/agents | `id`, `name`, `district`, `location` |
-| `Cycle` | 5-day recurring advisory window | `id`, `startDate`, `endDate`, `status` |
-| `AdvisoryCase` | Core workflow object — one case per Agrobot advisory | `id`, `cycleId`, `farmId`, `fieldCropId`, `sourceAdvisoryId`, `kind`, `issueType`, `severity`, `state`, `assignedAgentId` |
-| `AdvisoryVerification` | Field agent's ground-truth report | `id`, `caseId`, `agentId`, `outcome` (CONFIRMED/NOT_FOUND), `notes`, `verifiedAt` |
-| `AdvisoryFeedback` | Mandatory feedback per case | `id`, `caseId`, `recordedById`, `text`, `recordedAt` |
-| `AdvisoryForwarding` | Record: case forwarded to farmer/Agrobot | `id`, `caseId`, `forwardedById`, `forwardedAt`, `agrobotRefId` |
-| `AdvisoryClosure` | Record: case closed without forwarding | `id`, `caseId`, `closedById`, `reason`, `closedAt` |
-| `AdvisoryEvent` | Audit trail — one row per state transition | `id`, `caseId`, `actorId`, `fromState`, `toState`, `note`, `createdAt` |
-| `Broadcast` | Push message to farmers (district/center/national) | `id`, `title`, `body`, `category`, `districtId`, `serviceCenterId`, `sentAt` |
-| `WeatherAlert` | District-scoped weather/pest/disease alert | `id`, `districtId`, `alertType`, `severity`, `message`, `validFrom`, `validTo` |
+| `ServiceCenter` | A physical/regional office that owns a set of farms and field agents. | `name`, `district`, `location`, `farms[]`, `agents[]` |
+| `Cycle` | A recurring 5-day advisory window; groups the AdvisoryCases generated in that window. | `startDate`, `endDate`, `status`, `cases[]` |
+| `AdvisoryCase` | The core FAMS workflow object: one trackable case per Agrobot advisory that needs human review. | `cycleId`, `farmId`, `fieldCropId`, `sourceAdvisoryId`, `kind`, `issueType`, `severity`, `state`, `assignedAgentId` |
+| `AdvisoryVerification` | Field agent's on-ground verification of an AdvisoryCase. | `caseId`, `agentId`, `outcome` (CONFIRMED / NOT_FOUND), `notes`, `verifiedAt` |
+| `AdvisoryFeedback` | Mandatory feedback recorded for every case regardless of verification outcome (BR-2). | `caseId`, `recordedById`, `text`, `recordedAt` |
+| `AdvisoryForwarding` | Record of a case forwarded back to Agrobot after confirmed verification (BR-1). | `caseId`, `forwardedById`, `forwardedAt`, `agrobotRefId` |
+| `AdvisoryClosure` | Record of a case closed without forwarding (e.g., verification came back NOT_FOUND). | `caseId`, `closedById`, `reason`, `closedAt` |
+| `AdvisoryEvent` | Full audit trail — one row per state transition on a case (BR-5). | `caseId`, `actorId`, `fromState`, `toState`, `note`, `createdAt` |
+| `Broadcast` | A message pushed to farmers in a district / service center / nationwide. | `title`, `body`, `category`, `districtId`, `serviceCenterId`, `createdById`, `sentAt` |
+| `WeatherAlert` | District-scoped weather/pest/disease alert shown on the farmer map and dashboard. | `districtId`, `alertType`, `severity`, `message`, `validFrom`, `validTo` |
 
-### 6.2 New Enums
+### 6.3 Modified Existing Tables
+
+| Table | Fields Added | Why |
+| :--- | :--- | :--- |
+| `District` | `serviceCenters[]`, `weatherAlerts[]`, `broadcasts[]` (relations only) | Back-relations for the new tables. |
+| `User` | `serviceCenterId`, `serviceCenter`, `availabilityStatus`, + 8 back-relation arrays | Link field agents / managers to a ServiceCenter; track on/off duty status for assignment & leaderboard. |
+| `Farm` | `serviceCenterId`, `serviceCenter`, `advisoryCases[]` | Scope a farm to a service center; legacy `center` string column kept untouched for compatibility. |
+| `FieldCrop` | `advisoryCases[]` (relation only) | Link crop records to the cases generated against them. |
+| `FarmAdvisory` | `generatedCases[]` (relation only) | Link an Agrobot-generated advisory to the AdvisoryCase(s) created from it. |
+| `ServiceRequest` | `serviceCenterId`, `basePrice`, `petrolCost`, `totalCost`, `scheduledFor`, `completedAt`, `declineReason`, `handledById`, `handledBy` | Support manager-entered petrol cost → totalCost, scheduling, and completion/decline tracking. |
+
+### 6.4 New Enums (7)
 
 | Enum | Values |
 | :--- | :--- |
@@ -185,14 +196,6 @@ The farm registry is sourced from `farms.json` (120 surveyed fields from Sheikhu
 | `AdvisoryCaseState` | `RECEIVED`, `UNDER_REVIEW`, `PENDING_VERIFICATION`, `VERIFIED_CONFIRMED`, `VERIFIED_NOT_FOUND`, `FEEDBACK_RECORDED`, `FORWARDED`, `CLOSED_NOT_FORWARDED` |
 | `VerificationOutcome` | `CONFIRMED`, `NOT_FOUND` |
 | `BroadcastCategory` | `ADVISORY`, `WEATHER`, `SCHEME`, `GENERAL` |
-
-### 6.3 Modified Existing Tables (Additive Columns Only)
-
-| Table | Added Fields | Purpose |
-| :--- | :--- | :--- |
-| `User` | `serviceCenterId`, `availabilityStatus` | Link agents/managers to a service center; track duty status |
-| `Farm` | `serviceCenterId` | Scope farms to a service center |
-| `ServiceRequest` | `basePrice`, `petrolCost`, `totalCost`, `scheduledFor`, `completedAt`, `declineReason`, `handledById` | Manager-entered pricing, scheduling, completion tracking |
 
 ---
 
@@ -1388,8 +1391,8 @@ Cache the computed leaderboard scores (yield efficiency, satellite health, condi
 
 | Job | Trigger | Description |
 | :--- | :--- | :--- |
-| **Cycle Generator** | Cron inside FastAPI (e.g., `APScheduler` every 5 days) or manual via `POST /api/advisory-case/cycles/generate` | Opens a new `Cycle` row, queries all Agrobot output since the last cycle, and creates `AdvisoryCase` rows for each. |
-| **Weather Data Ingestion** | Cron inside FastAPI (hourly) | Fetches current weather and forecast data from an Open API (e.g., OpenWeatherMap) to display on the dashboard and farm detail views. Alert creation remains a manual process by the Manager. |
+| **Cycle Generator** | Cron inside FastAPI (e.g., `APScheduler` every 5 days) or manual via `POST /api/advisory-case/cycles/generate` | Every 5 days, opens a new `Cycle` row and creates `AdvisoryCase` rows from whatever Agrobot output has accumulated since the last cycle. Today, Agriverse's `agrobot.controller.js` is purely on-demand; this job turns its output into trackable FAMS cases on a fixed cadence. |
+| **Weather Data Ingestion** | Cron inside FastAPI (hourly) | Fetches current weather and forecast data from an external Open API to display on the dashboard and farm detail views. Alert creation itself remains a manual process by the Manager (matching the "manual petrol cost" precedent). |
 
 ---
 
