@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import TopNav from "@/components/TopNav";
 import { useFams } from "@/lib/store";
-import { AGENTS, farmById } from "@/lib/data";
+import { farmById } from "@/lib/data";
 
 const TASK_BADGE = {
   pending_verification: ["Pending visit", "badge-amber"],
@@ -14,7 +14,7 @@ const TASK_BADGE = {
 };
 
 export default function Agents() {
-  const { advisories } = useFams();
+  const { advisories, fieldAgents } = useFams();
   const router = useRouter();
   const [openId, setOpenId] = useState(null);
 
@@ -47,7 +47,7 @@ export default function Agents() {
               <tr><th style={{ width: 40 }}></th><th>Agent</th><th>Phone</th><th>Availability</th><th>Active tasks</th><th>Completed today</th></tr>
             </thead>
             <tbody>
-              {AGENTS.map((ag) => {
+              {fieldAgents.map((ag) => {
                 const tasks = tasksFor(ag.id);
                 const active = tasks.filter((t) => !t.done).length;
                 const doneCount = tasks.filter((t) => t.done).length;

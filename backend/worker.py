@@ -66,9 +66,13 @@ def process_message(ch, method, properties, body):
         db.rollback()
         logger.error(f"Error processing advisory: {e}")
         logger.error(traceback.format_exc())
-        # Negative ack so it requeues or drops based on dead letter config
-        # For simplicity, requeue=False to avoid infinite loops if it's a schema error
-        ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
+        # Requeue once (survives transient DB blips) but drop on the second
+        # failure so a genuinely bad message can't loop forever.
+        # ponytail: a proper dead-letter exchange is the upgrade for retaining poison messages.
+        requeue = not method.redelivered
+        if not requeue:
+            logger.error("Message already retried once — dropping to avoid an infinite loop.")
+        ch.basic_nack(delivery_tag=method.delivery_tag, requeue=requeue)
     finally:
         db.close()
 

@@ -12,6 +12,7 @@ const INDEX_COLORS = {
 export default function FarmMap({ farms = [], mode = "pins", index = "NDVI", height = 300, onSelect, focus }) {
   const ref = useRef(null);
   const mapRef = useRef(null);
+  const tipRef = useRef(null);
 
   useEffect(() => {
     let map;
@@ -134,6 +135,7 @@ export default function FarmMap({ farms = [], mode = "pins", index = "NDVI", hei
         });
         ref.current.style.position = "relative";
         ref.current.appendChild(tip);
+        tipRef.current = tip;
 
         map.on("pointermove", (e) => {
           let found = null;
@@ -160,7 +162,12 @@ export default function FarmMap({ farms = [], mode = "pins", index = "NDVI", hei
 
     return () => {
       disposed = true;
-      if (mapRef.current) { mapRef.current.setTarget(null); mapRef.current = null; }
+      if (tipRef.current) { tipRef.current.remove(); tipRef.current = null; }
+      if (mapRef.current) {
+        mapRef.current.setTarget(undefined);
+        mapRef.current.dispose();
+        mapRef.current = null;
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode, index, farms.length, farms[0]?.id, focus?.[0]]);

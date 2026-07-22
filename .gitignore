@@ -1,0 +1,19 @@
+# Claude Code local files
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Node / Next.js
+node_modules/
+.next/
+npm-debug.log*
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db

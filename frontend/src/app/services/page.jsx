@@ -165,9 +165,6 @@ export default function Services() {
                     </button>
                   </div>
                 )}
-                {sel.state === "scheduled" && (
-                  <button className="btn btn-primary" onClick={() => reqAction(sel.id, "start")}>Mark In Progress</button>
-                )}
                 {sel.state === "in_progress" && (
                   <button className="btn btn-primary" onClick={() => reqAction(sel.id, "complete")}>Mark Completed</button>
                 )}

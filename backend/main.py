@@ -61,11 +61,13 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS config
+# CORS config. Auth is a localStorage Bearer token (not cookies), so credentials
+# are not needed — keeping allow_credentials False makes the "*" origin valid and
+# avoids the insecure "*" + credentials combination browsers reject anyway.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update in production to specific origins
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

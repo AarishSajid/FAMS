@@ -7,6 +7,7 @@ Queue strategy (from spec Section 11):
   - ZREM on completion/decline.
 """
 
+import random
 import redis
 from config import get_settings
 
@@ -22,8 +23,21 @@ def _queue_key(service_center_id: int) -> str:
     return f"fams:requests:{service_center_id}"
 
 
-def _leaderboard_key(service_center_id: int) -> str:
-    return f"fams:leaderboard:{service_center_id}"
+def _leaderboard_key(cache_key: str) -> str:
+    return f"fams:leaderboard:{cache_key}"
+
+
+# ── Single-flight lock (cache-stampede guard) ────────────────
+
+def acquire_lock(name: str, ttl: int = 30) -> bool:
+    """Try to grab a short-lived recompute lock. True = caller should recompute.
+    # ponytail: one global per-key lock; fine for low-write caches. Upgrade to
+    # a fenced/Redlock token only if multi-node recompute correctness matters."""
+    return bool(redis_client.set(f"fams:lock:{name}", "1", nx=True, ex=ttl))
+
+
+def release_lock(name: str):
+    redis_client.delete(f"fams:lock:{name}")
 
 
 # ── Service Request Queue (Sorted Sets) ──────────────────────
@@ -45,30 +59,22 @@ def get_request_queue(service_center_id: int, start: int = 0, end: int = -1) -> 
 
 # ── Leaderboard Cache ────────────────────────────────────────
 
-def get_cached_leaderboard(service_center_id: int) -> str | None:
+def get_cached_leaderboard(cache_key: str) -> str | None:
     """Get cached leaderboard JSON, or None if expired/missing."""
-    return redis_client.get(_leaderboard_key(service_center_id))
+    return redis_client.get(_leaderboard_key(cache_key))
 
 
-def set_cached_leaderboard(service_center_id: int, data: str, ttl: int = 3600):
-    """Cache leaderboard JSON for 1 hour."""
-    redis_client.set(_leaderboard_key(service_center_id), data, ex=ttl)
+def set_cached_leaderboard(cache_key: str, data: str, ttl: int = 3600):
+    """Cache leaderboard JSON for ~1 hour, with jitter so keys created together
+    don't all expire at the same instant (desynchronizes the herd)."""
+    redis_client.set(_leaderboard_key(cache_key), data, ex=ttl + random.randint(0, 300))
 
 
-def invalidate_leaderboard(service_center_id: int):
-    """Clear the leaderboard cache (e.g., after a case resolution)."""
-    redis_client.delete(_leaderboard_key(service_center_id))
-
-
-# ── Advisory Cache (optional) ────────────────────────────────
-
-def get_cached_advisory(case_id: int) -> str | None:
-    return redis_client.get(f"fams:advisory:{case_id}")
-
-
-def set_cached_advisory(case_id: int, data: str, ttl: int = 300):
-    redis_client.set(f"fams:advisory:{case_id}", data, ex=ttl)
-
-
-def invalidate_advisory(case_id: int):
-    redis_client.delete(f"fams:advisory:{case_id}")
+def invalidate_leaderboard_center(service_center_id: int | None):
+    """Clear every cached window for a center (keys `<id>:<window>`) plus the
+    global aggregate (id 0). Called after any change that shifts agent standings."""
+    ids = {"0", str(service_center_id)} if service_center_id else {"0"}
+    for _id in ids:
+        keys = list(redis_client.scan_iter(match=f"fams:leaderboard:{_id}:*"))
+        if keys:
+            redis_client.delete(*keys)

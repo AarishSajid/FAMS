@@ -13,27 +13,8 @@ from models.advisory import (
 from models.user import User
 from enums import AdvisoryCaseState, VerificationOutcome
 from exceptions import ConflictError, NotFoundError, BadRequestError
-
-
-# ── Valid transitions ─────────────────────────────────────────
-
-VALID_TRANSITIONS = {
-    AdvisoryCaseState.RECEIVED: [AdvisoryCaseState.UNDER_REVIEW],
-    AdvisoryCaseState.UNDER_REVIEW: [AdvisoryCaseState.PENDING_VERIFICATION],
-    AdvisoryCaseState.PENDING_VERIFICATION: [
-        AdvisoryCaseState.VERIFIED_CONFIRMED,
-        AdvisoryCaseState.VERIFIED_NOT_FOUND,
-    ],
-    AdvisoryCaseState.VERIFIED_CONFIRMED: [AdvisoryCaseState.FEEDBACK_RECORDED],
-    AdvisoryCaseState.VERIFIED_NOT_FOUND: [AdvisoryCaseState.FEEDBACK_RECORDED],
-    AdvisoryCaseState.FEEDBACK_RECORDED: [
-        AdvisoryCaseState.FORWARDED,
-        AdvisoryCaseState.CLOSED_NOT_FORWARDED,
-    ],
-    # Terminal states
-    AdvisoryCaseState.FORWARDED: [],
-    AdvisoryCaseState.CLOSED_NOT_FORWARDED: [],
-}
+from redis_client import invalidate_leaderboard_center
+from services.rabbitmq_service import publish_agrobot_feedback
 
 
 def _write_event(
@@ -43,7 +24,9 @@ def _write_event(
     actor: User | None,
     detail: str | None = None,
 ):
-    """BR-5: every action writes an AdvisoryEvent row."""
+    """BR-5: every action writes an AdvisoryEvent row.
+    stateSnapshot records the case state *after* this action's transition
+    (i.e. the resulting state), captured before commit."""
     event = AdvisoryEvent(
         advisoryCaseId=case.id,
         actorId=actor.id if actor else None,
@@ -55,7 +38,14 @@ def _write_event(
 
 
 def _get_case_or_404(db: Session, case_id: int) -> AdvisoryCase:
-    case = db.query(AdvisoryCase).filter(AdvisoryCase.id == case_id).first()
+    # with_for_update serializes concurrent transitions on the same case so
+    # two requests can't both pass their state guards (TOCTOU) and double-write.
+    case = (
+        db.query(AdvisoryCase)
+        .filter(AdvisoryCase.id == case_id)
+        .with_for_update()
+        .first()
+    )
     if not case:
         raise NotFoundError("AdvisoryCase", case_id)
     return case
@@ -176,6 +166,20 @@ def record_feedback(
     _write_event(db, case, "FEEDBACK_RECORDED", actor)
     db.commit()
     db.refresh(case)
+
+    # BR-6: actually return the feedback to Agrobot (not just flag it). Published
+    # after commit so we never announce feedback that didn't persist.
+    # ponytail: fire-and-forget publish; a transactional outbox is the upgrade if
+    # guaranteed delivery is ever required.
+    publish_agrobot_feedback({
+        "caseId": case.id,
+        "farmId": case.farmId,
+        "sourceFarmAdvisoryId": case.sourceFarmAdvisoryId,
+        "outcome": feedback_outcome.value if feedback_outcome else None,
+        "explanation": explanation,
+        "falsePositiveReason": false_positive_reason,
+        "returnedAt": now.isoformat(),
+    })
     return case
 
 
@@ -228,6 +232,8 @@ def forward_case(
     _write_event(db, case, "FORWARDED", actor)
     db.commit()
     db.refresh(case)
+    # Resolving a case changes agent standings — drop stale leaderboard windows.
+    invalidate_leaderboard_center(case.serviceCenterId)
     return case
 
 
@@ -270,4 +276,6 @@ def close_case(
     _write_event(db, case, "CLOSED", actor, detail=reason)
     db.commit()
     db.refresh(case)
+    # Resolving a case changes agent standings — drop stale leaderboard windows.
+    invalidate_leaderboard_center(case.serviceCenterId)
     return case

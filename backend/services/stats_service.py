@@ -15,7 +15,8 @@ from enums import AdvisoryCaseState, ServiceRequestStatus
 
 def get_kpis(db: Session, service_center_id: int) -> dict:
     """KPI tiles for the manager morning dashboard."""
-    # Active cycle
+    # Active cycle. NOTE: cycles are global (system-wide), not per-center, so this
+    # assumes a single active cycle across all service centers.
     active_cycle = db.query(Cycle).filter(Cycle.active == True).first()
 
     # Open cases (not in a terminal state)
@@ -127,7 +128,7 @@ def get_trends(db: Session, service_center_id: int, num_cycles: int = 10) -> lis
         results.append({
             "cycleId": cycle.id,
             "cycleIndex": cycle.index,
-            "startDate": cycle.startDate.isoformat(),
+            "startDate": cycle.startDate.isoformat() if cycle.startDate else None,
             "totalCases": total,
             "forwarded": forwarded,
             "closedNotForwarded": closed,

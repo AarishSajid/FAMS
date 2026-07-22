@@ -11,6 +11,7 @@ export function FamsProvider({ children }) {
   const [requests, setRequests] = useState([]);
   const [farms, setFarms] = useState([]);
   const [broadcasts, setBroadcasts] = useState([]);
+  const [fieldAgents, setFieldAgents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // Initial load
@@ -70,6 +71,16 @@ export function FamsProvider({ children }) {
       // Broadcasts (General Advisories)
       const bRes = await fetchApi(`/broadcast`);
       setBroadcasts(bRes || []);
+
+      // Field agents (live) — powers the assign dropdown and the agents page.
+      const faRes = await fetchApi(`/users/field-agents?serviceCenterId=${centerId}`);
+      const mappedAgents = (faRes || []).map((a) => ({
+        id: a.id,
+        name: `${a.firstName || ""} ${a.lastName || ""}`.trim() || a.email,
+        status: a.availabilityStatus || "AVAILABLE",
+        phone: a.phone || "—",
+      }));
+      setFieldAgents(mappedAgents);
     } catch (e) {
       console.error(e);
     }
@@ -95,6 +106,7 @@ export function FamsProvider({ children }) {
     requests,
     farms,
     broadcasts,
+    fieldAgents,
 
     login: async (email, password) => {
       const res = await fetchApi("/auth/login", {
@@ -162,6 +174,14 @@ export function FamsProvider({ children }) {
 
     reqAction: async (id, action, payload) => {
       if (action === "schedule") {
+        // Persist the petrol cost entered at accept time before scheduling —
+        // otherwise it's silently dropped and the manager must re-enter it.
+        if (payload?.petrol != null) {
+          await fetchApi(`/service/${id}/cost`, {
+            method: "PATCH",
+            body: JSON.stringify({ petrolCost: payload.petrol }),
+          });
+        }
         await fetchApi(`/service/${id}/schedule`, {
           method: "PATCH",
           body: JSON.stringify({ scheduledFor: payload?.date || new Date().toISOString(), handledById: user.id }),

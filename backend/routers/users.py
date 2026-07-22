@@ -12,7 +12,7 @@ from services.leaderboard_service import get_agent_leaderboard
 from dependencies import authorize, get_current_user
 from enums import UserRole, FieldAgentAvailability
 from exceptions import NotFoundError
-from redis_client import invalidate_leaderboard
+from redis_client import invalidate_leaderboard_center
 
 router = APIRouter(prefix="/users", tags=["Users / Field Agents"])
 
@@ -40,9 +40,8 @@ def update_availability(
     db.commit()
     db.refresh(user)
 
-    # Invalidate leaderboard cache for this agent's service center
-    if user.serviceCenterId:
-        invalidate_leaderboard(user.serviceCenterId)
+    # Invalidate every leaderboard window for this agent's center + the global one
+    invalidate_leaderboard_center(user.serviceCenterId)
 
     return {
         "id": user.id,

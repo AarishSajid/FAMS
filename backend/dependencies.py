@@ -2,6 +2,7 @@
 FastAPI dependencies for authentication and role-based authorization.
 """
 
+from typing import Optional
 from fastapi import Depends, Header
 from sqlalchemy.orm import Session
 
@@ -13,14 +14,16 @@ from services.auth_service import decode_access_token
 
 
 async def get_current_user(
-    authorization: str = Header(..., description="Bearer <accessToken>"),
+    authorization: Optional[str] = Header(None, description="Bearer <accessToken>"),
     db: Session = Depends(get_db),
 ) -> User:
     """
     Decode the JWT from the Authorization header, look up the user in the
-    database, and return the User object. Raises 401 if invalid.
+    database, and return the User object. Raises 401 if missing/invalid.
     """
-    if not authorization.startswith("Bearer "):
+    # Optional header so a *missing* token returns 401 (not FastAPI's 422 for a
+    # required-header validation error) — clients and the refresh flow expect 401.
+    if not authorization or not authorization.startswith("Bearer "):
         raise UnauthorizedError("Authorization header must start with 'Bearer '.")
 
     token = authorization.split(" ", 1)[1]

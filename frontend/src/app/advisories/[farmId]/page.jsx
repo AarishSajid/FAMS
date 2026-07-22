@@ -11,7 +11,7 @@ import { AdvisoryBadge, SeverityBadge, ConditionBadge } from "@/components/badge
 import { useFams } from "@/lib/store";
 import {
   farmById, historyAdvisories, indexSeries, classification, INDICES, IMAGERY_DATES,
-  AGENTS, weather, STAGES,
+  weather, STAGES,
 } from "@/lib/data";
 
 const FarmMap = dynamic(() => import("@/components/FarmMap"), { ssr: false });
@@ -35,7 +35,7 @@ function Modal({ title, children, onClose }) {
 export default function FarmDetail() {
   const { farmId } = useParams();
   const router = useRouter();
-  const { advisories, assignAgent, recordVerification, forward, close } = useFams();
+  const { advisories, fieldAgents, assignAgent, recordVerification, forward, close } = useFams();
 
   const farm = farmById[farmId];
   const [index, setIndex] = useState(null);
@@ -140,7 +140,7 @@ export default function FarmDetail() {
                   </div>
                   {adv.assignedAgentId && (
                     <div style={{ fontSize: 12, color: "var(--text-secondary)", marginBottom: 8 }}>
-                      Field agent: <b>{AGENTS.find((a) => a.id === adv.assignedAgentId)?.name}</b>
+                      Field agent: <b>{fieldAgents.find((a) => a.id === adv.assignedAgentId)?.name || adv.assignedAgent?.firstName || "—"}</b>
                     </div>
                   )}
                   {adv.verification && (
@@ -152,7 +152,7 @@ export default function FarmDetail() {
                   )}
                   <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                     {adv.state === "received" && (
-                      <button className="btn btn-primary" onClick={() => { setForm({ agentId: AGENTS[0].id }); setModal("assign"); }}>Send to Field Agent</button>
+                      <button className="btn btn-primary" onClick={() => { setForm({ agentId: fieldAgents[0]?.id || "" }); setModal("assign"); }}>Send to Field Agent</button>
                     )}
                     {adv.state === "pending_verification" && (
                       <button className="btn btn-primary" onClick={() => { setForm({ outcome: "confirmed", observations: "", explanation: "" }); setModal("verify"); }}>Record Verification & Feedback</button>
@@ -314,9 +314,10 @@ export default function FarmDetail() {
             The agent visits the farm to establish ground truth before anything reaches the farmer (BR-1).
           </div>
           <select className="input" style={{ width: "100%", marginBottom: 14 }} value={form.agentId} onChange={(e) => setForm({ ...form, agentId: e.target.value })}>
-            {AGENTS.map((a) => <option key={a.id} value={a.id}>{a.name} — {a.status}</option>)}
+            {fieldAgents.length === 0 && <option value="">No field agents available</option>}
+            {fieldAgents.map((a) => <option key={a.id} value={a.id}>{a.name} — {a.status}</option>)}
           </select>
-          <button className="btn btn-primary" style={{ width: "100%" }} onClick={() => { assignAgent(adv.id, form.agentId); setModal(null); }}>
+          <button className="btn btn-primary" style={{ width: "100%" }} disabled={!form.agentId} onClick={() => { assignAgent(adv.id, form.agentId); setModal(null); }}>
             Assign & mark Pending Verification
           </button>
         </Modal>
