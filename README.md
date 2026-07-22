@@ -1,41 +1,106 @@
-# FAMS v2 — Final Prototype
+# Agriverse FAMS (Farmer Advisory Management System)
 
-The merged FAMS prototype built from `FAMS_Design_Requirements_v1.0.docx`:
-Agriverse visual language (Inter, dark theme, Recharts, OpenLayers) over the
-SRS v0.4 workflow, using the real 120-farm field-survey registry
-(`Digitized Field Survey Form corrected.xlsx`) as sample data.
+FAMS is a sub-system of the Agriverse ecosystem designed to manage farm-level advisories, general broadcasts, and service catalog requests (e.g., tractor/drone bookings). 
 
-## Run
+This repository contains the complete prototype implementation, including a modern Next.js frontend and a fully integrated FastAPI backend with PostgreSQL, Redis, and an Nginx reverse proxy.
+
+## Architecture & Tech Stack
+
+This application is composed of several microservices coordinated via Docker Compose:
+
+- **Frontend (`frontend/`)**: A Next.js (App Router) React application. It uses Vanilla CSS, features a highly responsive UI, and communicates with the backend via REST API calls.
+- **Backend (`backend/`)**: A Python FastAPI application. It handles business logic, authentication (JWT), state machines for advisory workflows, and exposes REST endpoints.
+- **Database (`db`)**: A PostgreSQL 15 database. Stores users, service centers, farms, advisories, and service requests using SQLAlchemy ORM.
+- **Cache & Message Broker (`redis`)**: Redis 7. Used for computationally heavy API responses (like the leaderboard), high-performance request queuing, and caching external API data (like weather stubs).
+- **Reverse Proxy (`nginx`)**: An Nginx container that acts as the entrypoint (port 80). It intelligently routes traffic to the `/api` prefix to the backend container, and all other traffic to the Next.js frontend container.
+
+## Getting Started
+
+### Prerequisites
+- Docker and Docker Compose installed on your machine.
+
+### 1. Setup Configuration
+A `.env.example` file is provided at the root of the project. 
+Copy it to create your local `.env` file:
+```bash
+cp .env.example .env
+```
+*(The defaults in `.env.example` are pre-configured to work out-of-the-box for local development).*
+
+### 2. Build and Run the Application
+To start the entire stack, run the following command in the root directory:
 
 ```bash
-npm install
-npm run dev      # http://localhost:3000
+docker-compose up -d --build
 ```
 
-On `/login`, pick a role — no password.
+**What happens when you run this?**
+1. Docker builds the frontend and backend images.
+2. The containers are started in the background (`-d`).
+3. The database container spins up and provisions the `agriverse` database.
+4. The `backend` container executes a startup script (`entrypoint.sh`). It runs Alembic/SQLAlchemy commands to create tables, and then executes `seed.py`. 
+5. `seed.py` reads the mock data (`farms.json`) and populates the database with default Service Center Managers, Chief Agronomists, Farms, and initial mock Advisories.
 
-## Screens
+### 3. Accessing the Application
+Once the containers are running, simply navigate to:
+**[http://localhost](http://localhost)**
 
-| Route | Screen | DRD § |
-|---|---|---|
-| `/login` | Role selection (from FAMS_Final) | 4 |
-| `/dashboard` | Manager morning dashboard — KPI tiles, farm map + action queue, trends | 5 |
-| `/advisories` | Farms table + general advisories strip | 6.1 |
-| `/advisories/[farmId]` | Farm detail — satellite map w/ index overlay, imagery timeline, charts, advisory workflow, audit trail | 6.2, 8 |
-| `/services` | Implement/drone request queue + manage sheet (base + petrol pricing) | 7 |
-| `/agents` | Field agents with expandable tasks (from Fams) | 9 |
-| `/overview` | Chief Agronomist portal — org KPIs, center comparison, trends | 10 |
+You will see the FAMS login screen. You can log in using the seeded mock credentials (e.g., Manager or Chief Agronomist roles) simply by clicking the buttons (the UI passes the mock credentials to the backend automatically).
 
-## Business rules in the UI
+## Developer Guide: Managing Containers
 
-- **BR-1** Forward is locked until a field agent verification is recorded.
-- **BR-2** Verification requires mandatory feedback (both outcomes) before any terminal action.
-- **BR-4** Closed advisories can never be sent; the action is removed.
-- **BR-5** Every action appears in the audit timeline with actor + timestamp.
-- **BR-6** Feedback shows a "returned to Agrobot" chip once recorded.
+If you are developing locally, you may need to restart specific services without taking down the entire stack.
 
-## Pricing model
+**View all running containers:**
+```bash
+docker-compose ps
+```
 
-- Advisories (farm-level and general): no charge.
-- Implements: standard base price per service; petrol/transport cost is
-  entered by the manager per request when accepting it. Total = base + petrol.
+**View logs for a specific container (e.g., the backend):**
+```bash
+docker-compose logs -f backend
+```
+
+**Restarting a specific container:**
+If you make changes to the frontend code, Next.js hot-reloading usually picks it up. But if you change package dependencies or want to force a restart:
+```bash
+docker-compose restart frontend
+```
+
+If you modify Python files in the backend, `uvicorn` is configured to auto-reload. However, if you change environment variables or the Dockerfile:
+```bash
+docker-compose up -d --build backend
+```
+
+**Shutting everything down:**
+To stop the application and remove the containers (your database data will persist in the Docker volume):
+```bash
+docker-compose down
+```
+
+**Wiping the Database:**
+If you want to start completely fresh and wipe the PostgreSQL volume so the seeder script runs from scratch on the next startup:
+```bash
+docker-compose down -v
+```
+
+## Directory Structure
+
+```text
+.
+├── backend/                  # FastAPI Application
+│   ├── models/               # SQLAlchemy Database Models
+│   ├── schemas/              # Pydantic Schemas (API validation)
+│   ├── routers/              # API Endpoints
+│   ├── services/             # Business Logic & Workflow Rules
+│   ├── seed.py               # Database Initialization Script
+│   └── main.py               # Application Entrypoint
+├── frontend/                 # Next.js Application
+│   ├── src/app/              # App Router Pages (Dashboard, Advisories, etc.)
+│   ├── src/components/       # Reusable UI Components
+│   └── src/lib/              # API Client & State Management
+├── docker-compose.yml        # Orchestration Config
+├── nginx.conf                # Routing Configuration
+├── .env.example              # Secret configurations template
+└── README.md                 # You are here
+```
