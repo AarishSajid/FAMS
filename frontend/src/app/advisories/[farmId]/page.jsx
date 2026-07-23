@@ -43,9 +43,9 @@ export default function FarmDetail() {
   const [modal, setModal] = useState(null); // "assign" | "verify" | "forward" | "close"
   const [form, setForm] = useState({});
 
-  const adv = advisories.find((a) => a.farmId === farmId) || null;
+  const adv = advisories.find((a) => a.farmId === Number(farmId)) || null;
   const activeIndex = index || adv?.indexLayer || "NDVI";
-  const history = useMemo(() => historyAdvisories.filter((h) => h.farmId === farmId), [farmId]);
+  const history = useMemo(() => historyAdvisories.filter((h) => h.farmId === Number(farmId)), [farmId]);
   const series = useMemo(() => (farm ? indexSeries(farm, activeIndex) : []), [farm, activeIndex]);
   const classes = useMemo(() => (farm ? classification(farm) : []), [farm]);
 
@@ -55,8 +55,8 @@ export default function FarmDetail() {
     );
   }
 
-  const canForward = adv && adv.verification && adv.feedback && adv.state === "verified" && adv.verification.outcome === "confirmed";
-  const canClose = adv && adv.feedback && adv.state === "verified";
+  const canForward = adv && adv.verification && adv.feedback && adv.state === "feedback_recorded" && adv.verification.outcome === "CONFIRMED";
+  const canClose = adv && adv.feedback && adv.state === "feedback_recorded";
 
   return (
     <div>
@@ -132,11 +132,8 @@ export default function FarmDetail() {
               </div>
               {adv ? (
                 <>
-                  <div style={{ fontSize: 13, lineHeight: 1.6, color: "var(--text-primary)" }}>
+                  <div style={{ fontSize: 13, lineHeight: 1.6, color: "var(--text-primary)", marginBottom: 8 }}>
                     <b style={{ color: "var(--text-bright)" }}>{adv.issueType}:</b> {adv.text}
-                  </div>
-                  <div style={{ fontSize: 11.5, color: "var(--text-muted)", margin: "8px 0" }}>
-                    Cycle {adv.cycle} · {adv.indexLayer} layer · affected {adv.affectedArea} · generated {adv.date}, 06:10
                   </div>
                   {adv.assignedAgentId && (
                     <div style={{ fontSize: 12, color: "var(--text-secondary)", marginBottom: 8 }}>
@@ -144,38 +141,44 @@ export default function FarmDetail() {
                     </div>
                   )}
                   {adv.verification && (
-                    <div style={{ background: adv.verification.outcome === "confirmed" ? "var(--success-muted)" : "var(--danger-muted)", border: `1px solid ${adv.verification.outcome === "confirmed" ? "var(--success-border)" : "var(--danger-border)"}`, borderRadius: 8, padding: 10, fontSize: 12, marginBottom: 8 }}>
-                      <b>{adv.verification.outcome === "confirmed" ? "✓ Issue confirmed" : "✗ Issue not found"}</b> by {adv.verification.agentName} · {adv.verification.observations}
-                      <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>Feedback: {adv.feedback.explanation}</div>
-                      {adv.feedback.returnedToAgrobot && <span className="badge badge-teal" style={{ marginTop: 6 }}>Feedback returned to Agrobot</span>}
+                    <div style={{ background: adv.verification.outcome === "CONFIRMED" ? "var(--success-muted)" : "var(--danger-muted)", border: `1px solid ${adv.verification.outcome === "CONFIRMED" ? "var(--success-border)" : "var(--danger-border)"}`, borderRadius: 8, padding: 10, fontSize: 12, marginBottom: 8 }}>
+                      <b>{adv.verification.outcome === "CONFIRMED" ? "✓ Issue confirmed" : "✗ Issue not found"}</b> by {adv.verification.agentName} · {adv.verification.observations}
+                      {adv.feedback && (
+                        <>
+                          <div style={{ color: "var(--text-secondary)", marginTop: 4 }}>Feedback: {adv.feedback.explanation}</div>
+                        </>
+                      )}
                     </div>
                   )}
                   <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                     {adv.state === "received" && (
-                      <button className="btn btn-primary" onClick={() => { setForm({ agentId: fieldAgents[0]?.id || "" }); setModal("assign"); }}>Send to Field Agent</button>
+                      <button className="btn btn-primary" onClick={() => { setForm({ agentId: fieldAgents[0]?.id || "" }); setModal("assign"); }}>Assign Field Agent</button>
                     )}
                     {adv.state === "pending_verification" && (
-                      <button className="btn btn-primary" onClick={() => { setForm({ outcome: "confirmed", observations: "", explanation: "" }); setModal("verify"); }}>Record Verification & Feedback</button>
+                      <span className="btn" style={{ cursor: "not-allowed", opacity: 0.7 }}>Awaiting Field Agent Verification</span>
                     )}
-                    {adv.state === "verified" && (
+                    {(adv.state === "verified_confirmed" || adv.state === "verified_not_found") && (
+                      <button className="btn btn-primary" onClick={() => { setForm({ explanation: "", falsePositiveReason: "" }); setModal("verify"); }}>Record Feedback</button>
+                    )}
+                    {adv.state === "feedback_recorded" && (
                       <>
-                        <button className="btn btn-primary" disabled={!canForward} title={!canForward ? "BR-1/BR-4: only confirmed, verified advisories can be forwarded" : ""} onClick={() => { setForm({ note: "" }); setModal("forward"); }}>
-                          Forward to Farmer
+                        <button className="btn btn-primary" disabled={!canForward} title={!canForward ? "Only confirmed advisories can be sent to farmer" : ""} onClick={() => { setForm({ note: "" }); setModal("forward"); }}>
+                          Send to Farmer
                         </button>
                         <button className="btn btn-danger" disabled={!canClose} onClick={() => { setForm({ reason: adv.feedback?.falsePositiveReason || "" }); setModal("close"); }}>
-                          Close — Do Not Forward
+                          Decline & Send Feedback
                         </button>
                       </>
                     )}
-                    {adv.state === "closed" && (
-                      <span style={{ fontSize: 12, color: "var(--text-muted)" }}>
-                        Terminal state — {adv.forwarding ? "delivered to the farmer via Farmer App" : "closed with feedback, never sent"}.
+                    {(adv.state === "forwarded" || adv.state === "closed_not_forwarded") && (
+                      <span style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 8 }}>
+                        Terminal state — {adv.state === "forwarded" ? "Delivered to farmer" : "Declined (feedback sent to Agrobot)"}.
                       </span>
                     )}
                   </div>
                   {adv.state === "received" && (
                     <div style={{ fontSize: 11.5, color: "var(--text-muted)", marginTop: 8 }}>
-                      BR-1: forwarding is locked until a field agent verifies this advisory on the ground.
+                      Assign a field agent to verify the issue on-site before taking action.
                     </div>
                   )}
                 </>

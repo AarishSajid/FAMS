@@ -141,7 +141,7 @@ export function FamsProvider({ children }) {
       await fetchApi(`/advisory-case/${id}/verification`, {
         method: "POST",
         body: JSON.stringify({
-          outcome: payload.outcome, // "CONFIRMED" or "NOT_FOUND"
+          outcome: payload.outcome === "confirmed" ? "CONFIRMED" : "NOT_FOUND",
           observations: payload.observations,
         }),
       });

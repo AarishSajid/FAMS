@@ -68,8 +68,8 @@ def assign_agent(db: Session, case_id: int, agent_id: str, actor: User) -> Advis
         raise NotFoundError("User (agent)", agent_id)
 
     case.assignedAgentId = agent_id
-    if case.state == AdvisoryCaseState.RECEIVED:
-        case.state = AdvisoryCaseState.UNDER_REVIEW
+    if case.state == AdvisoryCaseState.RECEIVED or case.state == AdvisoryCaseState.UNDER_REVIEW:
+        case.state = AdvisoryCaseState.PENDING_VERIFICATION
 
     _write_event(db, case, "ASSIGNED", actor,
                  detail=f"Assigned to {agent.firstName} {agent.lastName}")
@@ -167,19 +167,6 @@ def record_feedback(
     db.commit()
     db.refresh(case)
 
-    # BR-6: actually return the feedback to Agrobot (not just flag it). Published
-    # after commit so we never announce feedback that didn't persist.
-    # ponytail: fire-and-forget publish; a transactional outbox is the upgrade if
-    # guaranteed delivery is ever required.
-    publish_agrobot_feedback({
-        "caseId": case.id,
-        "farmId": case.farmId,
-        "sourceFarmAdvisoryId": case.sourceFarmAdvisoryId,
-        "outcome": feedback_outcome.value if feedback_outcome else None,
-        "explanation": explanation,
-        "falsePositiveReason": false_positive_reason,
-        "returnedAt": now.isoformat(),
-    })
     return case
 
 
@@ -232,6 +219,19 @@ def forward_case(
     _write_event(db, case, "FORWARDED", actor)
     db.commit()
     db.refresh(case)
+
+    # Publish feedback to Agrobot upon final acceptance
+    now = datetime.now(timezone.utc)
+    publish_agrobot_feedback({
+        "caseId": case.id,
+        "farmId": case.farmId,
+        "sourceFarmAdvisoryId": case.sourceFarmAdvisoryId,
+        "outcome": case.verification.outcome.value if case.verification else None,
+        "explanation": case.feedback.explanation if case.feedback else None,
+        "falsePositiveReason": case.feedback.falsePositiveReason if case.feedback else None,
+        "returnedAt": now.isoformat(),
+    })
+
     # Resolving a case changes agent standings — drop stale leaderboard windows.
     invalidate_leaderboard_center(case.serviceCenterId)
     return case
@@ -276,6 +276,19 @@ def close_case(
     _write_event(db, case, "CLOSED", actor, detail=reason)
     db.commit()
     db.refresh(case)
+
+    # Publish feedback to Agrobot upon final decline
+    now = datetime.now(timezone.utc)
+    publish_agrobot_feedback({
+        "caseId": case.id,
+        "farmId": case.farmId,
+        "sourceFarmAdvisoryId": case.sourceFarmAdvisoryId,
+        "outcome": case.verification.outcome.value if case.verification else None,
+        "explanation": case.feedback.explanation if case.feedback else None,
+        "falsePositiveReason": case.feedback.falsePositiveReason if case.feedback else None,
+        "returnedAt": now.isoformat(),
+    })
+
     # Resolving a case changes agent standings — drop stale leaderboard windows.
     invalidate_leaderboard_center(case.serviceCenterId)
     return case

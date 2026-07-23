@@ -83,6 +83,30 @@ def list_advisory_cases(
     }
 
 
+@router.get("/my-assignments")
+def get_my_assignments(
+    state: str | None = Query(None),
+    db: Session = Depends(get_db),
+    current_user: User = Depends(authorize(UserRole.FIELD_AGENT)),
+):
+    """Mobile app endpoint: Get active assignments for the logged in field agent."""
+    query = db.query(AdvisoryCase).options(
+        joinedload(AdvisoryCase.farm),
+        joinedload(AdvisoryCase.cycle),
+    ).filter(AdvisoryCase.assignedAgentId == current_user.id)
+
+    if state:
+        query = query.filter(AdvisoryCase.state == state)
+    else:
+        # Default to showing cases that need verification
+        query = query.filter(AdvisoryCase.state == AdvisoryCaseState.PENDING_VERIFICATION)
+
+    cases = query.order_by(AdvisoryCase.generatedAt.desc()).all()
+    
+    return [_case_to_list_item(c) for c in cases]
+
+
+
 @router.get("/{case_id}")
 def get_advisory_case(
     case_id: int,
