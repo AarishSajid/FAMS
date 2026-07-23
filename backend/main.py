@@ -9,10 +9,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from config import get_settings
-from database import engine, Base
 
-# Import all models so SQLAlchemy knows about them for Base.metadata.create_all
-# (Though in production, Prisma handles the schema).
+# Import all models so SQLAlchemy knows about them (used by Alembic and relationships).
 import models
 
 # Import routers
@@ -33,9 +31,8 @@ scheduler = AsyncIOScheduler()
 async def lifespan(app: FastAPI):
     # Startup
     
-    # In a pure SQLAlchemy project, we'd do this. Since Prisma owns the schema,
-    # this is safe as long as Prisma has run, but also ensures tests work.
-    Base.metadata.create_all(bind=engine)
+    # Schema creation is handled by Alembic migrations (alembic upgrade head)
+    # which runs in entrypoint.sh before the server starts.
     
     # Register jobs
     # Cycle generator: every 5 days. For testing, we might want this manual or daily.

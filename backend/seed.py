@@ -42,7 +42,7 @@ def upload_mock_cogs(db_farms, cycle_id, logger):
             except Exception as e:
                 logger.error(f"Failed to upload COG: {e}")
 
-from database import engine, Base, SessionLocal
+from database import SessionLocal
 from enums import UserRole, FieldAgentAvailability, AdvisoryCaseState, VerificationOutcome, AdvisoryCaseKind, IssueType, AdvisorySeverity, ServiceRequestStatus
 from models.user import User
 from models.service_center import ServiceCenter, District
@@ -59,7 +59,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 def hash_pass(p): return pwd_context.hash(p)
 
 def seed():
-    Base.metadata.create_all(bind=engine)
+    # Schema is created by Alembic (alembic upgrade head) before this script runs.
+    # This seeder only inserts mock data if the database is empty.
     db = SessionLocal()
     
     if db.query(User).first():
@@ -69,9 +70,7 @@ def seed():
 
     db.close()
 
-    logger.info("Dropping and recreating all tables...")
-    Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
+    logger.info("Seeding database with initial data...")
 
     # Re-open session for seeding
     db = SessionLocal()
