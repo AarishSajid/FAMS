@@ -10,8 +10,16 @@ from functools import lru_cache
 class Settings(BaseSettings):
     # ── Database ──────────────────────────────────────────────
     DATABASE_URL: str = "postgresql://agriverse_user:agriverse_pass@localhost:5432/agriverse"
-    AGRIVERSE_DB_URL: str = "postgresql://remote_user:password@agriverse-db.com:5432/agriverse_prod"
+
+    # ── Agriverse Remote API (Delta Sync) ─────────────────────
+    AGRIVERSE_API_URL: str = "https://172.16.1.230/api"
+    AGRIVERSE_SYNC_EMAIL: str = ""
+    AGRIVERSE_SYNC_PASSWORD: str = ""
+    AGRIVERSE_VERIFY_SSL: bool = False
     SYNC_INTERVAL_MINUTES: int = 60
+
+    # Legacy direct DB connection (kept as fallback, not used by default)
+    AGRIVERSE_DB_URL: str = "postgresql://remote_user:password@agriverse-db.com:5432/agriverse_prod"
 
     # ── JWT ───────────────────────────────────────────────────
     JWT_SECRET: str = "your-agriverse-jwt-secret-here"

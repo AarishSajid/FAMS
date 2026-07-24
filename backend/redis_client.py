@@ -78,3 +78,21 @@ def invalidate_leaderboard_center(service_center_id: int | None):
         keys = list(redis_client.scan_iter(match=f"fams:leaderboard:{_id}:*"))
         if keys:
             redis_client.delete(*keys)
+
+
+# ── Delta Sync High-Water Marks ──────────────────────────────
+
+def _hwm_key(entity: str) -> str:
+    return f"fams:sync:hwm:{entity}"
+
+
+def get_sync_hwm(entity: str) -> str | None:
+    """Get the last-synced updatedAt timestamp for an entity type (e.g. 'users', 'farms').
+    Returns ISO-8601 string or None if never synced."""
+    return redis_client.get(_hwm_key(entity))
+
+
+def set_sync_hwm(entity: str, timestamp: str):
+    """Set the high-water mark after a successful sync."""
+    redis_client.set(_hwm_key(entity), timestamp)
+

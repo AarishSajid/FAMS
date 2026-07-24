@@ -177,24 +177,24 @@ export function FamsProvider({ children }) {
         // Persist the petrol cost entered at accept time before scheduling —
         // otherwise it's silently dropped and the manager must re-enter it.
         if (payload?.petrol != null) {
-          await fetchApi(`/service/${id}/cost`, {
+          await fetchApi(`/service/requests/${id}/cost`, {
             method: "PATCH",
             body: JSON.stringify({ petrolCost: payload.petrol }),
           });
         }
-        await fetchApi(`/service/${id}/schedule`, {
+        await fetchApi(`/service/requests/${id}/schedule`, {
           method: "PATCH",
           body: JSON.stringify({ scheduledFor: payload?.date || new Date().toISOString(), handledById: user.id }),
         });
       } else if (action === "petrol") {
-        await fetchApi(`/service/${id}/cost`, {
+        await fetchApi(`/service/requests/${id}/cost`, {
           method: "PATCH",
           body: JSON.stringify({ petrolCost: payload }),
         });
       } else if (action === "complete") {
-        await fetchApi(`/service/${id}/complete`, { method: "PATCH" });
+        await fetchApi(`/service/requests/${id}/complete`, { method: "PATCH" });
       } else if (action === "decline") {
-        await fetchApi(`/service/${id}/decline`, {
+        await fetchApi(`/service/requests/${id}/decline`, {
           method: "PATCH",
           body: JSON.stringify({ declineReason: payload || "Not available" }),
         });

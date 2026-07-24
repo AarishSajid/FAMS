@@ -65,6 +65,34 @@ def create_service_request(
     return req
 
 
+@router.get("/{service_id}", response_model=ServiceResponse)
+def get_service(service_id: int, db: Session = Depends(get_db)):
+    """Get one service."""
+    svc = db.query(Service).filter(Service.id == service_id).first()
+    if not svc:
+        raise NotFoundError("Service", service_id)
+    return svc
+
+
+@router.get("/requests/farm/{farm_id}")
+def get_farm_requests(
+    farm_id: int,
+    db: Session = Depends(get_db),
+):
+    """All service requests submitted by one farm (public, farmer-facing)."""
+    reqs = db.query(ServiceRequest).filter(ServiceRequest.farmId == farm_id).all()
+    return [
+        {
+            "id": r.id,
+            "serviceId": r.serviceId,
+            "status": r.status.value,
+            "requestedAt": r.requestedAt.isoformat() if r.requestedAt else None,
+            "service": {"id": r.service.id, "name": r.service.name, "rate": r.service.rate} if r.service else None,
+        }
+        for r in reqs
+    ]
+
+
 # ── Manager workflow endpoints ────────────────────────────────
 
 @router.get("/requests/service-center/{center_id}")
@@ -117,7 +145,7 @@ def get_manager_queue(
     return result
 
 
-@router.patch("/{req_id}/cost")
+@router.patch("/requests/{req_id}/cost")
 def set_request_cost(
     req_id: int,
     body: CostRequest,
@@ -138,7 +166,7 @@ def set_request_cost(
     return {"id": req.id, "petrolCost": req.petrolCost, "totalCost": req.totalCost}
 
 
-@router.patch("/{req_id}/schedule")
+@router.patch("/requests/{req_id}/schedule")
 def schedule_request(
     req_id: int,
     body: ScheduleRequest,
@@ -160,7 +188,7 @@ def schedule_request(
     return {"id": req.id, "status": req.status.value, "scheduledFor": req.scheduledFor}
 
 
-@router.patch("/{req_id}/complete")
+@router.patch("/requests/{req_id}/complete")
 def complete_request(
     req_id: int,
     db: Session = Depends(get_db),
@@ -181,7 +209,7 @@ def complete_request(
     return {"id": req.id, "status": req.status.value, "completedAt": req.completedAt}
 
 
-@router.patch("/{req_id}/decline")
+@router.patch("/requests/{req_id}/decline")
 def decline_request(
     req_id: int,
     body: DeclineRequest,

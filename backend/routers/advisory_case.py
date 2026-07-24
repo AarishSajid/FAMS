@@ -170,7 +170,7 @@ def record_feedback(
     case_id: int,
     body: FeedbackRequest,
     db: Session = Depends(get_db),
-    user: User = Depends(authorize(UserRole.SERVICE_CENTER_MANAGER, UserRole.ADMIN)),
+    user: User = Depends(authorize(UserRole.FIELD_AGENT, UserRole.SERVICE_CENTER_MANAGER, UserRole.ADMIN)),
 ):
     case = advisory_service.record_feedback(
         db, case_id, body.explanation, body.falsePositiveReason, user,

@@ -12,6 +12,7 @@ settings = get_settings()
 
 QUEUE_NAME = "advisories_queue"
 AGROBOT_FEEDBACK_QUEUE = "agrobot_feedback_queue"
+SYNC_UPDATES_QUEUE = "sync_updates_queue"
 
 def get_connection():
     parameters = pika.URLParameters(settings.RABBITMQ_URL)
@@ -40,6 +41,18 @@ def publish_agrobot_feedback(payload: dict):
         _publish(AGROBOT_FEEDBACK_QUEUE, payload)
     except Exception as e:
         logger.error(f"Failed to return feedback to Agrobot (case {payload.get('caseId')}): {e}")
+
+def publish_sync_updates(records: list[dict]):
+    """Push a batch of changed records (detected by delta sync) into RabbitMQ.
+    Each record dict must include 'entity' (e.g. 'user', 'farm') and 'data'."""
+    if not records:
+        return
+    try:
+        _publish(SYNC_UPDATES_QUEUE, {"batch": records, "count": len(records)})
+        logger.info(f"Published {len(records)} sync update(s) to RabbitMQ.")
+    except Exception as e:
+        logger.error(f"Failed to publish sync updates to RabbitMQ: {e}")
+
 
 def publish_advisory(payload: dict):
     """Publish an advisory dictionary to RabbitMQ."""

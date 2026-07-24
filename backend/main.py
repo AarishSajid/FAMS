@@ -16,7 +16,8 @@ import models
 # Import routers
 from routers import (
     auth, service_center, advisory_case, users,
-    service_request, product_request, broadcast, weather_alert, stats, sync
+    service_request, product_request, broadcast, weather_alert, stats, sync,
+    satellite_data,
 )
 from jobs.cycle_generator import run_cycle_generator
 from jobs.weather_ingestion import run_weather_ingestion
@@ -80,6 +81,7 @@ app.include_router(broadcast.router, prefix="/api")
 app.include_router(weather_alert.router, prefix="/api")
 app.include_router(stats.router, prefix="/api")
 app.include_router(sync.router, prefix="/api")
+app.include_router(satellite_data.router, prefix="/api")
 
 @app.get("/api/health")
 def health_check():
